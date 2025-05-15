@@ -4,12 +4,12 @@ import React, {
   createContext,
   useContext,
   useState,
-  useEffect,
   ReactNode,
+  useEffect,
 } from "react";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { User } from "firebase/auth";
 
-import { auth } from "@/firebase";
+// import { auth } from "@/firebase";
 
 // import Spinner from "@/components/ui/Spinner";
 
@@ -26,12 +26,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState<boolean>(true); // Add this
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    // const unsubscribe = onAuthStateChanged(auth, (user) => {
+    //   setUser(user);
+    //   setLoading(false); // Auth state is known
+    // });
+
+    const unsubscribe = ( () => {
       setUser(user);
-      setLoading(false); // Auth state is known
+      setLoading(false); 
     });
     return () => unsubscribe();
-  }, []);
+  },);
 
   return (
     <AuthContext.Provider

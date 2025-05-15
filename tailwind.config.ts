@@ -9,17 +9,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        futurapt: ["var(--font-futurapt)"],
-        futura: ["var(--font-futura)"],
-        newCourier: ["var(--font-newCourier)"],
+        poppins: ["var(--font-poppins)"],
+        space_grotesk: ["var(--font-space_grotesk)"],
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(to bottom, #0E0E0E, #0A2C3B )",
       },
       colors: {
-        // "primary-dark": "#48422D",
-        "secondary-dark": "#FFFFFF",
-        accent: "#FFCC00",
+        "primary": "#000000",
+        "secondary": "#0055FF",
+        // accent: "#FFCC00",
       },
       screens: {
         "2xl": { max: "1535px" },
