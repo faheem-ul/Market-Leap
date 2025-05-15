@@ -31,6 +31,8 @@
     "react-toastify": "^11.0.3",
     "stripe": "^17.7.0",
     "tailwind-merge": "^3.0.1"
+
+    
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
