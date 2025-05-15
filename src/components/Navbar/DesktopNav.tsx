@@ -7,7 +7,7 @@ import Logo from "@/public/logo.svg";
 
 const navItems = [
   {
-    title: "Home",
+    title: "test",
     url: "/",
   },
   {
