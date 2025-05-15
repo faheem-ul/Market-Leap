@@ -12,11 +12,20 @@
   box-shadow: 0px -20px 100px rgba(255, 255, 255, 0.3); 
 } */
 
-.shadow {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.9) 40%,
-    rgba(255, 255, 255, 0.5) 70%,
-    rgba(255, 255, 255, 0) 100%
-  );
+body{
+  background: #FFFFFF;
+}
+
+
+.leading-custom-6{
+  line-height: 28px;
+}
+
+.image-shadow {
+  box-shadow: 0px 14px 34px 0px #00000040;
+}
+
+.Image-overlay{
+  background: linear-gradient(360deg, #000000 0%, rgba(123, 123, 123, 0) 92.32%);
+
 }

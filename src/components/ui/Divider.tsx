@@ -8,7 +8,7 @@ const Divider = (props: PropTypes) => {
   const { className } = props;
 
   return (
-    <hr className={cn("w-full my-4 border-[1.2px] shadow-md", className)} />
+    <hr className={cn("w-full my-1 border-[1.2px] shadow-md", className)} />
   );
 };
 
