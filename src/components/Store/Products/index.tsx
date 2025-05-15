@@ -8,8 +8,8 @@ import { db } from "@/firebase";
 import Text from "@/components/ui/Text";
 import Spinner from "@/components/ui/Spinner";
 
-import logo from "@/public/watermark.png";
-import SearchProduct from "../Serach";
+import logo from "@/public/signatureblack.png";
+// import SearchProduct from "../Serach";
 
 interface SizeInfo {
   image: string;
@@ -58,12 +58,15 @@ const Products = () => {
 
   return (
     <div className="mx-auto w-full max-w-[1267.97px] mob:px-5">
-      <Text as="h1" className="text-black text-center">
+      <Text
+        as="h1"
+        className="text-black text-center font-newCourier font-bold"
+      >
         STORE
       </Text>
 
       <hr className="border-[0.5px] border-black/50 w-full my-5" />
-      <SearchProduct />
+      {/* <SearchProduct /> */}
 
       {/* Products grid */}
       <div className="flex flex-wrap mob:justify-center mt-16 gap-[30px] justify-start mob:gap-[20px] mb-16">
@@ -76,8 +79,11 @@ const Products = () => {
             // Determine which images to use.
             let imageUrl = product.image;
             let hoverUrl = product.hoverImage || product.image;
-            if (product.sizes && product.sizes["Normal"]) {
-              const sizeData = product.sizes["Normal"];
+            if (
+              product.sizes &&
+              product.sizes["Small"]
+            ) {
+              const sizeData = product.sizes["Small"];
               imageUrl = sizeData.image;
               hoverUrl = sizeData.hoverImage;
             }
@@ -90,49 +96,89 @@ const Products = () => {
                   onClick={() => handleNavigation(product.slugtitle)}
                 >
                   {/* Default image fades out on hover */}
-                  <Image
-                    src={imageUrl}
-                    alt={product.name}
-                    width={402}
-                    height={314}
-                    onContextMenu={(e) => e.preventDefault()}
-                    className="transition-opacity duration-1000 ease-in-out group-hover:opacity-0 object-contain"
-                  />
 
-                  {/* Hover image – centered and not forced to fill the container */}
-                  <Image
-                    src={hoverUrl}
-                    alt={product.name}
-                    width={402}
-                    height={314}
-                    onContextMenu={(e) => e.preventDefault()}
-                    className="transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 object-contain"
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      maxWidth: "100%",
-                      maxHeight: "100%",
-                    }}
-                  />
+                  {/* <div className="w-full max-w-[670px] relative group">
+              <Image
+                src={currentImage}
+                alt={product.title}
+                width={670}
+                height={523}
+                onContextMenu={(e) => e.preventDefault()}
+                className="object-contain max-w-full max-h-full"
+              />
+
+              <div className="absolute bottom-3 right-2 w-[80px] rounded-[24px] p-4 ">
+                <Image
+                  className="mx-auto w-[80px]"
+                  src={logo}
+                  alt="Watermark Logo"
+                />
+              </div>
+            </div> */}
+
+                  <div className="w-full relative group">
+                    {/* Main Image */}
+                    <Image
+                      src={imageUrl}
+                      alt={product.name}
+                      width={402}
+                      height={314}
+                      onContextMenu={(e) => e.preventDefault()}
+                      className="transition-opacity duration-1000 ease-in-out group-hover:opacity-0 object-contain"
+                    />
+
+                    {/* Watermark for Main Image - Also fades out on hover */}
+                    <div className="absolute bottom-3 right-2 w-[80px] rounded-[24px] transition-opacity duration-1000 ease-in-out group-hover:opacity-0">
+                      <Image
+                        className="mx-auto w-[80px]"
+                        src={logo}
+                        alt="Watermark Logo"
+                      />
+                    </div>
+
+                    {/* Hover Image and its watermark */}
+                    <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 flex justify-center items-center z-10">
+                      <div className="relative">
+                        <Image
+                          src={hoverUrl}
+                          alt={product.name}
+                          width={402}
+                          height={314}
+                          onContextMenu={(e) => e.preventDefault()}
+                          className="object-contain max-w-full max-h-full"
+                        />
+                        <div className="absolute bottom-3 right-2 w-[80px] rounded-[24px] pointer-events-none">
+                          <Image
+                            className="mx-auto w-[80px]"
+                            src={logo}
+                            alt="Watermark Logo"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   {/* Watermark overlay remains fixed on top */}
-                  <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-20">
-                    <Image className="w-full" src={logo} alt="Watermark Logo" />
-                  </div>
+                  {/* <div className="absolute inset-0 flex justify-center w-[100px] items-center pointer-events-none z-20">
+                    <Image
+                      className="w-full relative"
+                      src={logo}
+                      alt="Watermark Logo"
+                    />
+                  </div> */}
                 </div>
 
                 {/* Product details */}
-                <div className="flex justify-between items-start mt-6">
-                  <Text className="text-[#000000] text-[24px] leading-[30.77px] font-futurapt font-medium max-w-[169px] mob:text-[20px] mob:leading-[25.64px]">
+                <div className="flex justify-center items-start mt-6">
+                  {/* max-w-[169px] */}
+                  <Text className="text-[#000000] font-bold text-[24px] leading-[30.77px] font-newCourier mob:text-[20px] mob:leading-[25.64px]">
                     {product.name}
                   </Text>
-                  <div className="bg-[#EBF1E0] px-3 py-1 max-h-[44.07px] flex items-center rounded-full">
+                  {/* <div className="bg-[#EBF1E0] px-3 py-1 max-h-[44.07px] flex items-center rounded-full">
                     <Text className="text-[#000000] text-[24px] leading-[30.77px] font-futurapt font-medium mob:text-[20px] mob:leading-[25.64px]">
                       ${product.price}
                     </Text>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             );
