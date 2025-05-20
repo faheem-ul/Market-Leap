@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Button from "../ui/Button";
-
+import Button from "@/components/ui/Button";
 import Logo from "@/public/logo.png";
 import { cn } from "@/lib/utils";
 
@@ -34,7 +33,7 @@ const DesktopNav = () => {
 
   const pathname = usePathname()
   return (
-    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5", pathname === "/nail-salon" ? "hidden" : "")}>
+    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5", pathname === "/nail-salon" ? "" : "hidden")}>
       <div className="relative flex h-[73px] items-center justify-center w-full max-w-[1313px] bg-background rounded-[10px] mt-6 mb-8 bg-primary">
         <div className="relative z-10 flex px-[49px] w-full items-center justify-between">
           <Link href="/">
