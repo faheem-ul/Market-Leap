@@ -17,7 +17,7 @@ const  MarqueeComponent: React.FC<Props> = ({
       <Marquee
         direction={direction}
         speed={200}
-        className={cn("w-full", className)}
+        className={cn("", className)}
       >
         {Array(25).fill(children)}
       </Marquee>
