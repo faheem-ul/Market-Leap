@@ -7,10 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Text from "@/components/ui/Text";
 
-import image1 from "@/public/images/home/img1.png"
-import image2 from "@/public/images/home/img2.png"
-import image3 from "@/public/images/home/img3.png"
-import image4 from "@/public/images/home/img4.png"
+import image1 from "@/public/images/home/img1.png";
+import image2 from "@/public/images/home/img2.png";
+import image3 from "@/public/images/home/img3.png";
+import image4 from "@/public/images/home/img4.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomeHero = () => {
@@ -18,6 +18,8 @@ const HomeHero = () => {
   const wrapperRef = useRef(null);
   const textRef = useRef(null);
   const smootherRef = useRef(null);
+  const subTextRef = useRef(null);
+
   useEffect(() => {
     // Initialize ScrollSmoother
     // const smoother = ScrollSmoother.create({
@@ -69,6 +71,32 @@ const HomeHero = () => {
             start: "top 45%",
             end: "top 20%",
             scrub: 1,
+            // markers:true
+          },
+        }
+      );
+    }
+
+    if (subTextRef.current) {
+      gsap.fromTo(
+        subTextRef.current,
+        {
+          opacity: 0.5,
+          y: 0,
+
+          color: "#000000",
+        },
+        {
+          opacity: 1,
+          y: 400,
+          color: "#FFFFFF",
+          ease: "none",
+          scrollTrigger: {
+            trigger: subTextRef.current,
+            start: "top 50%",
+            end: "top 6%",
+            scrub: 1,
+            // markers:true
           },
         }
       );
@@ -95,10 +123,13 @@ const HomeHero = () => {
       data-aos-easing="ease-in-out">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full max-w-[1236px]">
-          <Text as="h1" className="text-[50px] text-center">
+          <Text as="h1" className="text-[50px] text-center" ref={textRef}>
             More than just a point-of-sale.
           </Text>
-          <Text as="h2" className="text-[40px] font-normal leading-[50px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
+          <Text
+            ref={subTextRef}
+            as="h2"
+            className="text-[40px] font-normal z-10 relative leading-[50px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
             Everything you need to run and grow your business, all in one place.
           </Text>
         </div>
@@ -108,14 +139,34 @@ const HomeHero = () => {
         className="relative w-full overflow-hidden items-center flex justify-center mb-[76px] mob:mb-[60px]"
         ref={wrapperRef}>
         <div
-          className="relative w-full flex max-w-[1240px] xl:max-w-[1100px] mx-auto z-10 h-auto"
+          className="relative w-full flex max-w-[1240px] xl:max-w-[1100px] mx-auto z-0 h-auto"
           ref={videoRef}>
-          <div className="absolute inset-0 bg-black opacity-50 z-20 pointer-events-none rounded-[40px]" />
+          <div className="absolute inset-0 bg-black opacity-50 z-0 pointer-events-none rounded-[40px]" />
 
-          <Image src={image1} alt="homeImage" width={310} className="border-r-[5px] border-[#FFFFFF]/30 rounded-l-[40px]"/>
-          <Image src={image2} alt="homeImage" width={310} className="border-r-[5px] border-[#FFFFFF]/30"/>
-          <Image src={image3} alt="homeImage" width={310} className="border-r-[5px] border-[#FFFFFF]/30"/>
-          <Image src={image4} alt="homeImage" width={310} className="rounded-r-[40px]"/>
+          <Image
+            src={image1}
+            alt="homeImage"
+            width={310}
+            className="border-r-[5px] border-[#FFFFFF]/30 rounded-l-[40px]"
+          />
+          <Image
+            src={image2}
+            alt="homeImage"
+            width={310}
+            className="border-r-[5px] border-[#FFFFFF]/30"
+          />
+          <Image
+            src={image3}
+            alt="homeImage"
+            width={310}
+            className="border-r-[5px] border-[#FFFFFF]/30"
+          />
+          <Image
+            src={image4}
+            alt="homeImage"
+            width={310}
+            className="rounded-r-[40px]"
+          />
         </div>
       </div>
     </div>
