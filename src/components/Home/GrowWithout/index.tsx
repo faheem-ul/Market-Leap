@@ -47,7 +47,8 @@ const GrowWithout = () => {
       });
 
       const contentHeight =
-        document.querySelector("#scroll-container")?.getBoundingClientRect().height || 800;
+        document.querySelector("#scroll-container")?.getBoundingClientRect()
+          .height || 800;
       const viewportHeight = window.innerHeight;
       const animationDuration = Math.max(contentHeight * 4, viewportHeight * 2);
 
@@ -59,11 +60,10 @@ const GrowWithout = () => {
           scrub: true,
           pin: "#pinned-section",
           pinSpacing: true,
-          markers: false,
+          // markers: true,
           anticipatePin: 1,
           immediateRender: false,
           onEnter: () => {
-            // Just refresh to stabilize, no resets to avoid jerk
             ScrollTrigger.refresh();
           },
           onUpdate: (self) => {
@@ -90,10 +90,9 @@ const GrowWithout = () => {
         },
       });
 
-      // Small delay before starting dot animations
       tl.to({}, { duration: 0.1 });
 
-      // Phase 1: First dot moves to end, fades out; others shift up
+      // Phase animations (dot motion along path)
       tl.to("#dot1", {
         motionPath: {
           path: "#semiPath",
@@ -153,7 +152,6 @@ const GrowWithout = () => {
           "<"
         );
 
-      // Phase 2: Second dot moves to end, fades out; others shift up
       tl.to("#dot2", {
         motionPath: {
           path: "#semiPath",
@@ -198,7 +196,6 @@ const GrowWithout = () => {
           "<"
         );
 
-      // Phase 3: Third dot moves to end, fades out; fourth shifts up
       tl.to("#dot3", {
         motionPath: {
           path: "#semiPath",
@@ -211,24 +208,22 @@ const GrowWithout = () => {
         scale: 0.5,
         duration: 1,
         ease: "none",
-      })
-        .to(
-          "#dot4",
-          {
-            motionPath: {
-              path: "#semiPath",
-              align: "#semiPath",
-              alignOrigin: [0.5, 0.5],
-              start: initialPositions[1],
-              end: initialPositions[0],
-            },
-            duration: 1,
-            ease: "none",
+      }).to(
+        "#dot4",
+        {
+          motionPath: {
+            path: "#semiPath",
+            align: "#semiPath",
+            alignOrigin: [0.5, 0.5],
+            start: initialPositions[1],
+            end: initialPositions[0],
           },
-          "<"
-        );
+          duration: 1,
+          ease: "none",
+        },
+        "<"
+      );
 
-      // Phase 4: Fourth dot moves to end, fades out
       tl.to("#dot4", {
         motionPath: {
           path: "#semiPath",
@@ -248,14 +243,6 @@ const GrowWithout = () => {
 
     const handleResize = () => {
       ScrollTrigger.refresh();
-      const svg = document.querySelector("#svg-container svg");
-      if (svg) {
-        // const containerWidth = document.querySelector("#svg-container")?.getBoundingClientRect().width || 300;
-        // const viewportHeight = window.innerHeight;
-        // const maxSvgHeight = Math.min(containerWidth * 2, viewportHeight * 0.7);
-        // svg.style.maxWidth = `${Math.min(containerWidth, 300)}px`;
-        // svg.style.height = `${maxSvgHeight}px`;
-      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -281,76 +268,97 @@ const GrowWithout = () => {
           className="w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 min-h-screen"
         >
           {/* LEFT SECTION */}
-          <div id="scroll-container" className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-[80vh] gap-4">
-            {/* Feature Pills (Header) */}
-            <div className="bg-secondary rounded-[20px] w-full py-3 px-4 sm:px-6 md:px-12 flex justify-between items-center h-16 sm:h-20">
-              {labels.map((label, index) => {
-                const isActive = activeIndex === index + 1;
-                return (
-                  <Text
-                    key={label}
-                    className={`font-semibold text-sm sm:text-base md:text-lg transition-all duration-1000 ${
-                      isActive
-                        ? "text-white px-2 sm:px-3 md:px-5 py-2 sm:py-3 bg-black rounded-[15px]"
-                        : "text-[#fff]/80"
-                    }`}
-                  >
-                    {label}
-                  </Text>
-                );
-              })}
-            </div>
+          <div
+            id="scroll-container"
+            className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-screen gap-4"
+          >
+            {/* Animated Content Wrapper */}
+            <div className="relative w-full flex flex-col items-center justify-center gap-4 max-w-[700px]">
+              {/* Labels bar placed ABOVE content */}
+              <div className="bg-secondary relative z-10 rounded-[20px] w-full py-3 px-4 sm:px-6 md:px-12 flex justify-between items-center h-16 sm:h-20">
+                {labels.map((label, index) => {
+                  const isActive = activeIndex === index + 1;
+                  return (
+                    <Text
+                      key={label}
+                      className={`font-semibold text-sm sm:text-base md:text-lg transition-all duration-1000 ${
+                        isActive
+                          ? "text-white px-2 sm:px-3 md:px-5 py-2 sm:py-3 bg-black rounded-[15px]"
+                          : "text-[#fff]/80"
+                      }`}
+                    >
+                      {label}
+                    </Text>
+                  );
+                })}
+              </div>
 
-            {/* Animated Content */}
-            <div className="relative w-full flex-1 flex items-center justify-center">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  id={`content${i}`}
-                  className="absolute inset-0 opacity-0 translate-y-[-50px] transition-all duration-500 text-center flex flex-col items-center justify-center"
-                >
-                  <Image
-                    src={grow1}
-                    alt="grow"
-                    width={0}
-                    height={0}
-                    className="mx-auto w-3/4 sm:w-2/3 md:w-1/2 h-auto"
-                    priority
-                  />
-                  <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">
-                    {i === 1 && "Empower Your Business with AI"}
-                    {i === 2 && "Automate Customer Engagement"}
-                    {i === 3 && "Optimize with Insights"}
-                    {i === 4 && "Never Miss a Lead"}
-                  </Text>
-                  <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
-                    {i === 1 &&
-                      "Use our built-in AI services to power your marketing, branding, customer engagement, pricing optimization, inventory management, and more."}
-                    {i === 2 &&
-                      "Let AI handle routine interactions, FAQs, and proactive communication, freeing you to focus on growth."}
-                    {i === 3 &&
-                      "Gain real-time analytics and data-driven suggestions to improve operations, sales, and retention."}
-                    {i === 4 &&
-                      "Capture every opportunity with intelligent lead tracking and automated follow-ups."}
-                  </Text>
-                  <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto h-12 sm:h-14 md:h-16 font-bold rounded-[15px] text-white text-base sm:text-lg">
-                    {i === 1 ? "Get Started" : i === 2 ? "Learn More" : i === 3 ? "Start Optimizing" : "Track Leads"}
-                  </Button>
-                </div>
-              ))}
+              {/* Content container below labels */}
+              <div className="relative w-full min-h-[400px] sm:min-h-[500px]">
+                {[1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    id={`content${i}`}
+                    className="absolute inset-0 opacity-0 translate-y-[-50px] transition-all duration-500 text-center flex flex-col items-center justify-center"
+                  >
+                    <Image
+                      src={grow1}
+                      alt="grow"
+                      width={0}
+                      height={0}
+                      className="mx-auto w-3/4 sm:w-2/3 md:w-1/2 h-auto"
+                      priority
+                    />
+                    <Text
+                      as="h2"
+                      className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4"
+                    >
+                      {i === 1 && "Empower Your Business with AI"}
+                      {i === 2 && "Automate Customer Engagement"}
+                      {i === 3 && "Optimize with Insights"}
+                      {i === 4 && "Never Miss a Lead"}
+                    </Text>
+                    <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
+                      {i === 1 &&
+                        "Use our built-in AI services to power your marketing, branding, customer engagement, pricing optimization, inventory management, and more."}
+                      {i === 2 &&
+                        "Let AI handle routine interactions, FAQs, and proactive communication, freeing you to focus on growth."}
+                      {i === 3 &&
+                        "Gain real-time analytics and data-driven suggestions to improve operations, sales, and retention."}
+                      {i === 4 &&
+                        "Capture every opportunity with intelligent lead tracking and automated follow-ups."}
+                    </Text>
+                    <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto h-12 sm:h-14 md:h-16 font-bold rounded-[15px] text-white text-base sm:text-lg">
+                      {i === 1
+                        ? "Get Started"
+                        : i === 2
+                        ? "Learn More"
+                        : i === 3
+                        ? "Start Optimizing"
+                        : "Track Leads"}
+                    </Button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* RIGHT SECTION (SVG Path Animation) */}
           <div
             id="svg-container"
-            className="w-full md:w-2/5 flex justify-center md:justify-end items-center min-h-[80vh] py-6 sm:py-8 md:py-10"
+            className="w-full md:w-2/5 flex justify-center md:justify-end items-center min-h-[80vh]"
           >
             <svg
               viewBox="0 0 400 800"
               className="w-full max-w-[400px] sm:max-w-[250px] md:max-w-[300px] h-auto overflow-visible"
             >
-              <path id="semiPath" d="M400,0 A400,400 0 0,0 400,800" fill="none" stroke="#0055FF" strokeWidth="8" />
+              <path
+                id="semiPath"
+                d="M400,0 A400,400 0 0,0 400,800"
+                fill="none"
+                stroke="#0055FF"
+                strokeWidth="8"
+              />
               <circle id="dot1" r="20" fill="#0055FF" />
               <circle id="dot2" r="20" fill="#0055FF" />
               <circle id="dot3" r="20" fill="#0055FF" />
