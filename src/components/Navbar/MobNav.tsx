@@ -20,7 +20,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <nav className="hidden navsize:block px-5 mt-5">
+      <nav className="hidden relative navsize:block px-5 mt-5">
         <div className="flex w-full justify-between mb-5 px-5 py-4 bg-primary items-center rounded-[10px]">
           <Link
             href="/"

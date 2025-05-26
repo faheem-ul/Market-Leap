@@ -48,3 +48,7 @@ body{
   }
 }
 
+
+#pinned-section{
+  top: 0px !important;
+}
