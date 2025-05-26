@@ -11,26 +11,18 @@ import image1 from "@/public/images/home/img1.png";
 import image2 from "@/public/images/home/img2.png";
 import image3 from "@/public/images/home/img3.png";
 import image4 from "@/public/images/home/img4.png";
+import Button from "@/components/ui/Button";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const HomeHero = () => {
   const videoRef = useRef(null);
   const wrapperRef = useRef(null);
   const textRef = useRef(null);
-  const smootherRef = useRef(null);
   const subTextRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
-    // Initialize ScrollSmoother
-    // const smoother = ScrollSmoother.create({
-    //   smooth: 0.7,
-    //   effects: true,
-    // });
-    //    ScrollSmoother.create({
-    //   smooth: 0.7,
-    //   effects: true,
-    // });
-
     if (videoRef.current && wrapperRef.current) {
       gsap.set(wrapperRef.current, { perspective: 1200 });
       gsap.set(videoRef.current, {
@@ -71,7 +63,6 @@ const HomeHero = () => {
             start: "top 45%",
             end: "top 20%",
             scrub: 1,
-            // markers:true
           },
         }
       );
@@ -83,7 +74,6 @@ const HomeHero = () => {
         {
           opacity: 0.5,
           y: 0,
-
           color: "#000000",
         },
         {
@@ -96,11 +86,31 @@ const HomeHero = () => {
             start: "top 50%",
             end: "top 6%",
             scrub: 1,
-            // markers:true
           },
         }
       );
     }
+
+    // Animate button only after subText is fully visible and centered
+    // Animate button only after subText is fully visible and centered
+if (buttonRef.current && subTextRef.current) {
+  gsap.fromTo(
+    buttonRef.current,
+    { opacity: 0, y: -40 },
+    {
+      opacity: 1,
+      y: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: subTextRef.current,
+        start: "top 6%",
+        end: "top 6%",
+        scrub: true, 
+      },
+    }
+  );
+}
+
 
     const handleResize = () => {
       ScrollTrigger.refresh();
@@ -115,7 +125,6 @@ const HomeHero = () => {
 
   return (
     <div
-      ref={smootherRef}
       className="w-full h-full mt-[76px] px-5"
       data-aos="zoom-in"
       data-aos-delay="200"
@@ -129,7 +138,7 @@ const HomeHero = () => {
           <Text
             ref={subTextRef}
             as="h2"
-            className="text-[40px] font-normal z-10 relative leading-[50px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
+            className="text-[40px] font-normal z-10 sticky top-0 leading-[70px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
             Everything you need to run and grow your business, all in one place.
           </Text>
         </div>
@@ -141,8 +150,10 @@ const HomeHero = () => {
         <div
           className="relative w-full flex max-w-[1240px] xl:max-w-[1100px] mx-auto z-0 h-auto"
           ref={videoRef}>
+          {/* Overlay */}
           <div className="absolute inset-0 bg-black opacity-50 z-0 pointer-events-none rounded-[40px]" />
 
+          {/* Images */}
           <Image
             src={image1}
             alt="homeImage"
@@ -167,6 +178,15 @@ const HomeHero = () => {
             width={310}
             className="rounded-r-[40px]"
           />
+
+          {/* Animated Button - initially hidden, appears after text animation */}
+          <div
+            ref={buttonRef}
+            className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500">
+            <Button className="w-[166px] h-[58px] rounded-[15px] font-bold bg-secondary text-white text-[18px] font-space_grotesk">
+              Get Started
+            </Button>
+          </div>
         </div>
       </div>
     </div>
