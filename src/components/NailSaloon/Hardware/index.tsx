@@ -20,7 +20,7 @@ const CardsStackSection = () => {
   useEffect(() => {
     // Animation for the first card
     gsap.to(cardRef1.current, {
-      opacity: 0,
+      // opacity: 0,
       scrollTrigger: {
         trigger: cardRef1.current,
         start: "top top-=400px",
@@ -32,7 +32,7 @@ const CardsStackSection = () => {
 
     // Animation for the second card
     gsap.to(cardRef2.current, {
-      opacity: 0,
+      // opacity: 0,
       scrollTrigger: {
         trigger: cardRef2.current,
         start: "top top-=400px",
@@ -43,7 +43,7 @@ const CardsStackSection = () => {
 
     // Animation for the third card
     gsap.to(cardRef3.current, {
-      opacity: 1,
+      // opacity: 1,
       scrollTrigger: {
         trigger: cardRef3.current,
         start: "top center",
