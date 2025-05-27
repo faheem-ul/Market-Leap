@@ -3,7 +3,7 @@ import Text from "@/components/ui/Text";
 
 const TermsOfService = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center px-5">
+    <div className="w-full h-full flex justify-center items-center px-5 mob:mt-[-120px]">
       <div className="w-full max-w-[1313px] mx-auto px-4">
         <Text className="text-black text-[18px] font-semibold my-[53px] text-end">
         Last updated: 09/21/2024

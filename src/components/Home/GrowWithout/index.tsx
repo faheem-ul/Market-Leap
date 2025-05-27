@@ -8,6 +8,7 @@ import grow1 from "@/public/images/home/grow.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import GrowWithoutMobSlider from "./GrowMobSlider";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -27,7 +28,7 @@ const GrowWithout = () => {
     }
 
     const setupAnimation = () => {
-      ScrollTrigger.refresh();
+      // ScrollTrigger.refresh();
 
       const initialPositions = [0.75, 0.5, 0.25, 0];
 
@@ -257,9 +258,10 @@ const GrowWithout = () => {
   const labels = ["Marketing", "Reviews", "Local Market", "Never Lose Lead"];
 
   return (
+    <>
     <div
       id="grow-without-container"
-      className="flex justify-center items-center w-full min-h-screen px-4 sm:px-6 md:px-8"
+      className="flex justify-center items-center w-full min-h-screen px-4 sm:px-6 md:px-8 mob:hidden"
     >
       <div className="w-full max-w-[1313px] flex flex-col items-center relative">
         {/* Pinned + ScrollSynced Section */}
@@ -368,6 +370,8 @@ const GrowWithout = () => {
         </div>
       </div>
     </div>
+   <GrowWithoutMobSlider/> 
+</>
   );
 };
 
