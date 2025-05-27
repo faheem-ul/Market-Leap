@@ -4,7 +4,7 @@ import Text from "@/components/ui/Text";
 
 const PrivacyPolicies = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center px-5">
+    <div className="w-full h-full flex justify-center items-center px-5 mob:mt-[-120px]">
       <div className="w-full max-w-[1313px] mx-auto">
         <Text className="text-black text-[18px] my-[53px] text-end font-poppins">
           Last updated: 09/21/2024

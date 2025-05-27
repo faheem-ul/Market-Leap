@@ -16,7 +16,6 @@ const space_grotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 })
 
-import AosProvider from "@/providers/Aos";
 import DesktopNav from "@/components/Navbar/DesktopNav";
 import MobileNav from "@/components/Navbar/MobNav";
 import Footer from "@/components/Footer";
@@ -40,7 +39,7 @@ export default function RootLayout({
       >
         <DesktopNav/>
         <MobileNav/>
-        <AosProvider>{children}</AosProvider>
+        <>{children}</>
         <Footer/>
       </body>
     </html>

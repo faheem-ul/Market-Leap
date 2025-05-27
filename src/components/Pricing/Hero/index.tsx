@@ -4,9 +4,10 @@ import Image from "next/image";
 import Text from "@/components/ui/Text";
 import DesktopNav from "@/components/NailSaloon/Hero/Navbar";
 
-import bg from "@/public/images/privacy-policy/hero.png";
+import bg from "@/public/images/Pricing/hero.png";
+import Button from "@/components/ui/Button";
 
-const PrivacyPolicyHero = () => {
+const PricingHero = () => {
   return (
     <div className="w-full relative">
       <Image
@@ -19,17 +20,21 @@ const PrivacyPolicyHero = () => {
         {/* Make nav fixed on top */}
         <DesktopNav  />
         {/* Add padding top equal to nav height, adjust as needed */}
-        <div className="w-full h-full max-w-[1313px] mx-auto flex justify-center items-center min-h-screen">
+        <div className="w-full h-full max-w-[1313px] mx-auto flex flex-col justify-center items-center min-h-screen">
           <Text
             as="h1"
-            className="w-full max-w-[634px] text-center mx-auto flex justify-center items-center text-[70px] text-white"
+            className="w-full max-w-[634px] text-center mx-auto flex justify-center items-center text-[50px] text-white"
           >
-            Privacy Policy
+            Pricing That Scales With 
+            Your Success
           </Text>
+          <Button className="w-[166px] h-[58px] rounded-[15px] text-white font-bold mx-auto mt-[23px] button-shadow-industry">
+          Contact
+          </Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default PrivacyPolicyHero;
+export default PricingHero;

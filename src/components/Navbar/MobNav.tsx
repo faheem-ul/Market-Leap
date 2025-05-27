@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { GiHamburgerMenu } from "react-icons/gi";
 
-import Logo from "@/public/logo.png";
+import Logo from "@/public/image 3 1.svg";
+import hamburger from "@/public/images/home/hamburger.svg"
 
 import DrawerMenuMob from "../ui/Drawer";
 import Divider from "../ui/Divider";
@@ -21,7 +21,7 @@ const MobileNav = () => {
   return (
     <>
       <nav className="hidden relative navsize:block px-5 mt-5">
-        <div className="flex w-full justify-between mb-5 px-5 py-4 bg-primary items-center rounded-[10px]">
+        <div className="flex w-full justify-between mb-5 py-4  items-center rounded-[10px]">
           <Link
             href="/"
             className="flex space-x-3 mob:justify-start rtl:space-x-reverse">
@@ -29,7 +29,7 @@ const MobileNav = () => {
               onClick={onClose}
               src={Logo}
               alt="Flowbite Logo"
-              width={150}
+              width={200}
               height={150}
             />
           </Link>
@@ -39,11 +39,10 @@ const MobileNav = () => {
             <div className="relative flex cursor-pointer" onClick={onOpen}>
               <button
                 type="button"
-                aria-controls="navbar-default"
-                aria-expanded={isOpen ? "true" : "false"}>
+             >
                 <span className="sr-only">Open main menu</span>
 
-                <GiHamburgerMenu size={30} fill="white" />
+               <Image src={hamburger} alt="hamburger" width={30}  />
               </button>
             </div>
             <div className="relative z-40">
@@ -52,7 +51,7 @@ const MobileNav = () => {
                   <ul className="z-50 mt-4 flex h-full min-h-[860px] w-full flex-col pt-4 font-normal rtl:space-x-reverse">
                     {/* <Link
                       href="/"
-                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-[#FCFCFC]"
+                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black"
                       onClick={onClose}>
                       <li className="list-items flex justify-center py-[15px]">
                         Home
@@ -62,16 +61,16 @@ const MobileNav = () => {
                     <Link
                       onClick={onClose}
                       href="/#AppFeatures"
-                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-[#FCFCFC]">
+                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Business Type
                       </li>
                     </Link>
                     <Divider />
-                    <Link
+                    {/* <Link
                       onClick={onClose}
                       href="/#abouttme"
-                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-[#FCFCFC]">
+                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Products
                       </li>
@@ -79,16 +78,16 @@ const MobileNav = () => {
                     <Divider />
                     <Link
                       href="/#Testimonials"
-                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-[#FCFCFC]">
+                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Hardware
                       </li>
                     </Link>
-                    <Divider />
+                    <Divider /> */}
                     <Link
                       onClick={onClose}
                       href="/#donwload"
-                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-[#FCFCFC]">
+                      className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Pricing
                       </li>
@@ -96,7 +95,7 @@ const MobileNav = () => {
 
                     <Divider />
 
-                    <Button className="bg-transparent border-2 w-full border-white my-[15px] mx-auto h-[51px] rounded-[15px] font-bold">
+                    <Button className="bg-transparent border-2 w-full border-black text-black my-[15px] mx-auto h-[51px] rounded-[15px] font-bold">
                       Login
                     </Button>
                     <Divider/>

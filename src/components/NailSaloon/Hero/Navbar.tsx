@@ -14,15 +14,15 @@ const navItems = [
     title: "Business Type",
     url: "/",
   },
-  {
-    title: "Products",
-    url: "/#",
-  },
+  // {
+  //   title: "Products",
+  //   url: "/#",
+  // },
 
-  {
-    title: "Hardware",
-    url: "/",
-  },
+  // {
+  //   title: "Hardware",
+  //   url: "/",
+  // },
   {
     title: "Pricing",
     url: "/#",
