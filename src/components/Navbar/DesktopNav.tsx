@@ -15,15 +15,15 @@ const navItems = [
     title: "Business Type",
     url: "/",
   },
-  {
-    title: "Products",
-    url: "/#",
-  },
+  // {
+  //   title: "Products",
+  //   url: "/#",
+  // },
 
-  {
-    title: "Hardware",
-    url: "/",
-  },
+  // {
+  //   title: "Hardware",
+  //   url: "/",
+  // },
   {
     title: "Pricing",
     url: "/#",
@@ -34,7 +34,8 @@ const DesktopNav = () => {
 
   const pathname = usePathname()
   return (
-    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5", pathname === "/nail-salon" || "privacy-policy" ? "hidden" : "")}>
+    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5", pathname === "/nail-salon" || pathname === "/privacy-policy" || pathname === "/terms-and-service" || pathname === "/pricing"
+      ? "hidden" : "")}>
       <div className="relative flex h-[73px] items-center justify-center w-full max-w-[1313px] bg-background rounded-[10px] mt-6 mb-8 bg-primary">
         <div className="relative z-10 flex px-[49px] w-full items-center justify-between">
           <Link href="/">
@@ -47,7 +48,7 @@ const DesktopNav = () => {
             />
           </Link>
 
-          <div className="nav-items flex items-center gap-[50px]">
+          <div className="nav-items flex items-center gap-[55px]">
             {navItems.map((navItem) => (
               <Link
                 href={navItem.url}

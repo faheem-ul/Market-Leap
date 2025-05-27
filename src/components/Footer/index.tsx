@@ -12,31 +12,36 @@ const Footer = () => {
   const currentPath = usePathname();
 
   return (
-    <div className="bg-primary pt-16 pb-6 px-5">
+    <div className="bg-primary pt-16 pb- px-5">
       <div className="flex justify-center overflow-hidden">
-        <div className="max-w-[1313px] w-full flex flex-wrap justify-between xl:justify-start gap-[28px]">
-          <div className="flex-col w-full max-w-[207px]">
-            <Text className="text-white text-[24px] mb-[38px] mob:mb-[14px]  font-bold mob:text-[22px]">
-              Resources
+        <div className="max-w-[1313px] w-full  xl:justify-start gap-[28px]">
+          <div className="flex justify-between items-center w-full">
+            <div className="flex-col w-full">
+            <Text className="text-white text-[24px] mb-[50px] font-poppins mob:mb-[14px]  font-bold mob:text-[22px]">
+            Pages
             </Text>
+            <div className="flex w-full justify-between mob:flex-col  flex-wrap tab:justify-start tab:gap-[16px]">
+            <div>
             <Text className="mb-[18px] ">
               <Link
                 href="/"
                 className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
                   currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
                 } `}>
-                Pricing
+                Business Types
               </Link>
             </Text>
-            <Text className="mb-[18px]">
+            <Text className="">
               <Link
                 href="/"
                 className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
                   currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
                 } `}>
-                Blog Guides
+               Pricing
               </Link>
             </Text>
+            </div>
+            <div>
             <Text className="mb-[18px]">
               <Link
                 href="/"
@@ -46,7 +51,7 @@ const Footer = () => {
                 Customer Stories
               </Link>
             </Text>
-            <Text className="mb-[18px]">
+            <Text className="">
               <Link
                 href="/"
                 className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
@@ -55,13 +60,23 @@ const Footer = () => {
                 Refer A Business
               </Link>
             </Text>
-            {/* <div className="mt-8 mob:hidden">
-              <Image src={logo} alt="" width={230} height={74} />
-            </div> */}
+            </div>  
+            <Image
+        className="max-w-[713px] mob:max-w-[300px] mob:h-[50px] mob:mt-10 h-[100px]"
+        src={footerlogo}
+        alt="logo"
+        width={713}
+        height={50}
+      />          
+          </div>
+          </div>
+<div className="">
+        
+      </div>
           </div>
 
           {/* 2 row */}
-          <div className="flex-col w-full max-w-[207px]">
+          {/* <div className="flex-col w-full max-w-[207px]">
             <Text className="text-white text-[24px] mb-[38px] mob:mb-[14px] font-bold mob:text-[22px]">
               Company
             </Text>
@@ -101,14 +116,12 @@ const Footer = () => {
                 Help Centers
               </Link>
             </Text>
-            {/* <div className="mt-8 mob:hidden">
-              <Image src={logo} alt="" width={230} height={74} />
-            </div> */}
-          </div>
+           
+          </div> */}
 
           {/* 3 */}
 
-          <div className="flex-col w-full max-w-[207px]">
+          {/* <div className="flex-col w-full max-w-[207px]">
             <Text className="text-white text-[24px] mb-[38px] mob:mb-[14px] font-bold mob:text-[22px]">
               Solutions
             </Text>
@@ -148,12 +161,10 @@ const Footer = () => {
                 Phone Calling
               </Link>
             </Text>
-            {/* <div className="mt-8 mob:hidden">
-              <Image src={logo} alt="" width={230} height={74} />
-            </div> */}
-          </div>
+          
+          </div> */}
           {/* 4 */}
-          <div className="flex-col w-full max-w-[207px]">
+          {/* <div className="flex-col w-full max-w-[207px]">
             <Text className="text-white text-[24px] mb-[38px] mob:mb-[14px] font-bold mob:text-[22px]">
               Partners
             </Text>
@@ -193,22 +204,20 @@ const Footer = () => {
                 Developer Platform
               </Link>
             </Text>
-            {/* <div className="mt-8 mob:hidden">
-              <Image src={logo} alt="" width={230} height={74} />
-            </div> */}
-          </div>
+          
+          </div> */}
         </div>
       </div>
 
-      <Divider className="border-[1px] mt-[79px] mb-3" />
-      <div className="flex justify-between mob:justify-start mb-[65px] w-full max-w-[1313px] mx-auto">
-        <div className="flex justify-between flex-wrap xl:justify-center mob:justify-start xl:gap-[30px] items-center mob:gap-8 w-full max-w-[1313px] mob:max-w-full">
+      <Divider className="border-[1px] mt-[79px]" />
+      <div className="flex justify-between mob:justify-start w-full max-w-[1313px] mx-auto">
+        <div className="flex justify-center flex-wrap my-8 xl:justify-center mob:justify-center xl:gap-[30px] items-center mob:gap-8 w-full max-w-[1313px] mob:max-w-full">
           <div className="">
-            <Text className="text-white text-[18px] font-semibold flex shirnk-0 text-center">
+            <Text className="text-white text-[18px] mob:text-center mob:mx-auto font-semibold flex shirnk-0 text-center">
               © Market Leap Corp Inc. 2025
             </Text>
           </div>
-          <div className="flex gap-[56px] xl:flex-col tab:gap-5">
+          {/* <div className="flex gap-[56px] xl:flex-col tab:gap-5">
             <Text className="text-[14px] font-light text-white">
               Terms & Condition
             </Text>
@@ -221,16 +230,10 @@ const Footer = () => {
             <Text className="text-[14px] font-light text-white">
               Do Not Sell or Share Your Personal Information
             </Text>
-          </div>
+          </div> */}
         </div>
       </div>
-      <Image
-        className="mx-auto"
-        src={footerlogo}
-        alt="logo"
-        width={1313}
-        height={186}
-      />
+     
     </div>
   );
 };

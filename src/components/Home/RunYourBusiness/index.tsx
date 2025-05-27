@@ -12,6 +12,7 @@ import calenderImage from "@/public/images/Nail-saloon/calender.png";
 // import payment from "@/public/images/Nail-saloon/take-payments.png";
 // import keep from "@/public/images/Nail-saloon/keep.png";
 import mask from "@/public/images/home/run-mask.png";
+import RunMobSlider from "./RunMobSlider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +64,7 @@ const MakeTheMost = () => {
     <div className="w-full h-full relative bg-[#FCFBFB]">
       {/* Fixed background image container */}
       <div
-        className="absolute top-0 left-0 w-full h-full z-0"
+        className="absolute top-0 mob:hidden left-0 w-full h-full z-0"
         style={{
           backgroundImage: `url(${mask.src})`,
           backgroundSize: "cover",
@@ -84,7 +85,7 @@ const MakeTheMost = () => {
         </div>
 
         {/* Content on the Right */}
-        <div className="flex flex-col items-center w-full relative">
+        <div className="flex flex-col items-center w-full relative mob:hidden">
           {/* Section 1 */}
           <div
             ref={sectionRef1}
@@ -173,6 +174,8 @@ const MakeTheMost = () => {
           </div>
         </div>
       </div>
+
+      <RunMobSlider/>
     </div>
   );
 };

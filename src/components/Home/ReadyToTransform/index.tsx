@@ -1,35 +1,124 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Text from '@/components/ui/Text';
-import readyToTrans from '@/public/images/home/ready-to-transofrm.png';
+import readyToTrans from '@/public/images/home/ready-bg-transoform.webp';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ReadytoStart = () => {
-  return (
-    <div className="relative bg-[#004389] overflow-hidden">
-      {/* The "Business" text behind the image */}
-      <div className="absolute inset-0 flex justify-center top-[23%] left-[50px] z-0 pointer-events-none">
-        <Text as="h1" className="text-[200px] text-white">
-          Business
-        </Text>
-      </div>
 
-      {/* Image on top of "Business" text */}
+  useEffect(() => {
+    // Setup ScrollTrigger animation for #hero-heading (Business)
+    gsap.fromTo(
+      "#hero-heading", 
+      {
+        bottom: -200, 
+      }, 
+      {
+        bottom: 0,  
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#hero-heading", 
+          start: "top 100%", 
+          end: "top center", 
+          scrub: true, 
+          // markers:true
+        }
+      }
+    );
+
+    // Animation for the 'Ready to transform your' text
+    // gsap.fromTo(
+    //   "#sub-heading", 
+    //   {
+    //     bottom: -200, 
+    //   },
+    //   {
+    //     bottom: 0,
+    //     opacity: 1,
+    //     duration: 1,
+    //     scrollTrigger: {
+    //       trigger: "#sub-heading",
+    //       start: "top 100%", 
+    //       end: "top center", 
+    //       scrub: true,
+    //       markers: true
+    //     }
+    //   }
+    // );
+
+    // Animation for the 'Join thousands of business owners...' text
+    // gsap.fromTo(
+    //   "#sub-text", 
+    //   {
+    //     bottom: -200, 
+    //   },
+    //   {
+    //     bottom: 0,
+    //     opacity: 1,
+    //     duration: 1,
+    //     scrollTrigger: {
+    //       trigger: "#sub-text",
+    //       start: "top 100%", 
+    //       end: "top center", 
+    //       scrub: true,
+    //       markers: true
+    //     }
+    //   }
+    // );
+  }, []);
+
+  return (
+    <section className="relative flex h-[1555px] w-full flex-col items-center justify-center overflow-x-hidden bg-primary mob:h-full mob:min-h-[947px]"
+    >
+      {/* Background Image */}
       <Image
         src={readyToTrans}
-        alt="Building"
-        className="relative z-10 w-full h-auto"
+        alt="heroImage"
+        fill
+        className="absolute top-0 h-full w-full"
       />
 
-      {/* Foreground content */}
-      <div className="absolute inset-0 flex flex-col justify-start items-center z-20 mx-auto text-center px-4 pt-[168px]">
-        <Text as='h1' className="text-[82px] font-semibold mb-2 text-white">
-          Ready To Transform Your
-        </Text>
-        <Text className="text-[24px] mb-8 text-white">
-          Join thousands of business owners who are growing faster <br /> and working smarter with Market Leap.
-        </Text>
+      {/* Center Text */}
+      <div className="z-10 mob:mt-[150px]  mob:flex mob:flex-col mob:items-center">
+        <span className="block overflow-hidden">
+          <span
+            className="relative bottom-[-472px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
+            id="hero-heading"
+          >
+            <Text as='h1' className="mx-auto text-center leading-[100%] text-[12vw] font-bold text-[#FCFCFC] ">
+              Business
+            </Text>
+          </span>
+        </span>
+      
+        {/* <span className="block overflow-hidden">
+          <span
+            className="relative bottom-[-572px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
+            id="sub-heading"
+          >
+            <Text className='text-[82px] font-semibold text-white font-poppins leading-[100px]'>
+              Ready To Transform Your
+            </Text>
+          </span>
+        </span>
+
+        <span className="block overflow-hidden">
+          <span
+            className="relative bottom-[-572px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
+            id="sub-text"
+          >
+            <Text className='text-[24px] font-normal text-white w-full max-w-[691px] mx-auto'>
+              Join thousands of business owners who are growing faster and working smarter with Market Leap.
+            </Text>
+          </span>
+        </span> */}
       </div>
-    </div>
+    </section>
   );
 };
 

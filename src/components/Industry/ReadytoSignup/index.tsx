@@ -19,10 +19,10 @@ const ReadyToSignup = () => {
 
       {/* Content container */}
       <div className="flex justify-center items-center h-full min-h-[373px] relative z-10">
-        <div className="w-full max-w-[1313px] px-4 flex justify-between">
+        <div className="w-full max-w-[1313px] px-4 flex justify-between flex-wrap mob:justify-center gap-10">
           <Text
             as="h1"
-            className="text-[50px] text-white font-space_grotesk font-semibold"
+            className="text-[50px] mob:text-[28px] text-white font-semibold"
           >
             <span className="text-secondary">Ready </span>
             To Sign Up?
@@ -32,7 +32,7 @@ const ReadyToSignup = () => {
           Get A Demo
           </Button>
           <Button className="w-[168px] rounded-[15px] h-[67px] bg-secondary font-bold text-[18px] text-white">
-          Contact Us
+        Login
           </Button>
           </div>
         </div>
