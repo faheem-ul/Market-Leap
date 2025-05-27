@@ -13,7 +13,7 @@ const Plans = () => {
             className="text-[60px] text-center text-balck mt-[81px] mb-[9px]">
             Plans for every stage
           </Text>
-          <Text className="text-[24px] font-light text-center mb-[76px]">
+          <Text className="text-[24px] mob:text-[20px] font-light text-center mb-[76px] mob:my-10">
             Simple pricing that grows with your business. No contracts, no
             hidden fees. Cancel anytime.
           </Text>

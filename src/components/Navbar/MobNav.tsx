@@ -21,7 +21,7 @@ const MobileNav = () => {
   return (
     <>
       <nav className="hidden relative navsize:block px-5 mt-5">
-        <div className="flex w-full justify-between mb-5 py-4  items-center rounded-[10px]">
+        <div className="flex w-full justify-between items-center rounded-[10px]">
           <Link
             href="/"
             className="flex space-x-3 mob:justify-start rtl:space-x-reverse">

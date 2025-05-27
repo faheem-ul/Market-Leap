@@ -25,7 +25,7 @@ const ResubalePlanFle: React.FC<props> = ({
   onlineValue,
 }) => {
   return (
-    <div className="group hover:bg-secondary w-full relative max-w-[304px] h-full min-h-[823px] mob:min-h-fit mob:pb-[43px] flex justify-center items-start pt-[43px] border-[5px] border-secondary hover:scale-[1.15] transition-all duration-1000 cursor-pointer px-[27px] rounded-[30px]">
+    <div className="group hover:bg-secondary w-full relative max-w-[304px] mob:max-w-full h-full min-h-[823px] mob:min-h-fit mob:pb-[43px] flex justify-center items-start pt-[43px] border-[5px] border-secondary hover:scale-[1.15] transition-all duration-1000 cursor-pointer px-[27px] rounded-[30px]">
       <div className="relative">
         <Text className="text-[24px] font-bold font-poppins group-hover:text-white text-black mb-2">
           {planType}
