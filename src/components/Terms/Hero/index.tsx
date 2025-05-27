@@ -13,7 +13,7 @@ const TermsHero = () => {
         src={bg}
         alt="bg"
         fill
-        className="object-cover mob:mt-[-120px] z-[-10]"
+        className="object-cover z-[-10]"
       />
       <div className="w-full relative z-10">
         {/* Make nav fixed on top */}

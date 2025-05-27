@@ -14,16 +14,16 @@ const PricingHero = () => {
         src={bg}
         alt="bg"
         fill
-        className="object-cover mob:mt-[-120px] z-[-10]"
+        className="object-cover z-[-10]"
       />
       <div className="w-full relative z-10">
         {/* Make nav fixed on top */}
         <DesktopNav  />
         {/* Add padding top equal to nav height, adjust as needed */}
-        <div className="w-full h-full max-w-[1313px] mx-auto flex flex-col justify-center items-center min-h-screen">
+        <div className="w-full h-full max-w-[1313px] mx-auto flex flex-col justify-center  items-center min-h-screen px-5">
           <Text
             as="h1"
-            className="w-full max-w-[634px] text-center mx-auto flex justify-center items-center text-[50px] text-white"
+            className="w-full max-w-[634px] mob:text-[35px] mob:leading-[45px] text-center mx-auto flex justify-center items-center text-[50px] text-white"
           >
             Pricing That Scales With 
             Your Success

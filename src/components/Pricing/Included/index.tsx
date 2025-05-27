@@ -6,10 +6,10 @@ import Button from "@/components/ui/Button";
 const PricingIncluded = () => {
   return (
     <>
-      <div className="w-full h0full flex justify-center items-center px-5 mb-[94px]">
+      <div className="w-full h-full flex justify-center items-center px-5 mb-[94px]">
         <div className="w-full max-w-[1313px] min-h-[391px] pt-[39px] flex justify-start items-start bg-[#000000]/5 mob:pb-10 rounded-[30px] px-[40px] mob:px-[20px]">
           <div className="w-full">
-            <Text className="text-[36px] font-medium font-poppins mb-[33px]">
+            <Text className="text-[36px] font-medium mob:text-[30px] mob:leading-[35px] mob:text-center font-poppins mb-[33px]">
               Included With Every Market Leap Account
             </Text>
             <ul className="list-disc pl-6 text-[18px] font-light font-space_grotesk space-y-2 w-full max-w-[1123px]">
