@@ -3,6 +3,7 @@ import React from "react";
 import Text from "@/components/ui/Text";
 import Divider from "@/components/ui/Divider";
 import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 interface props {
   planType: string;
@@ -13,6 +14,8 @@ interface props {
   points: string[];
   inpersonValue?: string;
   onlineValue?: string;
+  inperonshow?:string
+  mt?:string
 }
 const ResubalePlanFle: React.FC<props> = ({
   planType,
@@ -23,6 +26,8 @@ const ResubalePlanFle: React.FC<props> = ({
   pricingDescrip,
   inpersonValue,
   onlineValue,
+  inperonshow,
+  mt
 }) => {
   return (
     <div className="group hover:bg-secondary w-full relative max-w-[304px] mob:max-w-full h-full min-h-[823px] mob:min-h-fit mob:pb-[43px] flex justify-center items-start pt-[43px] border-[5px] border-secondary hover:scale-[1.15] transition-all duration-1000 cursor-pointer px-[27px] rounded-[30px]">
@@ -33,13 +38,13 @@ const ResubalePlanFle: React.FC<props> = ({
         <Text className="text-[14px] font-light text-black group-hover:text-white">
           {PlanDescrip}
         </Text>
-        <Divider className="border border-[#000000] my-2 group-hover:border-white" />
+        <Divider className={cn("border border-[#000000] my-2 group-hover:border-white", inperonshow)} />
 
-        <Text className="text-[12px] font-semibold mb-3 group-hover:text-white">
+        <Text className={cn("text-[12px] font-semibold mb-3 group-hover:text-white",inperonshow)}>
           Payment Processing Fee:
         </Text>
-        <div>
-          <div className="w-full flex justify-between items-center mb-[6px]">
+        <div className={cn(inperonshow)}>
+          <div className={cn("w-full flex justify-between items-center mb-[6px]",)}>
             <Text className="text-[12px] font-light group-hover:text-white">
               In-Person
             </Text>
@@ -54,11 +59,12 @@ const ResubalePlanFle: React.FC<props> = ({
             </Text>
           </div>
         </div>
-        <Divider className="border border-[#000000]/50 mb-4 group-hover:border-white" />
+        <Divider className={cn("border border-[#000000]/50 mb-4 group-hover:border-white", inperonshow)} />
         <Text className="text-[24px] font-poppins font-bold text-black group-hover:text-white">
           {pricing} <span className="text-[11px] font-light">{pricingDescrip}</span>
         </Text>
-        <Button className="bg-transparent text-secondary transition-colors duration-1000 group-hover:bg-black group-hover:text-white group-hover:border-none font-bold border h-[41px] rounded-[30px] mt-[43px] mb-[17px] mx-auto border-black w-[149px]">
+        <Button className={cn("bg-transparent text-secondary transition-colors duration-1000 group-hover:bg-black group-hover:text-white group-hover:border-none font-bold border h-[41px] rounded-[30px] mt-[43px] mb-[17px] mx-auto border-black w-[149px]",mt)}
+        >
           {buttontext}
         </Button>
 
