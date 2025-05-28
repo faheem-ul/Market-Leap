@@ -60,9 +60,10 @@ const HomeHero = () => {
           ease: "none",
           scrollTrigger: {
             trigger: textRef.current,
-            start: "top 45%",
+            start: "top 15%",
             end: "top 20%",
             scrub: 1,
+            // markers:true
           },
         }
       );
@@ -72,20 +73,21 @@ const HomeHero = () => {
       gsap.fromTo(
         subTextRef.current,
         {
-          opacity: 0.5,
+          // opacity: 0.5,
           y: 0,
           color: "#000000",
         },
         {
-          opacity: 1,
+          // opacity: 1,
           y: 400,
           color: "#FFFFFF",
           ease: "none",
           scrollTrigger: {
             trigger: subTextRef.current,
-            start: "top 50%",
+            start: "top 20%",
             end: "top 6%",
             scrub: 1,
+            // markers:true
           },
         }
       );
@@ -132,13 +134,13 @@ if (buttonRef.current && subTextRef.current) {
       data-aos-easing="ease-in-out">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full max-w-[1236px]">
-          <Text as="h1" className="text-[50px] text-center" ref={textRef}>
+          <Text as="h1" className="text-[50px] mob:text-[35px] mob:mb-4 text-center" ref={textRef}>
             More than just a point-of-sale.
           </Text>
           <Text
             ref={subTextRef}
             as="h2"
-            className="text-[40px] font-normal z-10 sticky top-0 leading-[70px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
+            className="text-[40px] mob:text-[25px] mob:leading-[35px] font-normal z-10 sticky top-0 leading-[70px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
             Everything you need to run and grow your business, all in one place.
           </Text>
         </div>

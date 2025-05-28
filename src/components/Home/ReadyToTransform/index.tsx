@@ -10,115 +10,77 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ReadytoStart = () => {
-
   useEffect(() => {
-    // Setup ScrollTrigger animation for #hero-heading (Business)
+    // Animation setup when the component mounts
     gsap.fromTo(
-      "#hero-heading", 
+      '.business-text', // Targeting the business text
       {
-        bottom: -200, 
-      }, 
+        opacity: 0,
+        scale: 0.5, // Start small
+      },
       {
-        bottom: 0,  
-        duration: 1,
+        opacity: 1,
+        scale: 1,
         scrollTrigger: {
-          trigger: "#hero-heading", 
-          start: "top 100%", 
-          end: "top center", 
-          scrub: true, 
-          // markers:true
-        }
+          trigger: '.business-text', // Trigger the animation when this element comes into view
+          start: 'top 80%', // Start the animation when the top of the element is 80% from the top of the viewport
+          end: 'bottom 20%', // End the animation when the bottom is 20% from the top of the viewport
+          scrub: 1, // Sync the animation with the scroll
+          markers: false, // Optional, you can remove this if you don't need markers for testing
+        },
       }
     );
 
-    // Animation for the 'Ready to transform your' text
-    // gsap.fromTo(
-    //   "#sub-heading", 
-    //   {
-    //     bottom: -200, 
-    //   },
-    //   {
-    //     bottom: 0,
-    //     opacity: 1,
-    //     duration: 1,
-    //     scrollTrigger: {
-    //       trigger: "#sub-heading",
-    //       start: "top 100%", 
-    //       end: "top center", 
-    //       scrub: true,
-    //       markers: true
-    //     }
-    //   }
-    // );
-
-    // Animation for the 'Join thousands of business owners...' text
-    // gsap.fromTo(
-    //   "#sub-text", 
-    //   {
-    //     bottom: -200, 
-    //   },
-    //   {
-    //     bottom: 0,
-    //     opacity: 1,
-    //     duration: 1,
-    //     scrollTrigger: {
-    //       trigger: "#sub-text",
-    //       start: "top 100%", 
-    //       end: "top center", 
-    //       scrub: true,
-    //       markers: true
-    //     }
-    //   }
-    // );
+    gsap.fromTo(
+      '.foreground-text', // Targeting the foreground text
+      {
+        opacity: 0,
+        scale: 0.75, // Start smaller
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        scrollTrigger: {
+          trigger: '.foreground-text', // Trigger the animation for foreground text
+          start: 'top 80%', // Start the animation when the top of the foreground text comes into the viewport
+          end: 'bottom 20%', // End when the bottom of the foreground text reaches the 20% position
+          scrub: 1, // Sync the animation with the scroll
+          markers: false, // Optional, can be removed if not needed
+        },
+      }
+    );
   }, []);
 
   return (
-    <section className="relative flex h-[1555px] w-full flex-col items-center justify-center overflow-x-hidden bg-primary mob:h-full mob:min-h-[947px]"
-    >
-      {/* Background Image */}
+    <div className="relative bg-[#004389] overflow-hidden">
+      {/* The "Business" text behind the image */}
+      <div
+        className="absolute inset-0 flex justify-center top-[23%] left-[50px] z-10 pointer-events-none business-text"
+      >
+        <Text as="h1" className="text-[200px] text-white">
+          Business
+        </Text>
+      </div>
+
+      {/* Image on top of "Business" text */}
       <Image
         src={readyToTrans}
-        alt="heroImage"
-        fill
-        className="absolute top-0 h-full w-full"
+        alt="Building"
+        className="relative z-0 w-full h-auto"
       />
 
-      {/* Center Text */}
-      <div className="z-10 mob:mt-[150px]  mob:flex mob:flex-col mob:items-center">
-        <span className="block overflow-hidden">
-          <span
-            className="relative bottom-[-472px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
-            id="hero-heading"
-          >
-            <Text as='h1' className="mx-auto text-center leading-[100%] text-[12vw] font-bold text-[#FCFCFC] ">
-              Business
-            </Text>
-          </span>
-        </span>
-      
-        {/* <span className="block overflow-hidden">
-          <span
-            className="relative bottom-[-572px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
-            id="sub-heading"
-          >
-            <Text className='text-[82px] font-semibold text-white font-poppins leading-[100px]'>
-              Ready To Transform Your
-            </Text>
-          </span>
-        </span>
-
-        <span className="block overflow-hidden">
-          <span
-            className="relative bottom-[-572px] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
-            id="sub-text"
-          >
-            <Text className='text-[24px] font-normal text-white w-full max-w-[691px] mx-auto'>
-              Join thousands of business owners who are growing faster and working smarter with Market Leap.
-            </Text>
-          </span>
-        </span> */}
+      {/* Foreground content */}
+      <div
+        className="absolute inset-0 flex flex-col justify-start items-center z-20 mx-auto text-center px-4 pt-[168px] foreground-text"
+      >
+        <Text as="h1" className="text-[82px] font-semibold mb-2 text-white">
+          Ready To Transform Your
+        </Text>
+        <Text className="text-[24px] mb-8 text-white">
+          Join thousands of business owners who are growing faster <br /> and working smarter with Market Leap.
+        </Text>
       </div>
-    </section>
+    </div>
   );
 };
 

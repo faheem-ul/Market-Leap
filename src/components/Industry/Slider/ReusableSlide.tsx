@@ -29,19 +29,19 @@ const RetailSlide: React.FC<RetailSlideProps> = ({
   ],
 }) => {
   return (
-    <div className="flex flex-wrap max-w-[637px] min-h-[401px] overflow-hidden rounded-2xl shadow-md">
+    <div className="flex mob:flex-wrap max-w-[637px] min-h-[401px] overflow-hidden rounded-2xl shadow-md">
       {/* Left - Image */}
       <div className="w-full max-w-[309px] mob:max-w-full">
         <Image
           src={image}
           alt={title}
           width={309}
-          className="w-full mob:h-[300px] h-full object-cover mob:max-w-full max-w-[309px]"
+          className="w-full h-full mob:h-[300px] mob:max-w-full object-cover max-w-[309px]"
         />
       </div>
 
       {/* Right - Content */}
-      <div className="relative bg-black text-white p-6">
+      <div className="relative bg-black text-white p-6 mob:pb-10">
         <Image src={bg} alt="bg-image" className="absolute w-full object-contain max-w-[330px] right-0 top-0"/>
         <div className="relative z-10">
           <Text
