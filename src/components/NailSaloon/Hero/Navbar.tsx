@@ -6,13 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import Button from "@/components/ui/Button";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/whitelogo.svg";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   {
     title: "Business Type",
-    url: "/",
+    url: "/industry",
   },
   // {
   //   title: "Products",
@@ -25,7 +25,7 @@ const navItems = [
   // },
   {
     title: "Pricing",
-    url: "/#",
+    url: "/pricing",
   },
 ];
 
@@ -40,7 +40,7 @@ const DesktopNav = () => {
             <Image
               src={Logo}
               alt="Logo"
-              width={136}
+              width={169}
               height={61}
               className="relative"
             />

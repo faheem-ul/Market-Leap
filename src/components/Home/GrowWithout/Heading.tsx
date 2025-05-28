@@ -7,10 +7,10 @@ const GrowWithoutHeading = () => {
       <div className="w-full max-w-[1313px]">
         <Text
           as="h1"
-          className="text-[100px] mob:text-[36px] mob:leading-[40px] leading-[100px] text-black w-full ">
+          className="text-[100px] mob:text-[40px] mob:leading-[40px] leading-[100px] text-black w-full ">
           Grow <br />
           Without <br />
-          <span className="text-secondary font-poppins text-[66px] leading-[0px] mob:text-[24px] mob:leading-[30px]">
+          <span className="text-secondary font-poppins text-[66px] leading-[0px] mob:text-[30px] mob:leading-[30px]">
             The Guesswork
           </span>
         </Text>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-import Logo from "@/public/image 3 1.svg";
+import Logo from "@/public/blacklogo.svg";
 import hamburger from "@/public/images/home/hamburger.svg"
 
 import DrawerMenuMob from "../ui/Drawer";
@@ -29,8 +29,8 @@ const MobileNav = () => {
               onClick={onClose}
               src={Logo}
               alt="Flowbite Logo"
-              width={200}
-              height={150}
+              width={190}
+              height={10}
             />
           </Link>
 
@@ -60,7 +60,7 @@ const MobileNav = () => {
                     <Divider />
                     <Link
                       onClick={onClose}
-                      href="/#AppFeatures"
+                      href="/industry"
                       className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Business Type
@@ -86,7 +86,7 @@ const MobileNav = () => {
                     <Divider /> */}
                     <Link
                       onClick={onClose}
-                      href="/#donwload"
+                      href="/pricing"
                       className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
                       Pricing

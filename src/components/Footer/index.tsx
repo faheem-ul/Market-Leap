@@ -17,62 +17,71 @@ const Footer = () => {
         <div className="max-w-[1313px] w-full  xl:justify-start gap-[28px]">
           <div className="flex justify-between items-center w-full">
             <div className="flex-col w-full">
-            <Text className="text-white text-[24px] mb-[50px] font-poppins mob:mb-[14px]  font-bold mob:text-[22px]">
-            Pages
-            </Text>
-            <div className="flex w-full justify-between mob:flex-col  flex-wrap tab:justify-start tab:gap-[16px]">
-            <div>
-            <Text className="mb-[18px] ">
-              <Link
-                href="/"
-                className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
-                  currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
-                } `}>
-                Business Types
-              </Link>
-            </Text>
-            <Text className="">
-              <Link
-                href="/"
-                className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
-                  currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
-                } `}>
-               Pricing
-              </Link>
-            </Text>
+              <Text className="text-white text-[24px] mb-[50px] font-poppins mob:mb-[14px]  font-bold mob:text-[22px]">
+                Pages
+              </Text>
+              <div className="flex w-full justify-between mob:flex-col  flex-wrap tab:justify-start tab:gap-[16px]">
+                <div>
+                  <Text className="mb-[18px] ">
+                    <Link
+                      href="/industry"
+                      className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
+                        currentPath === "/"
+                          ? "text-accentGreen"
+                          : "text-[#151515]"
+                      } `}>
+                      Business Types
+                    </Link>
+                  </Text>
+                  <Text className="">
+                    <Link
+                      href="/pricing"
+                      className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
+                        currentPath === "/"
+                          ? "text-accentGreen"
+                          : "text-[#151515]"
+                      } `}>
+                      Pricing
+                    </Link>
+                  </Text>
+                </div>
+                <div>
+                  <Text className="mb-[18px]">
+                    <Link
+                      href="/terms-and-service"
+                      className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
+                        currentPath === "/"
+                          ? "text-accentGreen"
+                          : "text-[#151515]"
+                      } `}>
+                      Terms of Sevices
+                    </Link>
+                  </Text>
+                  <Text className="">
+                    <Link
+                      href="/privacy-policy"
+                      className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
+                        currentPath === "/"
+                          ? "text-accentGreen"
+                          : "text-[#151515]"
+                      } `}>
+                      Privacy Policy
+                    </Link>
+                  </Text>
+                </div>
+
+                <Link href="/">
+                <Image
+                  className="max-w-[713px] mob:max-w-[300px] mob:h-[50px] mob:mt-10 h-[100px]"
+                  src={footerlogo}
+                  alt="logo"
+                  width={713}
+                  height={50}
+                />
+                </Link>
+              </div>
             </div>
-            <div>
-            <Text className="mb-[18px]">
-              <Link
-                href="/"
-                className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
-                  currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
-                } `}>
-                Customer Stories
-              </Link>
-            </Text>
-            <Text className="">
-              <Link
-                href="/"
-                className={`text-[18px] font-light font-space_grotesk text-[#FFFFFF] mob:text-[15px]${
-                  currentPath === "/" ? "text-accentGreen" : "text-[#151515]"
-                } `}>
-                Refer A Business
-              </Link>
-            </Text>
-            </div>  
-            <Image
-        className="max-w-[713px] mob:max-w-[300px] mob:h-[50px] mob:mt-10 h-[100px]"
-        src={footerlogo}
-        alt="logo"
-        width={713}
-        height={50}
-      />          
-          </div>
-          </div>
-<div className="">
-        
-      </div>
+            <div className=""></div>
           </div>
 
           {/* 2 row */}
@@ -233,7 +242,6 @@ const Footer = () => {
           </div> */}
         </div>
       </div>
-     
     </div>
   );
 };
