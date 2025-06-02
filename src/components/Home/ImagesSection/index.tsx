@@ -10,7 +10,13 @@ import image6 from "@/public/images/home/3-2.png";
 
 const GridLayout = () => {
   return (
-    <div className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[1313px] mx-auto px-5 mb-[83px]">
+    <div className="overflow-hidden">
+    <div
+      className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[1313px] mx-auto px-5 mb-[83px]"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out">
       {/* Blue box top-left */}
       <div className="text-white relative font-semibold mob:row-auto mob:col-auto row-start-1 col-start-1">
         <Image
@@ -30,7 +36,12 @@ const GridLayout = () => {
       </div>
 
       {/* Left big image */}
-      <div className="rounded-lg overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full">
+      <div className="rounded-lg overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      >
         <Image
           src={image2}
           alt="Workspace"
@@ -42,17 +53,18 @@ const GridLayout = () => {
       </div>
 
       {/* Center image */}
-      <div className="relative rounded-lg overflow-hidden mob:h-[300px] mob:row-auto mob:col-auto row-span-2 col-start-2 row-start-1">
-        <Image
-          src={image3}
-          alt="Woman on Laptop"
-          fill
-          className="object-cover"
-        />
+      {/* <div className="relative rounded-lg overflow-hidden h-fit mob:h-[300px] mob:row-auto mob:col-auto row-span-2 col-start-2 row-start-1">
+        <Image src={image3} alt="Woman on Laptop" className="object-cover" />
       </div>
 
-      {/* Text box */}
-      <div className="border-[5px] border-black rounded-[20px] h-[242px] w-full relative font-medium text-sm mob:row-auto mob:col-auto row-start-3 col-start-2 overflow-hidden">
+      
+      <div
+        className="border-[5px] border-black rounded-[20px] h-auto w-full relative font-medium text-sm mob:row-auto mob:col-auto row-start-3 col-start-2 overflow-hidden"
+        // data-aos="fade-up"
+        // data-aos-delay="200"
+        // data-aos-duration="1400"
+        // data-aos-easing="ease-in-out"
+      >
         <Text className="text-[28px] font-semibold text-primary mt-[34px] px-[30px] mb-[21px] font-poppins">
           Overarching Value Prop.
         </Text>
@@ -69,6 +81,34 @@ const GridLayout = () => {
           height={152}
           className="absolute bottom-0 left-0 w-full"
         />
+      </div> */}
+      <div className="flex flex-col space-y-3 col-start-2 row-start-1 row-span-3">
+        <div className="relative rounded-lg overflow-hidden mob:h-[300px] min-h-[410px]">
+          <Image src={image3} alt="Woman on Laptop" className="object-cover" />
+        </div>
+        <div className="border-[5px] border-black rounded-[20px] w-full relative font-medium  overflow-hidden h-full"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        >
+          <Text className="text-[28px] font-semibold text-primary mt-[34px] px-[28px] mb-[21px] font-poppins">
+            Overarching Value Prop.
+          </Text>
+          <Text className="font-light leading-custom-6 text-[15px] px-[30px] text-center z-[100]">
+            Your business needs to do more than just take payments. Our platform
+            is designed to help you operate at the highest level across
+            marketing, customer engagement, and business operations.
+          </Text>
+          <Image
+            src={image4}
+            alt="Office Growth"
+            layout="responsive"
+            width={414}
+            height={122}
+            className="absolute bottom-[-20px] left-0 w-full h-[200px]"
+          />
+        </div>
       </div>
 
       {/* Top right image */}
@@ -96,7 +136,13 @@ const GridLayout = () => {
       </div>
 
       {/* Blue box bottom-right */}
-      <div className=" relative  font-semibold mob:row-auto mob:col-auto row-start-3 col-start-3 h-full">
+      <div className="overflow-hidden">
+      <div
+        className=" relative font-semibold mob:row-auto mob:col-auto overflow-hidden row-start-3 col-start-3 h-full"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="800"
+        data-aos-easing="ease-in-out">
         <Image
           src={image1}
           alt="Workspace"
@@ -105,7 +151,9 @@ const GridLayout = () => {
           height={250}
           className="object-cover"
         />
-        <div className="absolute bottom-0 left-0 px-[25px] pb-[24px]">
+        <div className="absolute bottom-0 left-0 px-[25px] pb-[24px]"
+       
+        >
           <Text
             as="h1"
             className="w-full bg-black text-white bg-opacity-50 leading-[110px] text-[30px] font-semibold">
@@ -114,6 +162,8 @@ const GridLayout = () => {
           <Text className="font-poppins text-white text-[28px] mt-[-8px]">
             In Customer Engagement
           </Text>
+        </div>
+        </div>
         </div>
       </div>
     </div>
