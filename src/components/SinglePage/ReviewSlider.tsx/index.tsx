@@ -16,7 +16,7 @@ const ReviewSlider = ({ industryId }: { industryId: string }) => {
   const reviews = industry?.ReviewSliderContent ?? [];
 
   return (
-    <div className="relative flex justify-start items-center pt-[84px] pb-[42px] mb-[76px] bg-cover bg-no-repeat">
+    <div className="relative flex justify-start items-center pt-[38px] pb-[42px] mb-[76px] bg-cover bg-no-repeat">
       <Image
         src={bg}
         alt="background"
