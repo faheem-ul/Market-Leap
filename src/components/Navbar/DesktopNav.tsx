@@ -30,12 +30,24 @@ const navItems = [
   },
 ];
 
-const DesktopNav = () => {
 
-  const pathname = usePathname()
+const DesktopNav = () => {
+  const pathname = usePathname();
+
+  const hideNav =
+    pathname === '/nail-salon' ||
+    pathname === '/privacy-policy' ||
+    pathname === '/terms-and-service' ||
+    pathname === '/pricing' ||
+    pathname.startsWith('/industry/');
+
   return (
-    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5", pathname === "/nail-salon" || pathname === "/privacy-policy" || pathname === "/terms-and-service" || pathname === "/pricing"
-      ? "hidden" : "")}>
+    <nav
+    className={cn(
+      'h-full w-full navsize:hidden flex justify-center items-center px-5',
+      hideNav && 'hidden'
+    )}
+  >
       <div className="relative flex h-[73px] items-center justify-center w-full max-w-[1313px] bg-background rounded-[10px] mt-6 mb-8 bg-primary">
         <div className="relative z-10 flex px-[49px] w-full items-center justify-between">
           <Link href="/">

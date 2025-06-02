@@ -131,7 +131,8 @@ if (buttonRef.current && subTextRef.current) {
       data-aos="zoom-in"
       data-aos-delay="200"
       data-aos-duration="800"
-      data-aos-easing="ease-in-out">
+      data-aos-easing="ease-in-out"
+      >
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full max-w-[1236px]">
           <Text as="h1" className="text-[50px] mob:text-[35px] mob:mb-4 text-center" ref={textRef}>

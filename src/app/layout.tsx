@@ -19,6 +19,7 @@ const space_grotesk = Space_Grotesk({
 import DesktopNav from "@/components/Navbar/DesktopNav";
 import MobileNav from "@/components/Navbar/MobNav";
 import Footer from "@/components/Footer";
+import AosProvider from "@/providers/Aos";
 
 import "./globals.css";
 
@@ -37,10 +38,12 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${space_grotesk.variable}`}
       >
+        <AosProvider>
         <DesktopNav/>
         <MobileNav/>
         <>{children}</>
         <Footer/>
+        </AosProvider>
       </body>
     </html>
   );
