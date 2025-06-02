@@ -10,7 +10,7 @@ import bg from "@/public/images/Nail-saloon/bg.png";
 
 export default function SinglePageHero({ industryId }: { industryId: string }) {
     return (
-        <div className="w-full h-full relative mob:mt-[-130px] -z-10" >
+        <div className="w-full h-full relative mob:mt-[-130px] z-10" >
         <Image src={bg} alt="bg" className=" absolute flex justify-center items-center h-[1260px] -z-10"/>
       <div className="w-full h-full flex flex-col justify-center items-center">
         <DesktopNav/>

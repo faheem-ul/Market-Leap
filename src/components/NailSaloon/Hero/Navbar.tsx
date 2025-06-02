@@ -33,7 +33,7 @@ const DesktopNav = () => {
 
   const pathname = usePathname()
   return (
-    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5 relative z-10", pathname === "/nail-salon" || "privacy-policy" ? "" : "hidden")}>
+    <nav className={cn("h-full w-full navsize:hidden flex justify-center items-center px-5 relative z-[100]", pathname === "/nail-salon" || "privacy-policy" ? "" : "hidden")}>
       <div className="relative flex h-[73px] items-center justify-center w-full max-w-[1313px] bg-background rounded-[10px] mt-6 mb-8 bg-primary">
         <div className="relative z-10 flex px-[49px] w-full items-center justify-between">
           <Link href="/">

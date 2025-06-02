@@ -12,6 +12,7 @@ const AosProvider: React.FC<MyProviderProps> = ({ children }) => {
   // You can add any state or functionality you need here
   useEffect(() => {
     AOS.init({ once: true });
+    AOS.refresh();
   }, []);
 
 
