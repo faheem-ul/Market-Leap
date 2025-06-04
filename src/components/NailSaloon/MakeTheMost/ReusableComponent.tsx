@@ -29,50 +29,74 @@ const ResuableComponent: React.FC<Props> = ({
   imageRef,
   disablePin = false,
 }) => {
-  const contentRef = useRef<HTMLDivElement | null>(null);
+  const leftContentRef = useRef<HTMLDivElement | null>(null);
+  const rightContentRef = useRef<HTMLDivElement | null>(null);
   const localImageRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const content = contentRef.current;
+    const leftContent = leftContentRef.current;
+    const rightContent = rightContentRef.current;
     const imageEl = imageRef?.current || localImageRef.current;
-
-    if (!content || !imageEl) return;
-
-    // Animate content opacity based on scroll
+  
+    if (!leftContent || !rightContent || !imageEl) return;
+  
+    const imageFullyVisible = { current: false }; // persist across updates
+  
+    const calculateOpacity = (element: HTMLElement) => {
+      const viewportHeight = window.innerHeight;
+      const rect = element.getBoundingClientRect();
+      const elementCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
+      const maxDistance = viewportHeight / 2;
+      const opacity = 1 - distanceFromCenter / maxDistance;
+      return Math.max(0, Math.min(1, opacity));
+    };
+  
     ScrollTrigger.create({
-      trigger: content,
+      trigger: leftContent,
       start: "top bottom",
       end: "bottom top",
       scrub: true,
       onUpdate: () => {
-        const viewportHeight = window.innerHeight;
-        const sectionRect = content.getBoundingClientRect();
-        const sectionCenter = sectionRect.top + sectionRect.height / 2;
-        const viewportCenter = viewportHeight / 2;
-        const distanceFromCenter = Math.abs(viewportCenter - sectionCenter);
-        const maxDistance = viewportHeight / 2;
-        const opacity = 1 - distanceFromCenter / maxDistance;
-        gsap.set(content, { opacity: Math.max(0, Math.min(1, opacity)) });
+        const leftOpacity = calculateOpacity(leftContent);
+        const rightOpacity = calculateOpacity(rightContent);
+  
+        gsap.set(leftContent, { opacity: leftOpacity });
+        gsap.set(rightContent, { opacity: rightOpacity });
+  
+        // Update image opacity only if it hasn't reached full visibility yet
+        if (!imageFullyVisible.current) {
+          gsap.set(imageEl, {
+            opacity: leftOpacity,
+          });
+  
+          // Lock in image opacity when it reaches full visibility (thresholded)
+          if (leftOpacity >= 0.99) {
+            imageFullyVisible.current = true;
+            gsap.set(imageEl, { opacity: 1 }); // ensure it's fully visible
+          }
+        }
       },
     });
-
-    // Pin the image when it's at the center
-    if(!disablePin) {
-    ScrollTrigger.create({
-      trigger: imageEl,
-      start: "center center",
-      end: "+=500", 
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-    });
-  }
-
-    // Cleanup
+  
+    if (!disablePin) {
+      ScrollTrigger.create({
+        trigger: imageEl,
+        start: "center center",
+        end: "+=500",
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+      });
+    }
+  
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [imageRef]);
+  }, [imageRef, disablePin]);
+  
+  
 
   return (
     <div
@@ -81,42 +105,47 @@ const ResuableComponent: React.FC<Props> = ({
         background
       )}
     >
-      <div className="w-full max-w-[1313px] flex justify-center items-center relative z-10">
-        <div className="w-full flex gap-[39px] justify-center items-center">
-          <div
-            ref={contentRef}
-            className="w-full flex justify-between flex-wrap items-center"
+      <div className="w-full max-w-[1313px] flex justify-center items-center relative z-10 gap-[39px]">
+        {/* Left Content */}
+        <div
+          ref={leftContentRef}
+          className="flex-1 flex flex-col justify-center"
+        >
+          <Text
+            as="h1"
+            className="text-[45px] font-semibold max-w-[408px] leading-[120%]"
           >
-            <Text
-              as="h1"
-              className="text-[45px] font-semibold w-full max-w-[408px] leading-[120%]"
-            >
-              {heading}
-            </Text>
+            {heading}
+          </Text>
+          {/* Add any additional left content here if needed */}
+        </div>
 
-            {/* Wrap image in a div to allow ref pinning */}
-            {image && (
-              <div ref={imageRef || localImageRef}>
-                <Image src={image} alt="image" width={424} className="max-w-[424px]" />
-              </div>
-            )}
-
-            <div className="w-full max-w-[354px] flex flex-col gap-[19px]">
-              {icons.map((icon, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <Image
-                    src={icon}
-                    alt={`icon-${index}`}
-                    width={40}
-                    height={40}
-                  />
-                  <Text className="text-[18px] font-light leading-[100%]">
-                    {iconsDescription[index]}
-                  </Text>
-                </div>
-              ))}
-            </div>
+        {/* Center Image */}
+        {image && (
+          <div ref={imageRef || localImageRef} className="max-w-[424px]">
+            <Image
+              src={image}
+              alt="image"
+              width={424}
+              className="max-w-[424px]"
+              priority
+            />
           </div>
+        )}
+
+        {/* Right Content */}
+        <div
+          ref={rightContentRef}
+          className="max-w-[354px] flex flex-col gap-[19px]"
+        >
+          {icons.map((icon, index) => (
+            <div key={index} className="flex items-center gap-4">
+              <Image src={icon} alt={`icon-${index}`} width={40} height={40} />
+              <Text className="text-[18px] font-light leading-[100%]">
+                {iconsDescription[index]}
+              </Text>
+            </div>
+          ))}
         </div>
       </div>
     </div>

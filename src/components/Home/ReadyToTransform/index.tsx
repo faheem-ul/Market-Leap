@@ -1,86 +1,135 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react';
-import Image from 'next/image';
-import Text from '@/components/ui/Text';
-import readyToTrans from '@/public/images/home/ready-bg-transoform.webp';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect } from "react";
+import Image from "next/image";
+import Text from "@/components/ui/Text";
+import readyToTrans from "@/public/images/home/businessgrad.png";
+import building from "@/public/images/home/ready-to-transofrm.png";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ReadytoStart = () => {
   useEffect(() => {
-    // Animation setup when the component mounts
+    // Setup ScrollTrigger animation for #hero-heading (Business)
     gsap.fromTo(
-      '.business-text', // Targeting the business text
+      "#hero-heading",
       {
-        opacity: 0,
-        scale: 0.5, // Start small
+        bottom: -400,
       },
       {
-        opacity: 1,
-        scale: 1,
+        bottom: 0,
+        // duration: 1,
         scrollTrigger: {
-          trigger: '.business-text', // Trigger the animation when this element comes into view
-          start: 'top 80%', // Start the animation when the top of the element is 80% from the top of the viewport
-          end: 'bottom 20%', // End the animation when the bottom is 20% from the top of the viewport
-          scrub: 1, // Sync the animation with the scroll
-          markers: false, // Optional, you can remove this if you don't need markers for testing
+          trigger: "#hero-heading",
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          // markers: true,
         },
       }
     );
 
+    // Animation for the 'Ready to transform your' text
     gsap.fromTo(
-      '.foreground-text', // Targeting the foreground text
+      "#sub-heading",
       {
-        opacity: 0,
-        scale: 0.75, // Start smaller
+        bottom: -200,
       },
       {
-        opacity: 1,
-        scale: 1,
+        bottom: 0,
+        // opacity: 1,
+        duration: 1,
         scrollTrigger: {
-          trigger: '.foreground-text', // Trigger the animation for foreground text
-          start: 'top 80%', // Start the animation when the top of the foreground text comes into the viewport
-          end: 'bottom 20%', // End when the bottom of the foreground text reaches the 20% position
-          scrub: 1, // Sync the animation with the scroll
-          markers: false, // Optional, can be removed if not needed
+          trigger: "#sub-heading-ready",
+          start: "top 70%",
+          end: "top center",
+          scrub: true,
+          // markers: true
+        },
+      }
+    );
+
+    // Animation for the 'Join thousands of business owners...' text
+    gsap.fromTo(
+      "#sub-text",
+      {
+        bottom: -200,
+      },
+      {
+        bottom: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#sub-text",
+          start: "top 100%",
+          end: "top center",
+          scrub: true,
+          // markers: true
         },
       }
     );
   }, []);
 
   return (
-    <div className="relative bg-[#004389] overflow-hidden">
-      {/* The "Business" text behind the image */}
-      <div
-        className="absolute inset-0 flex justify-center top-[23%] left-[50px] z-10 pointer-events-none business-text"
-      >
-        <Text as="h1" className="text-[200px] text-white">
-          Business
-        </Text>
+    <section className="relative flex min-h-[190vh] xl:min-h-[220vh] w-full flex-col items-center justify-center overflow-x-hidden bg-primary mob:h-full mob:min-h-[947px] z-10">
+      {/* Background Image */}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
+        <Image
+          src={readyToTrans}
+          alt="heroImage"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
       </div>
 
-      {/* Image on top of "Business" text */}
-      <Image
-        src={readyToTrans}
-        alt="Building"
-        className="relative z-0 w-full h-auto"
-      />
-
-      {/* Foreground content */}
-      <div
-        className="absolute inset-0 flex flex-col justify-start items-center z-20 mx-auto text-center px-4 pt-[168px] foreground-text"
-      >
-        <Text as="h1" className="text-[82px] font-semibold mb-2 text-white">
-          Ready To Transform Your
-        </Text>
-        <Text className="text-[24px] mb-8 text-white">
-          Join thousands of business owners who are growing faster <br /> and working smarter with Market Leap.
-        </Text>
+      {/* Second Image Positioned AFTER the First */}
+      <div className="absolute top-0 left-0 w-full h-full z-[1] ">
+        <Image
+          src={building}
+          alt="heroImage"
+          layout="fill"
+          objectFit="cover"
+          className="z-[0]"
+        />
       </div>
-    </div>
+
+      {/* Center Text */}
+      <div className="mt-[150px] absolute top-[10px] mob:flex mob:flex-col mob:items-center">
+      
+          <span
+            className=" mob:bottom-[-763px] duration-500 mob:flex mob:justify-center"
+            id="sub-heading-ready"
+          >
+            <Text className="text-[82px] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
+              Ready To Transform Your
+            </Text>
+          </span>
+          <span
+            className="mob:bottom-[-763px] duration-500  mob:flex mob:justify-center"
+            id="sub-text"
+          >
+            <Text className="text-[24px] font-normal text-white mob:text-[16px] px-7 text-center w-full max-w-[691px] mx-auto">
+              Join thousands of business owners who are growing faster and
+              working smarter with Market Leap.
+            </Text>
+          </span>
+       
+        <span
+          className="relative bottom-[-772px] xl:bottom-[-400px] z-[0] mob:bottom-[-163px] duration-1000 mob:flex mob:justify-center"
+          id="hero-heading">
+            
+          <Text
+            as="h1"
+            className="mx-auto text-center leading-[100%] mob:text-[15vw] text-[12vw] font-bold text-[#FCFCFC] ">
+            Business
+          </Text>
+          
+        </span>
+      </div>
+    </section>
   );
 };
 

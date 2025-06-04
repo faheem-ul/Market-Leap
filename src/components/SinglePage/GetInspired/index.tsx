@@ -16,31 +16,25 @@ const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
 
   return (
     <div className="relative flex flex-col justify-start items-center mob:mb-10 mb-[76px] bg-cover bg-no-repeat">
-    <Text as="h1" className="font-semibold my-[65px] text-[60px]">
-    Get Inspired
-    </Text>
+      <Text as="h1" className="font-semibold my-[65px] text-[60px]">
+        Get Inspired
+      </Text>
 
       <div className="w-full max-w-full mx-auto">
         <Swiper
-        //   slidesPerView={4}
           loop={true}
-        //   autoplay={{ delay: 4000 }}
-        //   pagination={{ clickable: true }}
-        //   navigation={true}
-        breakpoints={{
-           
+          breakpoints={{
             768: {
               slidesPerView: 1,
               spaceBetween: 30,
             },
-            
             1280: {
               slidesPerView: 4,
               spaceBetween: 150,
             },
           }}
-        centeredSlides={true}
-        spaceBetween={150}
+          centeredSlides={true}
+          spaceBetween={150}
           modules={[Navigation, Pagination, Autoplay]}
           className="w-full mx-auto "
         >
@@ -48,25 +42,20 @@ const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
             <SwiperSlide key={index}>
               <div className="w-[395px] mob:w-full mob:px-5 mx-auto">
                 {/* Left image */}
-                <div className=" mob:w-full mob:mx-auto">
+                <div className="mob:w-full mob:mx-auto">
                   <Image
-                    src={post.image.inspired1
-                    }
+                    src={post.image}
                     alt={`post ${index + 1}`}
                     width={365}
                     height={372}
-                    className="rounded-md w-full max-w-[365px] mob:max-w-full h-auto object-cover"
+                    className="rounded-[20px] h-[372px] w-full max-w-[365px] mob:max-w-full object-cover"
                   />
-                   <div className="">
-                  <Text className="text-[18px] font-semibold mt-[38px] text-center text-black">
-                    {post.description}
-                  </Text>
-                
+                  <div className="">
+                    <Text className="text-[18px] font-semibold mt-[38px] text-center text-black">
+                      {post.description}
+                    </Text>
+                  </div>
                 </div>
-                </div>
-
-                {/* Right content */}
-               
               </div>
             </SwiperSlide>
           ))}
@@ -75,5 +64,6 @@ const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
     </div>
   );
 };
+
 
 export default GetInspiredSlider;

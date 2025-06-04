@@ -212,7 +212,7 @@ const MakeTheMost = () => {
                   "Spend less time managing bookings with automated confirmations and reminders and let the AI-powered automated messaging manage any rescheduling.",
                   "Add unlimited tech calendars and sync them across multiple locations.",
                 ]}
-                noImage={true}
+                
               />
             </div>
           </div>
@@ -231,7 +231,7 @@ const MakeTheMost = () => {
                   "Accept every major type of payment your clients prefer, whether that’s tap, chip, card on file, Apple Pay, Google Pay, Cash App Pay, or Cash App Afterpay.",
                   "Access your funds instantly with Square Checking.",
                 ]}
-                noImage={true}
+                
               />
             </div>
           </div>
@@ -251,7 +251,7 @@ const MakeTheMost = () => {
                   "Get discovered and booked on",
                   "Maximize your techs’ limited time with cancellation and no-show policies and waitlists.",
                 ]}
-                noImage={true}
+                
               />
             </div>
           </div>
@@ -270,7 +270,7 @@ const MakeTheMost = () => {
                   "Sell gift cards online and in person to reach even more customers.",
                   "Drive repeat business with a loyalty program that rewards returning customers.",
                 ]}
-                noImage={true}
+                
               />
             </div>
           </div>
