@@ -19,19 +19,19 @@ const ReusableCard: React.FC<props> = ({
   heading,
   image,
   Description,
-  imageShow,
+  // imageShow,
 }) => {
   return (
     <div
       className={cn(
-        "w-full h-full flex  justify-center bg-[#F2F2F2] items-center py-[160px] mob:py-10 relative px-5 mob:px-0 z-10 overflow-hidden"
+        "w-full flex h-screen justify-center bg-[#F2F2F2] items-center mob:py-10 relative px-5 mob:px-0 z-10 overflow-hidden square-shadow"
       )}>
       <Image
         src={mask}
         alt="mask"
         className={cn(
-          "absolute w-full h-full object-contain z-0 opacity-10",
-          imageShow
+          "absolute w-full h-full object-cover z-0",
+          
         )}
       />
       <div className="w-full max-w-[1313px] flex justify-center items-center relative z-10">

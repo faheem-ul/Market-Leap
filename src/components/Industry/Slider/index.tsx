@@ -106,7 +106,7 @@ export default function IndustrySlider() {
         {slideLabels.map((label, index) => (
           <button
             key={index}
-            onClick={() => swiperRef.current?.slideTo(index)}
+            onClick={() => swiperRef.current?.slideToLoop(index)}
             className={`capitalize transition-all duration-700 font-space_grotesk ${
               activeIndex === index
                 ? "text-white bg-black font-bold px-[15px] py-[10px] rounded-[15px]"
@@ -159,7 +159,7 @@ export default function IndustrySlider() {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         modules={[Keyboard, Navigation, Scrollbar]}
-        className="w-full max-w-[1313px] h-[701px] rounded-md p-6">
+        className="w-full max-w-[1313px] h-[522px] mob:h-[731px] rounded-md p-6">
         {slideContents.map((content, index) => (
           <SwiperSlide key={index}>
             <div className="w-full h-full flex items-center justify-center mob:h-auto mob:mt-[30px]">

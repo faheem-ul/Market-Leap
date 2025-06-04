@@ -17,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 const SecondSection = ({ industryId }: { industryId: string }) => {
   const sectionRefs = useRef<Array<HTMLDivElement | null>>([]);
 
+
   const industry = industries.find((industry) => industry.id === industryId);
   const makeTheMost = industry?.makeTheMostSection ?? [];
 
@@ -68,7 +69,7 @@ const SecondSection = ({ industryId }: { industryId: string }) => {
               sectionRefs.current[index] = el;
             }}
             className={cn(
-              "w-full flex items-center justify-center relative h-[100vh]",
+              "w-full flex items-center justify-center relative ",
               isLast ? "py-[160px]" : "py-[160px]"
             )}>
             <div className="content w-full max-w-[1313px] px-5">

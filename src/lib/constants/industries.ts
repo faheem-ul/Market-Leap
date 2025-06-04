@@ -16,6 +16,11 @@ import square1 from "@/public/images/Nail-saloon/square1.png";
 import square2 from "@/public/images/Nail-saloon/square2.png";
 import sqaure3 from "@/public/images/Nail-saloon/square3.png";
 import inspired1 from "@/public/images/Nail-saloon/getinspird1.png";
+import inspired2 from "@/public/images/Nail-saloon/getinspired2.png";
+import inspired3 from "@/public/images/Nail-saloon/getinspired3.png";
+import inspired4 from "@/public/images/Nail-saloon/getinspured4.png";
+
+
 
 export const industries = [
   {
@@ -177,34 +182,34 @@ export const industries = [
 ],
   getinspiredSection:[
     {
-        image: {inspired1},
+        image: inspired1,
         // heading: "",
         description: "How to Keep Salon Appointments on Schedule When You’re Busy",
     },
     {
-        image: {inspired1},
+        image: inspired2,
+        // heading: "",
+        description: "How to Build a Tattoo Shop Website",
+    },
+    {
+        image: inspired3,
+        // heading: "",
+        description: "16 Tax Deductions for Salons",
+    },
+    {
+        image: inspired4,
+        // heading: "",
+        description: "5 Areas to Leverage Automation in the Beauty Industry",
+    },
+    {
+        image: inspired1,
         // heading: "",
         description: "How to Keep Salon Appointments on Schedule When You’re Busy",
     },
     {
-        image: {inspired1},
+        image: inspired2,
         // heading: "",
-        description: "How to Keep Salon Appointments on Schedule When You’re Busy",
-    },
-    {
-        image: {inspired1},
-        // heading: "",
-        description: "How to Keep Salon Appointments on Schedule When You’re Busy",
-    },
-    {
-        image: {inspired1},
-        // heading: "",
-        description: "How to Keep Salon Appointments on Schedule When You’re Busy",
-    },
-    {
-        image: {inspired1},
-        // heading: "",
-        description: "How to Keep Salon Appointments on Schedule When You’re Busy",
+        description: "How to Build a Tattoo Shop Website",
     },
   ],
   faqData : [
