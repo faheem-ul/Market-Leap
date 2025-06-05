@@ -2,7 +2,7 @@
 
 import React from "react";
 import SinglePageHero from "@/components/SinglePage/Hero";
-import SecondSection from "@/components/SinglePage/MakeTheMost";
+// import SecondSection from "@/components/SinglePage/MakeTheMost";
 import MaketheMostSlider from "@/components/SinglePage/MakeTheMost/MakeTheMostMob";
 import EverythingYouNeed from "@/components/SinglePage/EverythingYouNeed";
 import ReviewSlider from "@/components/SinglePage/ReviewSlider.tsx";
@@ -10,7 +10,7 @@ import SinglePagePlans from "@/components/SinglePage/Pricing";
 import CardsStackSection from "@/components/SinglePage/HardWare";
 import GetInspiredSlider from "@/components/SinglePage/GetInspired";
 import SinglePageFAQ from "@/components/SinglePage/Faq";
-// import ImageReveal from "@/components/SinglePage/ImageReveal";
+import ImageReveal from "@/components/SinglePage/ImageReveal";
 
 type Params = Promise<{ id: string }>;
 
@@ -28,8 +28,8 @@ const IndustryPage = async ({ params }: { params: Params }) => {
   return (
     <main>
       <SinglePageHero industryId={id} />
-      {/* <ImageReveal  /> */}
-      <SecondSection industryId={id} />
+      <ImageReveal industryId={id} />
+      {/* <SecondSection industryId={id} /> */}
       <MaketheMostSlider industryId={id} />
       <ReviewSlider industryId={id} />
       <EverythingYouNeed industryId={id} />
