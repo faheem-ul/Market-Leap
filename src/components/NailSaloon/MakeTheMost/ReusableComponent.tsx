@@ -37,11 +37,11 @@ const ResuableComponent: React.FC<Props> = ({
     const leftContent = leftContentRef.current;
     const rightContent = rightContentRef.current;
     const imageEl = imageRef?.current || localImageRef.current;
-  
+
     if (!leftContent || !rightContent || !imageEl) return;
-  
-    const imageFullyVisible = { current: false }; // persist across updates
-  
+
+    let imageFullyVisible = false;
+
     const calculateOpacity = (element: HTMLElement) => {
       const viewportHeight = window.innerHeight;
       const rect = element.getBoundingClientRect();
@@ -52,7 +52,7 @@ const ResuableComponent: React.FC<Props> = ({
       const opacity = 1 - distanceFromCenter / maxDistance;
       return Math.max(0, Math.min(1, opacity));
     };
-  
+
     ScrollTrigger.create({
       trigger: leftContent,
       start: "top bottom",
@@ -61,25 +61,19 @@ const ResuableComponent: React.FC<Props> = ({
       onUpdate: () => {
         const leftOpacity = calculateOpacity(leftContent);
         const rightOpacity = calculateOpacity(rightContent);
-  
+
         gsap.set(leftContent, { opacity: leftOpacity });
         gsap.set(rightContent, { opacity: rightOpacity });
-  
-        // Update image opacity only if it hasn't reached full visibility yet
-        if (!imageFullyVisible.current) {
-          gsap.set(imageEl, {
-            opacity: leftOpacity,
-          });
-  
-          // Lock in image opacity when it reaches full visibility (thresholded)
-          if (leftOpacity >= 0.99) {
-            imageFullyVisible.current = true;
-            gsap.set(imageEl, { opacity: 1 }); // ensure it's fully visible
-          }
+
+        // Image fades in with left content, then stays fully visible
+        if (!imageFullyVisible && leftOpacity >= 1) {
+          imageFullyVisible = true;
         }
+
+        gsap.set(imageEl, { opacity: imageFullyVisible ? 1 : leftOpacity });
       },
     });
-  
+
     if (!disablePin) {
       ScrollTrigger.create({
         trigger: imageEl,
@@ -90,13 +84,11 @@ const ResuableComponent: React.FC<Props> = ({
         scrub: true,
       });
     }
-  
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [imageRef, disablePin]);
-  
-  
 
   return (
     <div
@@ -123,13 +115,13 @@ const ResuableComponent: React.FC<Props> = ({
         {/* Center Image */}
         {image && (
           <div ref={imageRef || localImageRef} className="max-w-[424px]">
-            <Image
+            {/* <Image
               src={image}
               alt="image"
               width={424}
               className="max-w-[424px]"
               priority
-            />
+            /> */}
           </div>
         )}
 
