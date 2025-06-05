@@ -16,15 +16,15 @@ const ReadytoStart = () => {
     gsap.fromTo(
       "#hero-heading",
       {
-        bottom: -400,
+        bottom: -500,
       },
       {
         bottom: 0,
         // duration: 1,
         scrollTrigger: {
           trigger: "#hero-heading",
-          start: "top 80%",
-          end: "top 20%",
+          start: "top 90%",
+          end: "top 0%",
           scrub: true,
           // markers: true,
         },
@@ -97,36 +97,31 @@ const ReadytoStart = () => {
       </div>
 
       {/* Center Text */}
-      <div className="mt-[150px] absolute top-[10px] mob:flex mob:flex-col mob:items-center">
-      
-          <span
-            className=" mob:bottom-[-763px] duration-500 mob:flex mob:justify-center"
-            id="sub-heading-ready"
-          >
-            <Text className="text-[82px] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
-              Ready To Transform Your
-            </Text>
-          </span>
-          <span
-            className="mob:bottom-[-763px] duration-500  mob:flex mob:justify-center"
-            id="sub-text"
-          >
-            <Text className="text-[24px] font-normal text-white mob:text-[16px] px-7 text-center w-full max-w-[691px] mx-auto">
-              Join thousands of business owners who are growing faster and
-              working smarter with Market Leap.
-            </Text>
-          </span>
-       
+      <div className="mt-[80px] absolute top-[10px] mob:flex mob:flex-col mob:items-center">
         <span
-          className="relative bottom-[-772px] xl:bottom-[-400px] z-[0] mob:bottom-[-163px] duration-1000 mob:flex mob:justify-center"
+          className=" mob:bottom-[-763px] duration-500 mob:flex mob:justify-center"
+          id="sub-heading-ready">
+          <Text className="text-[82px] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
+            Ready To Transform Your
+          </Text>
+        </span>
+        <span
+          className="mob:bottom-[-763px] duration-500  mob:flex mob:justify-center"
+          id="sub-text">
+          <Text className="text-[24px] font-normal text-white mob:text-[16px] px-7 text-center w-full max-w-[691px] mx-auto">
+            Join thousands of business owners who are growing faster and working
+            smarter with Market Leap.
+          </Text>
+        </span>
+
+        <span
+          className="relative bottom-[-672px] xl:bottom-[-400px] z-[0] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
           id="hero-heading">
-            
           <Text
             as="h1"
             className="mx-auto text-center leading-[100%] mob:text-[15vw] text-[12vw] font-bold text-[#FCFCFC] ">
             Business
           </Text>
-          
         </span>
       </div>
     </section>
