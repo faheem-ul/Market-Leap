@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +13,9 @@ import calenderImage from "@/public/images/Nail-saloon/calender.png";
 // import payment from "@/public/images/Nail-saloon/take-payments.png";
 // import keep from "@/public/images/Nail-saloon/keep.png";
 import mask from "@/public/images/home/run-mask.png";
+// import run1 from "@/public/images/home/run1.webp";  
+// import run2 from "@/public/images/home/run2.webp";
+// import run3 from "@/public/images/home/run3.webp";
 import RunMobSlider from "./RunMobSlider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,11 +30,15 @@ const MakeTheMost = () => {
   const imageRef3 = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    const sections = [sectionRef1.current, sectionRef2.current, sectionRef3.current];
-  
+    const sections = [
+      sectionRef1.current,
+      sectionRef2.current,
+      sectionRef3.current,
+    ];
+
     sections.forEach((section) => {
       if (!section) return;
-  
+
       gsap.fromTo(
         section,
         { opacity: 0 },
@@ -38,9 +46,9 @@ const MakeTheMost = () => {
           // opacity: 1,
           scrollTrigger: {
             trigger: section,
-            start: "top bottom",    // when top of section hits bottom of viewport
-            end: "bottom top",    
-             onUpdate: () => {
+            start: "top bottom", // when top of section hits bottom of viewport
+            end: "bottom top",
+            onUpdate: () => {
               const viewportHeight = window.innerHeight;
               const sectionRect = section.getBoundingClientRect();
               const sectionCenter = sectionRect.top + sectionRect.height / 2;
@@ -51,14 +59,13 @@ const MakeTheMost = () => {
               const maxDistance = viewportHeight / 2;
               const opacity = 1 - distanceFromCenter / maxDistance;
               gsap.set(section, { opacity: Math.max(0, Math.min(1, opacity)) });
-            },  // when bottom of section hits top of viewport
-            scrub: true,            // smooth scrubbing
+            }, // when bottom of section hits top of viewport
+            scrub: true, // smooth scrubbing
           },
         }
       );
     });
   }, []);
-  
 
   return (
     <div className="w-full h-full relative bg-[#FCFBFB]">
@@ -70,15 +77,14 @@ const MakeTheMost = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
-        }}
-      >
-         
-      </div>
+        }}></div>
 
       <div className="w-full h-full relative flex mob:flex-col max-w-[1313px] gap-5 mx-auto px-5">
         {/* Sticky Heading on the Left */}
         <div className="sticky mob:relative mob:h-auto top-[0%] w-full max-w-[408px] h-screen flex justify-center items-center z-10">
-          <Text as="h1" className="text-[55px] w-full max-w-[408px] leading-[120%]">
+          <Text
+            as="h1"
+            className="text-[55px] w-full max-w-[408px] leading-[120%]">
             Run Your Business With{" "}
             <span className="text-secondary">Confidence</span>
           </Text>
@@ -89,8 +95,7 @@ const MakeTheMost = () => {
           {/* Section 1 */}
           <div
             ref={sectionRef1}
-            className="w-full flex items-center justify-between flex-wrap xl:justify-center xl:gap-5 min-h-screen py-[80px] mx-auto max-w-[860px]"
-          >
+            className="w-full flex items-center justify-between flex-wrap xl:justify-center xl:gap-5 min-h-screen py-[80px] mx-auto max-w-[860px]">
             <div className="image-container">
               <Image
                 ref={imageRef1}
@@ -101,28 +106,33 @@ const MakeTheMost = () => {
               />
             </div>
             <div className="w-full max-w-[394px]">
-              <Text as="h1" className="text-[30px] font-semibold leading-[37px]">
-                Branding and Experience
+              <Text
+                as="h1"
+                className="text-[30px] font-semibold leading-[37px]">
+                Your Business Command Center
               </Text>
               <Text className="font-light text-[18px] mt-[15px] mb-[39px]">
-                Use our flagship point of sale and business growth software.
-                Create and own your brand from the start - and let our software
-                do the heavy lifting to help you stand out.
+                Everything you need in one powerful platform. Effortlessly
+                manage sales, inventory, staff, and customer relationships.
+                Whether {"you're"} a small boutique or a growing chain, get the
+                insights and control you need to make better decisions and
+                delight your customers.
               </Text>
-              <button>
-                <div className="flex gap-3 justify-center items-center">
-                  <Text className="text-[18px] font-normal">Get Started</Text>
-                  <Image src={arrow} alt="arrow" />
-                </div>
-              </button>
+              <Link href="/pricing">
+                <button>
+                  <div className="flex gap-3 justify-center items-center">
+                    <Text className="text-[18px] font-normal">Get Started</Text>
+                    <Image src={arrow} alt="arrow" />
+                  </div>
+                </button>
+              </Link>
             </div>
           </div>
 
           {/* Section 2 */}
           <div
             ref={sectionRef2}
-            className="w-full flex items-center justify-between flex-wrap xl:justify-center xl:gap-5 min-h-screen py-[80px] mx-auto max-w-[860px]"
-          >
+            className="w-full flex items-center justify-between flex-wrap xl:justify-center xl:gap-5 min-h-screen py-[80px] mx-auto max-w-[860px]">
             <div className="image-container">
               <Image
                 ref={imageRef2}
@@ -133,7 +143,9 @@ const MakeTheMost = () => {
               />
             </div>
             <div className="w-full max-w-[394px]">
-              <Text as="h1" className="text-[30px] font-semibold leading-[37px]">
+              <Text
+                as="h1"
+                className="text-[30px] font-semibold leading-[37px]">
                 Accept Payments Anywhere, Anytime
               </Text>
               <Text className="font-light text-[18px] mt-[15px] mb-[39px]">
@@ -148,8 +160,7 @@ const MakeTheMost = () => {
           {/* Section 3 */}
           <div
             ref={sectionRef3}
-            className="w-full flex items-center justify-between min-h-screen flex-wrap xl:justify-center xl:gap-5 py-[80px] mx-auto max-w-[860px]"
-          >
+            className="w-full flex items-center justify-between min-h-screen flex-wrap xl:justify-center xl:gap-5 py-[80px] mx-auto max-w-[860px]">
             <div className="image-container">
               <Image
                 ref={imageRef3}
@@ -160,22 +171,25 @@ const MakeTheMost = () => {
               />
             </div>
             <div className="w-full max-w-[394px]">
-              <Text as="h1" className="text-[30px] font-semibold leading-[37px]">
+              <Text
+                as="h1"
+                className="text-[30px] font-semibold leading-[37px]">
                 Customer Engagement
               </Text>
               <Text className="font-light text-[18px] mt-[15px] mb-[39px]">
                 Delight customers with a solid brand experience using our
                 flagship loyalty, retention marketing, and customer engagement
-                software. Easy setup and fully managed for you. No need to stress
-                over getting every detail right. Our AI optimizes the experience
-                based on your customer and business data - removing the guesswork.
+                software. Easy setup and fully managed for you. No need to
+                stress over getting every detail right. Our AI optimizes the
+                experience based on your customer and business data - removing
+                the guesswork.
               </Text>
             </div>
           </div>
         </div>
       </div>
 
-      <RunMobSlider/>
+      <RunMobSlider />
     </div>
   );
 };

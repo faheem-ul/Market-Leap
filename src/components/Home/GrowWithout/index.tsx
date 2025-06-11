@@ -339,7 +339,33 @@ const GrowWithout = () => {
                           ? "Start Optimizing"
                           : "Track Leads"}
                       </Button>
+
+                      {/*  <Text
+                        as="h2"
+                        className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">
+                        {i === 1 && "Marketing That Actually Works"}
+                        {i === 2 && "Turn Reviews Into Revenue"}
+                        {i === 3 && "Dominate Your Local Market"}
+                        {i === 4 && "Never Lose Another Lead"}
+                      </Text>
+                      <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
+                        {i === 1 &&
+                          "Finally, marketing that delivers real results. Our AI analyzes your customer data to create perfectly targeted campaigns that bring in more sales. No more wasted budget, no more hoping and praying - just predictable growth you can count on."}
+                        {i === 2 &&
+                          "Watch your reputation soar with automated review procurement that gets customers talking. Our smart system knows exactly when to ask for reviews, responds to feedback instantly, and turns happy customers into your best marketing asset."}
+                        {i === 3 &&
+                          "Get found everywhere your customers are looking. Our platform optimizes your business listings across 100+ platforms, manages your local SEO, and makes sure you show up at the top of search results. Watch your foot traffic grow as local customers discover you first."}
+                        {i === 4 &&
+                          "We make sure every inquiry becomes an opportunity for your business. Our systems take care of following up with leads, sending perfectly timed offers, and keeping customers coming back - all while you focus on running your business."}
+                      </Text>
+                      <Link href="/pricing">
+                      <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto h-12 sm:h-14 md:h-16 font-bold rounded-[15px] text-white text-base sm:text-lg">
+                      Get Started
+                      </Button>
+                      </Link> */}
                     </div>
+
+                    
                   ))}
                 </div>
               </div>

@@ -115,7 +115,7 @@ const ReadytoStart = () => {
         </span>
 
         <span
-          className="relative bottom-[-672px] xl:bottom-[-400px] z-[0] mob:bottom-[-163px] duration-500 mob:flex mob:justify-center"
+          className="relative bottom-[-672px] xl:bottom-[-400px] z-[0] mob:bottom-[-100px] duration-500 mob:flex mob:justify-center"
           id="hero-heading">
           <Text
             as="h1"

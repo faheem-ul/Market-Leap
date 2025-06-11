@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Text from "@/components/ui/Text";
 
@@ -24,9 +25,12 @@ const IndustryHero = () => {
             className="w-full max-w-[820px] text-[50px] text-center leading-[65px] mb-[32px]">
             Start With The Right Tech For Your Business
           </Text>
+
+          <Link href="/pricing">
           <Button className="w-[166px] h-[58px] rounded-[15px] text-white font-bold mx-auto  button-shadow-industry">
           Get Started
           </Button>
+          </Link>
         </div>
       </div>
       

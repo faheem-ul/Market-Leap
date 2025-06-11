@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Text from "@/components/ui/Text";
 import Button from "@/components/ui/Button";
@@ -34,9 +35,11 @@ const SeeWhy = () => {
                 Check out what Square can do for your business and how it
                 could improve your day-to-day and big picture.
               </Text>
+              <Link href="/pricing">
               <Button className="w-[103px] text-[12px] h-[36px] rounded-[10px] text-white font-bold mt-[26px]">
                 Get Started
               </Button>
+              </Link>
             </div>
           </div>
 
@@ -61,9 +64,11 @@ const SeeWhy = () => {
                 See how Square stacks up against other payment providers to
                 make the best decision for your business.
               </Text>
+              <Link href="/pricing">
               <Button className="w-[103px] text-[12px] h-[36px] rounded-[10px] text-white font-bold mt-[26px]">
                 Get Started
               </Button>
+              </Link>
             </div>
           </div>
         </div>

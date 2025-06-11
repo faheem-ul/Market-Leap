@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import Text from "@/components/ui/Text";
 import Button from "@/components/ui/Button";
 import { industries } from "@/lib/constants/industries";
@@ -40,9 +42,11 @@ export default function EverythingYouNeed({ industryId }: { industryId: string }
                 <Text className="mt-[21px] mb-[52px] text-[24px] mob:text-[20px] mob:leading-[22px] font-light">
                   {item.description}
                 </Text>
+                <Link href="/pricing">
                 <Button className="w-[166px] h-[58px] rounded-[15px] text-[18px] font-bold">
                   Get Started
                 </Button>
+                </Link>
               </div>
               <Image
                 src={item.image}
