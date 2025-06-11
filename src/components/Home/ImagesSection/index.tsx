@@ -21,12 +21,12 @@ const GridLayout = () => {
       ".left-image", // Target the element with the class 'left-image'
       { scale: 1, }, // Start with normal size
       {
-        scale: 1.2, // Scale up by 20%
+        scale: 1.4, // Scale up by 20%
         duration: 1.5,
         scrollTrigger: {
           trigger: ".left-image", 
           start: "top bottom", 
-          end: "top center", 
+          end: "top top", 
           scrub: 1,
           // markers: true,
         },
@@ -38,12 +38,12 @@ const GridLayout = () => {
       ".value-prop", // Target the element with class 'value-prop'
       { scale: 1, }, // Start with normal size
       {
-        scale: 1.2, // Scale up by 20%
+        scale: 1.4, // Scale up by 20%
         duration: 1.5,
         scrollTrigger: {
           trigger: ".value-prop",
           start: "top bottom", 
-          end: "top 50%", 
+          end: "top top", 
           scrub: 1,
           // markers: true,
         },
@@ -55,12 +55,12 @@ const GridLayout = () => {
       ".increase-text", // Target the "35% Increase" element
       { scale: 1, }, // Start with normal size
       {
-        scale: 1.2, // Scale up by 20%
+        scale: 1.4, // Scale up by 20%
         duration: 1.5,
         scrollTrigger: {
           trigger: ".increase-text",
           start: "top bottom", 
-          end: "top 70%", 
+          end: "top top", 
           scrub: 2,
         },
       }

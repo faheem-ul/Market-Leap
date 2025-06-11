@@ -1,5 +1,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 import Text from "@/components/ui/Text";
 import { cn } from "@/lib/utils";
@@ -37,21 +38,23 @@ const ReusableCard: React.FC<props> = ({
       <div className="w-full max-w-[1313px] flex justify-center items-center relative z-10">
         <div className="w-full">
           <div className="w-full flex justify-between xl:justify-center flex-wrap items-center mob:flex-col mob:gap-5">
-            <Text className="text-black text-[50px] font-semibold">Square</Text>
+            <Text className="text-black text-[50px] font-semibold">Market Leap</Text>
+            <Link href="/pricing">
             <Button className="bg-transparent border border-black w-[142px] h-[50px] rounded-[10px] text-secondary text-[18px] font-bold">
               <div className="flex gap-1">
                 Explore
                 <Image src={arrow} alt="arrow" />
               </div>
             </Button>
+            </Link>
           </div>
           <div className="mt-[55px] flex justify-between items-end flex-wrap mob:items-center">
             <Image src={image} alt="image" width={489} className="mob:mb-5" />
             <div className="w-full max-w-[726px]">
-                <Text className="text-[40px] mob:text-[35px] font-semibold mb-[45px] mob:mb-5 mob:text-center">
+                <Text className="text-[40px] mob:text-[35px] font-semibold mb-[25px] mob:mb-5 mob:text-center">
                     {heading}
                 </Text>
-                <Text className="text-[20px] font-light mob:text-[18px]">
+                <Text className="text-[20px] font-light mob:text-[18px] mb-10">
                 {Description}
                 </Text>
             </div>

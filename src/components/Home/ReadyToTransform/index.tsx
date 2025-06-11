@@ -13,18 +13,20 @@ gsap.registerPlugin(ScrollTrigger);
 const ReadytoStart = () => {
   useEffect(() => {
     // Setup ScrollTrigger animation for #hero-heading (Business)
+    const isMobile = window.innerWidth <= 768;
     gsap.fromTo(
       "#hero-heading",
+      
       {
-        bottom: -500,
+        bottom: isMobile ? "-100" : "-500",
       },
       {
         bottom: 0,
         // duration: 1,
         scrollTrigger: {
           trigger: "#hero-heading",
-          start: "top 90%",
-          end: "top 0%",
+          start: isMobile ? "top 90%": "top 90%",
+          end: isMobile ? "top 20%" : "top 0%",
           scrub: true,
           // markers: true,
         },
@@ -115,7 +117,7 @@ const ReadytoStart = () => {
         </span>
 
         <span
-          className="relative bottom-[-672px] xl:bottom-[-400px] z-[0] mob:bottom-[-100px] duration-500 mob:flex mob:justify-center"
+          className="relative bottom-[-672px] xl:bottom-[-400px] z-[0] mob:bottom-[0px] duration-500 mob:flex mob:justify-center"
           id="hero-heading">
           <Text
             as="h1"

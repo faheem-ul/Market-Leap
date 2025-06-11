@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
 
 // Define la forma del contenido que usas
 type AccordionContentItem = {
@@ -37,7 +38,14 @@ const AccordionItem = ({ title, text }: AccordionItemProps) => {
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? "max-h-[1000px] opacity-100 mt-[8px]" : "max-h-0 opacity-0" // Ajusta max-h-[1000px] si esperas contenido más largo
         }`}>
-        <p className="max-w-[1313px] text-[14px] font-light">{text}</p>
+        <p className="max-w-[1313px] text-[14px] font-light">
+          {text.split("<br />").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              {index < text.split("<br />").length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </p>
       </div>
     </div>
   );

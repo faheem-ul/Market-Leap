@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-
 import Text from "@/components/ui/Text";
 import DesktopNav from "@/components/NailSaloon/Hero/Navbar";
 
@@ -28,9 +27,11 @@ const PricingHero = () => {
             Pricing That Scales With 
             Your Success
           </Text>
+          <a href="tel:+1 (469) 210-5193">
           <Button className="w-[166px] h-[58px] rounded-[15px] text-white font-bold mx-auto mt-[23px] button-shadow-industry">
           Contact
           </Button>
+          </a>
         </div>
       </div>
     </div>
