@@ -23,6 +23,7 @@ const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
       <div className="w-full max-w-full mx-auto">
         <Swiper
           loop={true}
+          // centerInsufficientSlides={true}
           breakpoints={{
             768: {
               slidesPerView: 1,
