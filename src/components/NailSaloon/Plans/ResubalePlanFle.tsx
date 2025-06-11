@@ -53,7 +53,7 @@ const ResubalePlanFle: React.FC<props> = ({
             </Text>
           </div>
           <div className="w-full flex justify-between items-center mb-[12px]">
-            <Text className="text-[12px] font-light">Online</Text>
+            <Text className="text-[12px] group-hover:text-white font-light">Online</Text>
             <Text className="text-[12px] font-light group-hover:text-white">
               {onlineValue}
             </Text>

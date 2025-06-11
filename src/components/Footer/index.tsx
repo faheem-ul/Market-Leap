@@ -20,7 +20,7 @@ const Footer = () => {
               <Text className="text-white text-[24px] mb-[50px] font-poppins mob:mb-[14px]  font-bold mob:text-[22px]">
                 Pages
               </Text>
-              <div className="flex w-full justify-between mob:flex-col  flex-wrap tab:justify-start tab:gap-[16px]">
+              <div className="flex w-full justify-between mob:flex-col mob:items-start flex-wrap tab:justify-start tab:gap-[16px] items-center">
                 <div>
                   <Text className="mb-[18px] ">
                     <Link
@@ -84,12 +84,12 @@ const Footer = () => {
             loop
             muted
             playsInline
-            className="object-cover max-w-[413px]"
+            className="object-cover max-w-[713px] mob:max-w-[350px] relative right-[40px] mob:right-[10px]"
           />
                 </Link>
               </div>
             </div>
-            <div className=""></div>
+           
           </div>
 
           {/* 2 row */}

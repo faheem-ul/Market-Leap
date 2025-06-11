@@ -53,7 +53,7 @@ export default function SinglePageFAQ({ industryId }: { industryId: string }) {
           <Text
             as="h1"
             className="text-[65px] mob:text-[28px] text-black font-semibold">
-            Try Square
+            Try Market Leap
           </Text>
           <div className="flex gap-[20px] mob:flex-col mob:w-full">
             <Link href="/pricing">
@@ -63,7 +63,7 @@ export default function SinglePageFAQ({ industryId }: { industryId: string }) {
             </Link>
             <a
               href="tel:+14692105193"
-              className=" font-poppins flex justify-center h-[67px] mob:w-full items-center bg-secondary px-2 rounded-[15px] text-white hover:text-gray-300 transition-colors">
+              className=" font-poppins flex justify-center h-[67px] mob:w-full items-center bg-secondary px-[30px] rounded-[15px] text-white hover:text-gray-300 transition-colors">
               <svg
                 stroke="currentColor"
                 fill="none"

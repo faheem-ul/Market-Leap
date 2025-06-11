@@ -30,7 +30,7 @@ const ReadyToSignup = () => {
 
             <a
               href="tel:+14692105193"
-              className=" font-poppins justify-center flex h-[67px] items-center mob:w-full bg-secondary px-2 rounded-[15px] text-white hover:text-gray-300 transition-colors">
+              className=" font-poppins justify-center px-[30px] flex h-[67px] items-center mob:w-full bg-secondary rounded-[15px] text-white hover:text-gray-300 transition-colors">
               <svg
                 stroke="currentColor"
                 fill="none"

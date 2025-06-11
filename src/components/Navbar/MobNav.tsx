@@ -19,7 +19,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <nav className="hidden relative navsize:block px-5 mt-5">
+      <nav className="hidden relative navsize:block px-5 mt-5 z-[100]">
         <div className="flex w-full justify-between items-center rounded-[10px]">
           <Link
             href="/"
@@ -94,7 +94,7 @@ const MobileNav = () => {
 
                     <a
                       href="tel:+14692105193"
-                      className=" font-poppins md:flex items-center text-white hover:text-gray-300 transition-colors">
+                      className=" font-poppins justify-center flex items-center py-[15px] font-bold text-black hover:text-gray-300 transition-colors">
                       <svg
                         stroke="currentColor"
                         fill="none"

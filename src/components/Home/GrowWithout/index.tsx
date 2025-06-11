@@ -315,29 +315,29 @@ const GrowWithout = () => {
                       <Text
                         as="h2"
                         className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">
-                        {i === 1 && "Empower Your Business with AI"}
-                        {i === 2 && "Automate Customer Engagement"}
-                        {i === 3 && "Optimize with Insights"}
-                        {i === 4 && "Never Miss a Lead"}
+                        {i === 1 && "Marketing That Actually Works"}
+                        {i === 2 && "Enhance Business Visibility Online"}
+                        {i === 3 && "Streamline Business Operations"}
+                        {i === 4 && "Customizable At Scale"}
                       </Text>
                       <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
                         {i === 1 &&
-                          "Use our built-in AI services to power your marketing, branding, customer engagement, pricing optimization, inventory management, and more."}
+                          "Get predictable and measurable customer growth powered by our best in class marketing software. Source leads from ads, search, referrals, and more. We do the heavy lifting behind the scenes so you can focus on your business."}
                         {i === 2 &&
-                          "Let AI handle routine interactions, FAQs, and proactive communication, freeing you to focus on growth."}
+                          "Meet customers where they are. You focus on delighting customers and we take care of helping you get reviews as well as creating, managing, and optimizing your business listings across third party platforms, local search, and social platforms so that you’re always front and center for prospective customers."}
                         {i === 3 &&
-                          "Gain real-time analytics and data-driven suggestions to improve operations, sales, and retention."}
+                          "Our software makes business operations seamless for single location businesses as well as multi store and franchise operations. Load in your products and services, and let our state of the art management system take care of optimizing your operations around your business goals and operational data. Automate as much or as little as you want and get access to powerful technology that doesn’t get in the way and lets you run your business on your terms."}
                         {i === 4 &&
-                          "Capture every opportunity with intelligent lead tracking and automated follow-ups."}
+                          "As you scale and your business operations evolve, continue using our state of the art software APIs with your own platform. Every part of our software is modular, giving you the flexibility to supercharge your systems with the best of ours."}
                       </Text>
-                      <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto h-12 sm:h-14 md:h-16 font-bold rounded-[15px] text-white text-base sm:text-lg">
+                      <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto py-4 font-bold rounded-[15px] text-white text-base sm:text-lg">
                         {i === 1
-                          ? "Get Started"
+                          ? "Marketing"
                           : i === 2
-                          ? "Learn More"
+                          ? "Visibility Online"
                           : i === 3
-                          ? "Start Optimizing"
-                          : "Track Leads"}
+                          ? "Operations"
+                          : "Software Apis"}
                       </Button>
 
                       {/*  <Text
