@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import Text from "@/components/ui/Text";
 import Divider from "@/components/ui/Divider";
@@ -65,10 +66,12 @@ const ResubalePlanFile: React.FC<props> = ({
         <Text className="text-[24px] font-poppins font-bold text-white group-hover:text-white">
           {pricing} <span className="text-[11px] font-light">{pricingDescrip}</span>
         </Text>
+        <Link href="/pricing">
         <Button className={cn("bg-transparent text-secondary transition-colors duration-1000 group-hover:bg-black group-hover:text-white group-hover:border-none font-bold border h-[41px] rounded-[30px] mt-[43px] mb-[17px] mx-auto border-white w-[149px]",mt)}
         >
           {buttontext}
         </Button>
+        </Link>
 
         <Text className="text-[15px] font-bold group-hover:text-white mb-[12px] text-white">Features:</Text>
 

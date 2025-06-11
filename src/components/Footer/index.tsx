@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import Text from "../ui/Text";
 
 import Divider from "../ui/Divider";
-import footerlogo from "@/public/images/home/footer-logo.png";
+// import footerlogo from "@/public/images/home/footer-logo.png";
 const Footer = () => {
   const currentPath = usePathname();
 
@@ -71,13 +71,21 @@ const Footer = () => {
                 </div>
 
                 <Link href="/">
-                <Image
+                {/* <Image
                   className="max-w-[713px] mob:max-w-[300px] mob:h-[50px] mob:mt-10 h-[100px]"
                   src={footerlogo}
                   alt="logo"
                   width={713}
                   height={50}
-                />
+                /> */}
+                <video
+            src="/marketleap.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover max-w-[413px]"
+          />
                 </Link>
               </div>
             </div>

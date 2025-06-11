@@ -7,6 +7,7 @@ import Divider from "@/components/ui/Divider";
 
 import arrow from "@/public/images/industry/Arrow 1.svg";
 import bg from "@/public/images/industry/Vector.png"
+import { cn } from "@/lib/utils";
 
 interface RetailSlideProps {
   image: StaticImageData;
@@ -14,6 +15,7 @@ interface RetailSlideProps {
   description: string;
   categories?: string[];
   buttonText?: string;
+  buttonShow?: string;
 }
 
 const RetailSlide: React.FC<RetailSlideProps> = ({
@@ -27,6 +29,8 @@ const RetailSlide: React.FC<RetailSlideProps> = ({
     "Home & Gift",
     "Wine & Liquor",
   ],
+  buttonShow,
+  buttonText
 }) => {
   return (
     <div className="flex mob:flex-wrap max-w-[637px] min-h-[401px] overflow-hidden rounded-2xl shadow-md">
@@ -65,9 +69,9 @@ const RetailSlide: React.FC<RetailSlideProps> = ({
         </div>
 
         <div>
-          <Button className="w-[106px] h-[40px] mt-4 rounded-[6px]">
+          <Button className={cn("w-fit px-3 py-2 h-fit mt-4 rounded-[6px]", buttonShow)}>
           <div className="flex gap-[7px] items-center">
-                <Text className="cursor-pointer text-white text-[14px] font-medium">All Retail</Text>
+                <Text className="cursor-pointer text-white text-[14px] font-medium">{buttonText}</Text>
                 <Image src={arrow} width={12} alt="arrow svg" />
               </div>
           </Button>

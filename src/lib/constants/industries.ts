@@ -7,14 +7,25 @@ import turn from "@/public/images/Nail-saloon/turn.png";
 import pen from "@/public/images/Nail-saloon/pen.svg";
 import manage from "@/public/images/Nail-saloon/manage.svg";
 import people from "@/public/images/Nail-saloon/people.svg";
+import paymnet1svg from "@/public/images/Nail-saloon/payment1.svg";
+import payment2svg from "@/public/images/Nail-saloon/payment2.svg";
+import payment3svg from "@/public/images/Nail-saloon/payment3.svg";
+import keep1svg from "@/public/images/Nail-saloon/keep1.svg";
+import keep2svg from "@/public/images/Nail-saloon/keep2.svg";
+import keep3svg from "@/public/images/Nail-saloon/keep3.svg"; 
+import keep4svg from "@/public/images/Nail-saloon/keep4.svg";
+import turn1 from "@/public/images/Nail-saloon/turn1.svg";
+import turn2 from "@/public/images/Nail-saloon/turn2.svg";
+import turn3 from "@/public/images/Nail-saloon/turn3.svg";
 import review1image from "@/public/images/Nail-saloon/reviewimage.png" 
 import signature1 from "@/public/images/Nail-saloon/signature1image.svg" 
 import sectionimage from "@/public/images/Nail-saloon/image 22.png";
 import grow from "@/public/images/Nail-saloon/image 23.png";
 import add from "@/public/images/Nail-saloon/image 24.png";
-import square1 from "@/public/images/Nail-saloon/square1.png";
-import square2 from "@/public/images/Nail-saloon/square2.png";
-import sqaure3 from "@/public/images/Nail-saloon/square3.png";
+import square1 from "@/public/images/Nail-saloon/square1.avif";
+import square2 from "@/public/images/Nail-saloon/square2.avif";
+import sqaure3 from "@/public/images/Nail-saloon/square3.avif";
+import sqaure4 from "@/public/images/Nail-saloon/square4.avif";
 import inspired1 from "@/public/images/Nail-saloon/getinspird1.png";
 import inspired2 from "@/public/images/Nail-saloon/getinspired2.png";
 import inspired3 from "@/public/images/Nail-saloon/getinspired3.png";
@@ -50,15 +61,15 @@ export const industries = [
         section2heading: "Take payments At The Booth",
         section2Image: payment,
         section2Content: [
-            { icon: pen, 
+            { icon: paymnet1svg, 
                 content: "Drag and drop, color code, and assign specific booths, resources, and techs to bookings within your calendar." 
             },
               {
-                icon: manage,
+                icon: payment2svg,
                 content: "Spend less time managing bookings with automated confirmations and reminders and let the AI-powered automated messaging manage any rescheduling.",
               },
               {
-                icon: people,
+                icon: payment3svg,
                 content: "Add unlimited tech calendars and sync them across multiple locations.",
               },
         ],
@@ -67,16 +78,20 @@ export const industries = [
         section3heading: "Keep Every Booth Booked And Busy",
         section3Image: keep,
         section3Content: [
-            { icon: pen, 
-                content: "Drag and drop, color code, and assign specific booths, resources, and techs to bookings within your calendar." 
+            { icon: keep1svg, 
+                content: "Make it easy for clients to book and rebook you anytime from anywhere with an online booking site. " 
             },
               {
-                icon: manage,
-                content: "Spend less time managing bookings with automated confirmations and reminders and let the AI-powered automated messaging manage any rescheduling.",
+                icon: keep2svg,
+                content: "Add a Book Now button to your Instagram and Facebook profiles.",
               },
               {
-                icon: people,
-                content: "Add unlimited tech calendars and sync them across multiple locations.",
+                icon: keep3svg,
+                content: "Get discovered and booked on Square Go.",
+              },
+              {
+                icon: keep4svg,
+                content: "Maximize your techs’ limited time with cancellation and no-show policies and waitlists.",
               },
         ],
       },
@@ -84,16 +99,16 @@ export const industries = [
         section4heading: "Turn Walk-ins Into Regulars",
         section4Image: turn,
         section4Content: [
-            { icon: pen, 
-                content: "Drag and drop, color code, and assign specific booths, resources, and techs to bookings within your calendar." 
+            { icon: turn1, 
+                content: "Send automated² and one-off email and text campaigns for seasonal offers, retail products, and more." 
             },
               {
-                icon: manage,
-                content: "Spend less time managing bookings with automated confirmations and reminders and let the AI-powered automated messaging manage any rescheduling.",
+                icon: turn2,
+                content: "Sell gift cards online and in person to reach even more customers. ",
               },
               {
-                icon: people,
-                content: "Add unlimited tech calendars and sync them across multiple locations.",
+                icon: turn3,
+                content: "Drive repeat business with a loyalty program that rewards returning customers. ",
               },
         ],
       },
@@ -105,36 +120,36 @@ export const industries = [
         name: "Rachel Dang", 
         addresss: "Urban Nail BoxSeattle, WA" 
     },
-    { image: review1image, 
-        review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
-        signature: signature1, 
-        name: "Rachel Dang", 
-        addresss: "Urban Nail BoxSeattle, WA" 
-    },
-    { image: review1image, 
-        review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
-        signature: signature1, 
-        name: "Rachel Dang", 
-        addresss: "Urban Nail BoxSeattle, WA" 
-    },
-    { image: review1image, 
-        review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
-        signature: signature1, 
-        name: "Rachel Dang", 
-        addresss: "Urban Nail BoxSeattle, WA" 
-    },
-    { image: review1image, 
-        review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
-        signature: signature1, 
-        name: "Rachel Dang", 
-        addresss: "Urban Nail BoxSeattle, WA" 
-    },
-    { image: review1image, 
-        review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
-        signature: signature1, 
-        name: "Rachel Dang", 
-        addresss: "Urban Nail BoxSeattle, WA" 
-    },
+    // { image: review1image, 
+    //     review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
+    //     signature: signature1, 
+    //     name: "Rachel Dang", 
+    //     addresss: "Urban Nail BoxSeattle, WA" 
+    // },
+    // { image: review1image, 
+    //     review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
+    //     signature: signature1, 
+    //     name: "Rachel Dang", 
+    //     addresss: "Urban Nail BoxSeattle, WA" 
+    // },
+    // { image: review1image, 
+    //     review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
+    //     signature: signature1, 
+    //     name: "Rachel Dang", 
+    //     addresss: "Urban Nail BoxSeattle, WA" 
+    // },
+    // { image: review1image, 
+    //     review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
+    //     signature: signature1, 
+    //     name: "Rachel Dang", 
+    //     addresss: "Urban Nail BoxSeattle, WA" 
+    // },
+    // { image: review1image, 
+    //     review: "“Square has been on my side since day one operating as a one-woman show, and has supported me as my business has grown from one team member to 34. Having everything in one place has unlocked our power to grow so quickly.”", 
+    //     signature: signature1, 
+    //     name: "Rachel Dang", 
+    //     addresss: "Urban Nail BoxSeattle, WA" 
+    // },
     ],
 
     everythinguouneedtoKnow: [
@@ -156,28 +171,27 @@ export const industries = [
     ],
     hardwarethatsuits: [
         {
-        heading: "Market Leap",
+        heading: "Square Handheld",
         image: square1,
-        constent:""
+        constent:"Power your day, manage appointments, and check out anywhere with a pocketable POS."
 
     },
     {
-        heading: "Market Leap",
+        heading: "Square Register",
         image: square2,
-        constent:""
+        constent:"Run your entire business right out of the box with a fully integrated, two-screen solution."
 
     },
     {
-        heading: "Market Leap",
+        heading: "Square Stand",
         image: sqaure3,
-        constent:"Square Register is the first fully integrated point-of-sale system that lets you start selling right out of the box. This POS system is built to be faster, more powerful, and more reliable—no extra tablets or apps required."
+        constent:" Simplify checkout in just one swivel with an iPad POS you already know how to use."
 
     },
     {
-        heading: "Market Leap",
-        image: sqaure3,
-        constent:"Square Register is the first fully integrated point-of-sale system that lets you start selling right out of the box. This POS system is built to be faster, more powerful, and more reliable—no extra tablets or apps required."
-
+        heading: " Square Terminal",
+        image: sqaure4,
+        constent:"Take payments, print receipts, and much more on a compact, countertop device."
     },
 ],
   getinspiredSection:[

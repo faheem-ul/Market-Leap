@@ -86,7 +86,7 @@ for you."
               PlanDescrip="Custom enterprise solution with 
 dedicated support and lowest 
 processing rates"
-mt="mt-[17px]"
+              mt="mt-[17px]"
               // inpersonValue="2.5% + $0.10"
               // onlineValue="2.7% + $0.30"
               // pricing="$229"
