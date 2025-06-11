@@ -17,7 +17,6 @@ export default function IndustrySlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<swiperTypes | null>(null);
 
-
   const slideLabels = [
     "Retail",
     "Beauty",
@@ -28,7 +27,7 @@ export default function IndustrySlider() {
 
   const slideContents = [
     <RetailSlide
-    key="retail1"
+      key="retail1"
       image={retail}
       title="Retail"
       description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
@@ -42,60 +41,55 @@ export default function IndustrySlider() {
       buttonText="All Retail"
     />,
     <RetailSlide
-    key="retail2"
+      key="retail2"
       image={retail}
-      title="Retail"
+      title="Beauty"
       description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       categories={[
-        "Clothing",
-        "Garden",
-        "Grocery",
-        "Home & Gift",
-        "Wine & Liquor",
+        "Barbershop ",
+        "Beauty salon",
+        "Hair salon",
+        "Med spa",
+        "Nail salon",
+        "Tattoo & piercing",
       ]}
-      buttonText="All Retail"
+      buttonText="All Beauty"
     />,
     <RetailSlide
-    key="retail3"
+      key="retail3"
       image={retail}
-      title="Retail"
+      title="Health & Wellness"
       description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-      categories={[
-        "Clothing",
-        "Garden",
-        "Grocery",
-        "Home & Gift",
-        "Wine & Liquor",
-      ]}
+      categories={["CBD", "Day spa", "Grocery", "Fitness", "Healthcare"]}
       buttonText="All Retail"
+      buttonShow="hidden"
     />,
     <RetailSlide
-    key="retail4"
+      key="retail4"
       image={retail}
-      title="Retail"
+      title="Home & Commercial"
       description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       categories={[
-        "Clothing",
-        "Garden",
-        "Grocery",
-        "Home & Gift",
-        "Wine & Liquor",
+        "Cleaning",
+        "Contractors & specialists ",
+        "Landscaping & outdoors ",
       ]}
-      buttonText="All Retail"
+      buttonText="All Home & Commercial"
     />,
     <RetailSlide
-    key="retail5"
+      key="retail5"
       image={retail}
-      title="Retail"
+      title="Services"
       description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       categories={[
-        "Clothing",
-        "Garden",
-        "Grocery",
-        "Home & Gift",
-        "Wine & Liquor",
+        "Automotive",
+        "Organization & nonprofits ",
+        "Pet services",
+        "Professional services",
+        "Recreation",
+        "Transportation ",
       ]}
-      buttonText="All Retail"
+      buttonText="All services"
     />,
   ];
 
@@ -119,20 +113,20 @@ export default function IndustrySlider() {
 
       {/* slider butttons */}
       <div className="flex gap-2 w-full max-w-[1313px] mob:hidden">
-      <div className="w-full mt-8 flex max-w-[90px] ml-auto pb-5 gap-3 items-center">
-        <div
-          className="custom-prev-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
-        //   onClick={handleprevbtn}
+        <div className="w-full mt-8 flex max-w-[90px] ml-auto pb-5 gap-3 items-center">
+          <div
+            className="custom-prev-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
+            //   onClick={handleprevbtn}
           >
-          <Image src={backarrow} alt="moveprevbtn1" />
-        </div>
-        <div
-          className="custom-next-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
-        //   onClick={handleNextvbtn}
+            <Image src={backarrow} alt="moveprevbtn1" />
+          </div>
+          <div
+            className="custom-next-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
+            //   onClick={handleNextvbtn}
           >
-          <Image src={nextarrow} alt="movenextbtn1" />
+            <Image src={nextarrow} alt="movenextbtn1" />
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Swiper Slider */}
@@ -141,25 +135,22 @@ export default function IndustrySlider() {
         // slidesPerView={2}
         loop={true}
         breakpoints={{
-         
-         
           768: {
             slidesPerView: 1,
           },
           1024: {
             slidesPerView: 2,
           },
-         
         }}
         navigation={{
-            nextEl: ".custom-next-popular",
-            prevEl: ".custom-prev-popular",
-          }}
+          nextEl: ".custom-next-popular",
+          prevEl: ".custom-prev-popular",
+        }}
         // centeredSlides={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         modules={[Keyboard, Navigation, Scrollbar]}
-        className="w-full max-w-[1313px] h-[522px] mob:h-[731px] rounded-md p-6">
+        className="w-full max-w-[1313px] h-[522px] mob:h-[799px] rounded-md p-6">
         {slideContents.map((content, index) => (
           <SwiperSlide key={index}>
             <div className="w-full h-full flex items-center justify-center mob:h-auto mob:mt-[30px]">
@@ -169,23 +160,24 @@ export default function IndustrySlider() {
         ))}
       </Swiper>
 
-       {/* slider butttons */}
-       <div className="mob:flex gap-5 w-full max-w-[1313px] hidden">
-      <div className="w-full mt-8 flex max-w-[90px] mx-auto
+      {/* slider butttons */}
+      <div className="mob:flex gap-5 w-full max-w-[1313px] hidden">
+        <div
+          className="w-full mt-8 flex max-w-[90px] mx-auto
        pb-5 gap-3 items-center">
-        <div
-          className="custom-prev-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
-        //   onClick={handleprevbtn}
+          <div
+            className="custom-prev-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
+            //   onClick={handleprevbtn}
           >
-          <Image src={backarrow} alt="moveprevbtn1" />
-        </div>
-        <div
-          className="custom-next-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
-        //   onClick={handleNextvbtn}
+            <Image src={backarrow} alt="moveprevbtn1" />
+          </div>
+          <div
+            className="custom-next-popular border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center cursor-pointer"
+            //   onClick={handleNextvbtn}
           >
-          <Image src={nextarrow} alt="movenextbtn1" />
+            <Image src={nextarrow} alt="movenextbtn1" />
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

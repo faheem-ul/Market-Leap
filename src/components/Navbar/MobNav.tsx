@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-
 import Logo from "@/public/blacklogo.svg";
-import hamburger from "@/public/images/home/hamburger.svg"
+import hamburger from "@/public/images/home/hamburger.svg";
 
 import DrawerMenuMob from "../ui/Drawer";
 import Divider from "../ui/Divider";
@@ -37,12 +36,10 @@ const MobileNav = () => {
           {/* tab and mob  menu*/}
           <div className="">
             <div className="relative flex cursor-pointer" onClick={onOpen}>
-              <button
-                type="button"
-             >
+              <button type="button">
                 <span className="sr-only">Open main menu</span>
 
-               <Image src={hamburger} alt="hamburger" width={30}  />
+                <Image src={hamburger} alt="hamburger" width={30} />
               </button>
             </div>
             <div className="relative z-40">
@@ -63,7 +60,7 @@ const MobileNav = () => {
                       href="/industry"
                       className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
-                      Business Type
+                        Business Type
                       </li>
                     </Link>
                     <Divider />
@@ -89,19 +86,37 @@ const MobileNav = () => {
                       href="/pricing"
                       className="block font-poppins text-[16px] font-bold uppercase leading-[24px] text-black">
                       <li className="list-items flex justify-center py-[15px]">
-                      Pricing
+                        Pricing
                       </li>
                     </Link>
 
                     <Divider />
 
-                    <Button className="bg-transparent border-2 w-full border-black text-black my-[15px] mx-auto h-[51px] rounded-[15px] font-bold">
-                      Login
-                    </Button>
-                    <Divider/>
+                    <a
+                      href="tel:+14692105193"
+                      className=" font-poppins md:flex items-center text-white hover:text-gray-300 transition-colors">
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mr-2"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>+1 (469) 210-5193</span>
+                    </a>
+                    <Divider />
+
+                    <Link href="/pricing">
                     <Button className="h-[51px] rounded-[15px] w-full font-bold my-[15px] mx-auto">
                       Get A Demo
                     </Button>
+                    </Link>
                   </ul>
                 </div>
               </DrawerMenuMob>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -183,12 +184,15 @@ if (buttonRef.current && subTextRef.current) {
           />
 
           {/* Animated Button - initially hidden, appears after text animation */}
+       
           <div
             ref={buttonRef}
             className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500">
+              <Link href="/pricing">
             <Button className="w-[166px] h-[58px] rounded-[15px] font-bold bg-secondary text-white text-[18px] font-space_grotesk">
               Get Started
             </Button>
+          </Link>
           </div>
         </div>
       </div>
