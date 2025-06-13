@@ -22,7 +22,7 @@ const AccordionItem = ({ title, text }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white pt-[20px] pb-[57px] flex flex-col rounded-md w-full max-w-[1313px] mx-auto">
+    <div className="bg-white pb-[19px] flex flex-col rounded-md w-full max-w-[1313px] mx-auto">
       <h5
         className="flex justify-between items-center w-full max-w-[1313px] text-left font-semibold cursor-pointer gap-[24px]" // Añadido cursor-pointer para mejor UX
         onClick={() => setIsOpen(!isOpen)}>

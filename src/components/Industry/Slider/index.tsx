@@ -68,7 +68,7 @@ export default function IndustrySlider() {
       image={health}
       title="Health & Wellness"
       description=""
-      categories={["CBD", "Day spa", "Grocery", "Fitness", "Healthcare"]}
+      categories={["CBD", "Day spa", "Fitness", "Healthcare"]}
       buttonText="All Retail"
       buttonShow="hidden"
     />,
@@ -79,9 +79,9 @@ export default function IndustrySlider() {
       description=""
       categories={[
         "Cleaning",
-        "Contractors & specialists ",
-        "Landscaping & outdoors ",
-        "All Home & Commercial",
+        "Contractors & specialists",
+        "Landscaping & outdoors",
+        // "All Home & Commercial",
       ]}
       buttonShow="hidden"
       buttonText=""
