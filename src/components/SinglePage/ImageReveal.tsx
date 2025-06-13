@@ -68,7 +68,7 @@ const ImageReveal = ({ industryId }: { industryId: string }) => {
               isLast ? "py-[160px]" : "py-[160px]"
             )}
             style={{
-              backgroundImage: `url(${image.src})`,
+              backgroundImage: `url(${image.src || image})`,
               backgroundAttachment: "fixed",
               backgroundSize: "400px",
               //   height: '100vh',
