@@ -46,6 +46,7 @@ export default function SinglePageHero({ industryId }: { industryId: string }) {
                     alt={`Marquee Image ${index + 1}`}
                     key={index}
                     width={300}
+                    height={300}
                     />
                 ))}
             </div>

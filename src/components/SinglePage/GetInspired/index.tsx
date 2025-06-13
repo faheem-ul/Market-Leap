@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 
 import { industries } from "@/lib/constants/industries";
 import Text from "@/components/ui/Text";
+import { cn } from "@/lib/utils";
 
 const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
   const industry = industries.find((ind) => ind.id === industryId);
@@ -41,7 +42,7 @@ const GetInspiredSlider = ({ industryId }: { industryId: string }) => {
         >
           {getinspired.map((post, index) => (
             <SwiperSlide key={index}>
-              <div className="w-[395px] mob:w-full mob:px-5 mx-auto">
+              <div className={cn("w-[395px] mob:w-full mob:px-5 mx-auto", post.image === "" ? "hidden" : "")}>
                 {/* Left image */}
                 <div className="mob:w-full mob:mx-auto">
                   <Image

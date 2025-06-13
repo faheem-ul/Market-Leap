@@ -114,7 +114,7 @@ const ResuableComponent: React.FC<Props> = ({
 
         {/* Center Image */}
         {image && (
-          <div ref={imageRef || localImageRef} className="max-w-[424px]">
+          <div ref={imageRef} className="max-w-[424px]">
             {/* <Image
               src={image}
               alt="image"
