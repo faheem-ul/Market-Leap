@@ -303,7 +303,7 @@ const GrowWithout = () => {
                     <div
                       key={i}
                       id={`content${i}`}
-                      className="absolute inset-0 opacity-0 translate-y-[-50px] transition-all duration-500 text-center flex flex-col items-center justify-center">
+                      className="absolute inset-0 top-[100px] opacity-0 translate-y-[-50px] transition-all duration-500 text-center flex flex-col items-center justify-center">
                       <Image
                         src={grow1}
                         alt="grow"
