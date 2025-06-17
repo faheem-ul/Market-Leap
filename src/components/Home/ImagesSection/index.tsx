@@ -73,7 +73,7 @@ const GridLayout = () => {
     {/* DEKSTOP VIEW */}
     <div className="overflow-hidden mob:hidden">
       <div
-        className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[1313px] mx-auto px-5 mb-[83px]"
+        className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[90vw] mx-auto px-5 mb-[83px]"
       >
         {/* Blue box top-left */}
         <div className="text-white relative font-semibold mob:row-auto mob:col-auto row-start-1 col-start-1">
@@ -87,9 +87,9 @@ const GridLayout = () => {
           />
           <Text
             as="h1"
-            className="absolute bottom-0 left-0 w-full bg-black text-white bg-opacity-50 px-[33px] py-[27px] text-[30px] font-medium"
+            className="absolute bottom-0 left-0 w-full bg-black text-white bg-opacity-50 px-[33px] py-[27px] text-[2vw] font-medium"
           >
-            <span className="text-[36px] font-semibold">3x</span> <br />
+            <span className="text-[2.2vw] font-semibold">3x</span> <br />
             More Leads
           </Text>
         </div>
@@ -114,10 +114,10 @@ const GridLayout = () => {
             <Image src={image3} alt="Woman on Laptop" className="object-cover value-prop" />
           </div>
           <div className="border-[5px] border-black rounded-[20px] w-full relative font-medium overflow-hidden h-full">
-            <Text className="text-[28px] font-semibold text-primary mt-[34px] px-[28px] mb-[21px] font-poppins">
+            <Text className="text-[2vw] font-semibold text-primary mt-[34px] px-[28px] mb-[21px] font-poppins">
               Overarching Value Prop.
             </Text>
-            <Text className="font-light leading-custom-6 text-[15px] px-[30px] text-center z-[100]">
+            <Text className="font-light leading-[1.5vw] text-[1vw] px-[30px] text-center z-[100]">
               Your business needs to do more than just take payments. Our platform
               is designed to help you operate at the highest level across
               marketing, customer engagement, and business operations.
@@ -200,9 +200,9 @@ const GridLayout = () => {
     />
     <Text
       as="h1"
-      className="absolute bottom-0 left-0 w-full bg-black text-white bg-opacity-50 px-[33px] py-[27px] text-[30px] font-medium"
+      className="absolute bottom-0 left-0 w-full bg-black text-white bg-opacity-50 px-[33px] py-[27px] text-[2vw] font-medium"
     >
-      <span className="text-[36px] font-semibold">3x</span> <br />
+      <span className="text-[2.2vw] font-semibold">3x</span> <br />
       More Leads
     </Text>
   </div>
@@ -227,10 +227,10 @@ const GridLayout = () => {
       <Image src={image3} alt="Woman on Laptop" className="object-cover" />
     </div>
     <div className="border-[5px] border-black rounded-[20px] w-full relative font-medium overflow-hidden h-full">
-      <Text className="text-[28px] font-semibold text-primary mt-[34px] px-[28px] mb-[21px] font-poppins">
+          <Text className="text-[1.8vw] font-semibold text-primary mt-[2vw] px-[2vw] mb-[1.5vw] font-poppins">
         Overarching Value Prop.
       </Text>
-      <Text className="font-light leading-custom-6 text-[15px] px-[30px] text-center z-[100]">
+      <Text className="font-light leading-[1.5vw] text-[1vw] px-[2vw] text-center z-[100]">
         Your business needs to do more than just take payments. Our platform
         is designed to help you operate at the highest level across
         marketing, customer engagement, and business operations.
