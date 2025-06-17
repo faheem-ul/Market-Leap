@@ -132,30 +132,36 @@ const HomeHero = () => {
       data-aos="zoom-in"
       data-aos-delay="200"
       data-aos-duration="800"
-      data-aos-easing="ease-in-out">
+      data-aos-easing="ease-in-out"
+    >
       <div className="w-full h-full flex justify-center items-center">
-        <div className="w-full max-w-[1236px]">
+        <div className="w-full max-w-[90vw]">
           <Text
             as="h1"
-            className="text-[50px] mob:text-[35px] mob:mb-4 text-center mob:leading-[39px]"
-            ref={textRef}>
+            className="text-[4.5vw] mob:text-[35px] mob:mb-4 text-center mob:leading-[39px]"
+            ref={textRef}
+          >
             More than just a point-of-sale.
           </Text>
           <Text
             ref={subTextRef}
             as="h2"
-            className="text-[40px] mob:text-[25px] mob:px-[14px] mob:leading-[35px] font-normal relative z-10 leading-[70px] mb-[52px] mt-1 mob:mb-[30px] text-center w-full max-w-[754px] mx-auto">
-            Everything you need to run and grow your business, all in one place.
+            className="text-[2.5vw] leading-[3.2vw] mob:text-[25px] mob:px-[14px] mob:leading-[35px] font-normal relative z-10  
+            mb-[52px] mt-1 mob:mb-[30px] text-center w-full mx-auto"
+          >
+            Everything you need to run and grow <br /> your business, all in one place.
           </Text>
         </div>
       </div>
 
       <div
         className="relative w-full overflow-hidden items-center flex justify-center mb-[76px] mob:mb-[60px]"
-        ref={wrapperRef}>
+        ref={wrapperRef}
+      >
         <div
-          className="relative w-full flex max-w-[1240px] xl:max-w-[1100px] mx-auto z-0 h-auto"
-          ref={videoRef}>
+          className="relative w-full flex max-w-[90vw] mx-auto z-0 h-auto"
+          ref={videoRef}
+        >
           {/* Overlay */}
           <div className="absolute inset-0 mob:hidden bg-black opacity-50 z-0 pointer-events-none rounded-[40px]" />
 
@@ -164,25 +170,25 @@ const HomeHero = () => {
             src={image1}
             alt="homeImage"
             width={310}
-            className="border-r-[5px] border-[#FFFFFF]/30 rounded-l-[40px] mob:hidden"
+            className="border-r-[5px] border-[#FFFFFF]/30 rounded-l-[40px] w-full max-w-[22.5vw] mob:hidden"
           />
           <Image
             src={image2}
             alt="homeImage"
             width={310}
-            className="border-r-[5px] border-[#FFFFFF]/30 mob:hidden"
+            className="border-r-[5px] border-[#FFFFFF]/30 w-full max-w-[22.5vw] mob:hidden"
           />
           <Image
             src={image3}
             alt="homeImage"
             width={310}
-            className="border-r-[5px] border-[#FFFFFF]/30 mob:hidden"
+            className="border-r-[5px] border-[#FFFFFF]/30 w-full max-w-[22.5vw] mob:hidden"
           />
           <Image
             src={image4}
             alt="homeImage"
             width={310}
-            className="rounded-r-[40px] mob:hidden"
+            className="rounded-r-[40px] w-full max-w-[22.5vw] mob:hidden"
           />
 
           <Image src={mobimage} alt="image" className="hidden mob:block" />
@@ -190,7 +196,8 @@ const HomeHero = () => {
 
           <div
             ref={buttonRef}
-            className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500">
+            className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500"
+          >
             <Link href="/pricing">
               <Button className="w-[166px] h-[58px] rounded-[15px] font-bold bg-secondary text-white text-[18px] font-space_grotesk">
                 Get Started
