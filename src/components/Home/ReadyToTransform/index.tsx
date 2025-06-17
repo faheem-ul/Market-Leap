@@ -103,14 +103,14 @@ const ReadytoStart = () => {
         <span
           className=" mob:bottom-[-763px] duration-500 mob:flex mob:justify-center"
           id="sub-heading-ready">
-          <Text className="text-[82px] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
+          <Text className="text-[5.5vw] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
             Ready To Transform Your
           </Text>
         </span>
         <span
           className="mob:bottom-[-763px] duration-500  mob:flex mob:justify-center"
           id="sub-text">
-          <Text className="text-[24px] font-normal text-white mob:text-[16px] px-7 text-center w-full max-w-[691px] mx-auto">
+          <Text className="text-[1.5vw] leading-[2vw] font-normal text-white mob:text-[16px] px-7 mt-12 text-center w-full max-w-[50vw] mx-auto">
             Join thousands of business owners who are growing faster and working
             smarter with Market Leap.
           </Text>
