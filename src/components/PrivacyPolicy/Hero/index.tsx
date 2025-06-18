@@ -19,7 +19,7 @@ const PrivacyPolicyHero = () => {
         {/* Make nav fixed on top */}
         <DesktopNav  />
         {/* Add padding top equal to nav height, adjust as needed */}
-        <div className="w-full h-full max-w-[1313px] mx-auto flex justify-center items-center min-h-screen">
+        <div className="w-full h-full max-w-[1313px] mx-auto flex justify-center items-center min-h-[59vh]">
           <Text
             as="h1"
             className="w-full max-w-[634px] text-center mx-auto flex justify-center items-center text-[70px] text-white"
