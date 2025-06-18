@@ -267,8 +267,8 @@ const GrowWithout = () => {
     <>
       <div
         id="grow-without-container"
-        className="flex justify-center items-center w-full min-h-screen px-4 sm:px-6 md:px-8 mob:hidden">
-        <div className="w-full max-w-[1313px] flex flex-col items-center relative">
+        className="flex justify-center items-center w-full min-h-[83vh] px-4 sm:px-6 md:px-8 mob:hidden">
+        <div className="w-full max-w-[90vw] flex flex-col items-center relative">
           {/* Pinned + ScrollSynced Section */}
           <div
             id="pinned-section"
@@ -278,17 +278,17 @@ const GrowWithout = () => {
               id="scroll-container"
               className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-screen gap-4">
               {/* Animated Content Wrapper */}
-              <div className="relative w-full flex flex-col items-center justify-center gap-4 max-w-[700px]">
+              <div className="relative w-full flex flex-col items-center justify-center gap-4 max-w-[50vw]">
                 {/* Labels bar placed ABOVE content */}
-                <div className="bg-secondary relative z-10 rounded-[20px] w-full py-3 px-4 sm:px-6 md:px-12 flex justify-between items-center h-16 sm:h-20">
+                <div className="bg-secondary relative z-10 rounded-[20px] w-full py-3 px-4 sm:px-6 md:px-12 flex justify-between items-center h-[8vh] sm:h-[10vh]">
                   {labels.map((label, index) => {
                     const isActive = activeIndex === index + 1;
                     return (
                       <Text
                         key={label}
-                        className={`font-semibold text-sm sm:text-base md:text-lg transition-all duration-1000 ${
+                        className={`font-semibold text-[1.5vw] transition-all duration-1000 ${
                           isActive
-                            ? "text-white px-2 sm:px-3 md:px-5 py-2 sm:py-3 bg-black rounded-[15px]"
+                            ? "text-white px-[0.5vw] sm:px-3 md:px-5 py-[0.5vw] sm:py-[0.5vw] bg-black rounded-[15px]"
                             : "text-[#fff]/80"
                         }`}>
                         {label}
@@ -298,39 +298,39 @@ const GrowWithout = () => {
                 </div>
 
                 {/* Content container below labels */}
-                <div className="relative w-full min-h-[400px] sm:min-h-[500px]">
+                <div className="relative w-full min-h-[50vh]">
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
                       id={`content${i}`}
-                      className="absolute inset-0 top-[100px] opacity-0 translate-y-[-50px] transition-all duration-500 text-center flex flex-col items-center justify-center">
+                      className="absolute inset-0 top-[8vh] opacity-0 translate-y-[-3vw] transition-all duration-500 text-center flex flex-col items-center justify-center">
                       <Image
                         src={grow1}
                         alt="grow"
                         width={0}
                         height={0}
-                        className="mx-auto w-3/4 sm:w-2/3 md:w-1/2 h-auto"
+                        className="mx-auto w-[38vw] sm:w-[32vw] md:w-[24vw] h-auto"
                         priority
                       />
                       <Text
                         as="h2"
-                        className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">
+                        className="text-[2.5vw] sm:text-[2vw] md:text-[1.7vw] mb-[1.2vw] md:mb-[1vw]">
                         {i === 1 && "Marketing That Actually Works"}
                         {i === 2 && "Enhance Business Visibility Online"}
                         {i === 3 && "Streamline Business Operations"}
                         {i === 4 && "Customizable At Scale"}
                       </Text>
-                      <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
+                      <Text className="mb-[1.5vw] md:mb-[1vw] text-[1.1vw] sm:text-[1vw] md:text-[0.95vw]">
                         {i === 1 &&
                           "Get predictable and measurable customer growth powered by our best in class marketing software. Source leads from ads, search, referrals, and more. We do the heavy lifting behind the scenes so you can focus on your business."}
                         {i === 2 &&
-                          "Meet customers where they are. You focus on delighting customers and we take care of helping you get reviews as well as creating, managing, and optimizing your business listings across third party platforms, local search, and social platforms so that you’re always front and center for prospective customers."}
+                          "Meet customers where they are. You focus on delighting customers and we take care of helping you get reviews as well as creating, managing, and optimizing your business listings across third party platforms, local search, and social platforms so that you're always front and center for prospective customers."}
                         {i === 3 &&
-                          "Our software makes business operations seamless for single location businesses as well as multi store and franchise operations. Load in your products and services, and let our state of the art management system take care of optimizing your operations around your business goals and operational data. Automate as much or as little as you want and get access to powerful technology that doesn’t get in the way and lets you run your business on your terms."}
+                          "Our software makes business operations seamless for single location businesses as well as multi store and franchise operations. Load in your products and services, and let our state of the art management system take care of optimizing your operations around your business goals and operational data. Automate as much or as little as you want and get access to powerful technology that doesn't get in the way and lets you run your business on your terms."}
                         {i === 4 &&
                           "As you scale and your business operations evolve, continue using our state of the art software APIs with your own platform. Every part of our software is modular, giving you the flexibility to supercharge your systems with the best of ours."}
                       </Text>
-                      <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto py-4 font-bold rounded-[15px] text-white text-base sm:text-lg">
+                      <Button className="bg-primary w-[12vw] sm:w-[13vw] md:w-[14vw] mx-auto py-[1vw] font-bold rounded-[1vw] text-white text-[1vw] sm:text-[1.1vw] md:text-[1.2vw]">
                         {i === 1
                           ? "Marketing"
                           : i === 2
@@ -339,33 +339,7 @@ const GrowWithout = () => {
                           ? "Operations"
                           : "Software Apis"}
                       </Button>
-
-                      {/*  <Text
-                        as="h2"
-                        className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">
-                        {i === 1 && "Marketing That Actually Works"}
-                        {i === 2 && "Turn Reviews Into Revenue"}
-                        {i === 3 && "Dominate Your Local Market"}
-                        {i === 4 && "Never Lose Another Lead"}
-                      </Text>
-                      <Text className="mb-4 md:mb-6 text-base sm:text-lg md:text-xl">
-                        {i === 1 &&
-                          "Finally, marketing that delivers real results. Our AI analyzes your customer data to create perfectly targeted campaigns that bring in more sales. No more wasted budget, no more hoping and praying - just predictable growth you can count on."}
-                        {i === 2 &&
-                          "Watch your reputation soar with automated review procurement that gets customers talking. Our smart system knows exactly when to ask for reviews, responds to feedback instantly, and turns happy customers into your best marketing asset."}
-                        {i === 3 &&
-                          "Get found everywhere your customers are looking. Our platform optimizes your business listings across 100+ platforms, manages your local SEO, and makes sure you show up at the top of search results. Watch your foot traffic grow as local customers discover you first."}
-                        {i === 4 &&
-                          "We make sure every inquiry becomes an opportunity for your business. Our systems take care of following up with leads, sending perfectly timed offers, and keeping customers coming back - all while you focus on running your business."}
-                      </Text>
-                      <Link href="/pricing">
-                      <Button className="bg-primary w-36 sm:w-40 md:w-44 mx-auto h-12 sm:h-14 md:h-16 font-bold rounded-[15px] text-white text-base sm:text-lg">
-                      Get Started
-                      </Button>
-                      </Link> */}
                     </div>
-
-                    
                   ))}
                 </div>
               </div>
@@ -374,10 +348,10 @@ const GrowWithout = () => {
             {/* RIGHT SECTION (SVG Path Animation) */}
             <div
               id="svg-container"
-              className="w-full md:w-2/5 flex justify-center md:justify-end items-center min-h-[80vh]">
+              className="w-full md:w-[40vw] flex justify-center md:justify-end items-center min-h-[80vh]">
               <svg
                 viewBox="0 0 400 800"
-                className="w-full max-w-[400px] sm:max-w-[250px] md:max-w-[300px] h-auto overflow-visible">
+                className="w-full max-w-[40vw] sm:max-w-[25vw] md:max-w-[18vw] h-auto overflow-visible">
                 <path
                   id="semiPath"
                   d="M400,0 A400,400 0 0,0 400,800"

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 // import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,12 +7,45 @@ import { usePathname } from "next/navigation";
 import Text from "../ui/Text";
 
 import Divider from "../ui/Divider";
+import { cn } from "@/lib/utils";
 // import footerlogo from "@/public/images/home/footer-logo.png";
 const Footer = () => {
   const currentPath = usePathname();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let hasPlayed = false;
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasPlayed) {
+          video.currentTime = 0;
+          video.play();
+          hasPlayed = true;
+        } else if (!entry.isIntersecting) {
+          video.pause();
+          video.currentTime = 0;
+          hasPlayed = false;
+        }
+      });
+    };
+
+    const observer = new window.IntersectionObserver(handleIntersection, {
+      threshold: 0.5,
+    });
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <div className="bg-primary pt-16 pb- px-5">
+    <div className={cn("bg-primary pt-16 pb- px-5", currentPath === "/" && "mt-[-0px] relative z-10")}>
       <div className="flex justify-center overflow-hidden">
         <div className="max-w-[1313px] w-full  xl:justify-start gap-[28px]">
           <div className="flex justify-between items-center w-full">
@@ -79,13 +112,12 @@ const Footer = () => {
                   height={50}
                 /> */}
                 <video
-            src="/marketleap.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="object-cover max-w-[713px] mob:max-w-[350px] relative right-[40px] mob:right-[10px]"
-          />
+                  ref={videoRef}
+                  src="/marketleap.mp4"
+                  muted
+                  playsInline
+                  className="object-cover max-w-[713px] mob:max-w-[350px] relative right-[40px] mob:right-[10px]"
+                />
                 </Link>
               </div>
             </div>
@@ -231,7 +263,7 @@ const Footer = () => {
         <div className="flex justify-center flex-wrap my-8 xl:justify-center mob:justify-center xl:gap-[30px] items-center mob:gap-8 w-full max-w-[1313px] mob:max-w-full">
           <div className="">
             <Text className="text-white text-[18px] mob:text-center mob:mx-auto font-semibold flex shirnk-0 text-center">
-              © Market Leap Corp Inc. 2025
+              © Market Leap Corp Inc. 2025
             </Text>
           </div>
           {/* <div className="flex gap-[56px] xl:flex-col tab:gap-5">

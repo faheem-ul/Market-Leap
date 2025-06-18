@@ -7,7 +7,7 @@ import Image from "next/image";
 import Text from "@/components/ui/Text";
 import image1 from "@/public/images/home/text-bg.png";
 import image2 from "@/public/images/home/1-2.png";
-import image3 from "@/public/images/home/2-1.png";
+// import image3 from "@/public/images/home/2-1.png";
 import image4 from "@/public/images/home/2-2.png";
 import image5 from "@/public/images/home/3-1.png";
 import image6 from "@/public/images/home/3-2.png";
@@ -96,7 +96,7 @@ const GridLayout = () => {
 
         {/* Left big image */}
         <div
-          className=" rounded-lg overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full"
+          className=" rounded-[18px] overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full"
         >
           <Image
             src={image2}
@@ -110,9 +110,52 @@ const GridLayout = () => {
 
         {/* Center image and text block */}
         <div className="flex flex-col space-y-3 col-start-2 row-start-1 row-span-3">
+
+        <div className="relative rounded-lg overflow-hidden mob:h-[300px] min-h-[30vh]">
+  <video
+    className="absolute top-0 left-0 w-full h-full object-cover rounded-[18px] z-[-1]"
+    src="/office.mp4" // Replace with your actual video path
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+  
+  {/* Your foreground content goes here */}
+</div>
+
+          {/* <div className="relative rounded-lg overflow-hidden mob:h-[300px] min-h-[410px] border-black border-[1px]" 
+          style={{
+            backgroundImage: `url(${image3.src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+          > */}
+            {/* <Image src={image3} alt="Woman on Laptop" className="object-cover value-prop absolute inset-0" /> */}
+            {/* <video
+                  src="/office.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  className="rounded-[18px] h-full w-full relative"
+                /> */}
+          {/* </div> */}
+
+          {/* 
           <div className="relative rounded-lg overflow-hidden mob:h-[300px] min-h-[410px]">
-            <Image src={image3} alt="Woman on Laptop" className="object-cover value-prop" />
+             <Image src={image3} alt="Woman on Laptop" className="object-cover value-prop" /> 
+            <video
+                  src="/office.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  className="w-full h-full object-cover absolute inset-0 value-prop"
+                />
           </div>
+          */}
           <div className="border-[5px] border-black rounded-[20px] w-full relative font-medium overflow-hidden h-full">
             <Text className="text-[2vw] font-semibold text-primary mt-[34px] px-[28px] mb-[21px] font-poppins">
               Overarching Value Prop.
@@ -134,7 +177,7 @@ const GridLayout = () => {
         </div>
 
         {/* Top right image */}
-        <div className="rounded-lg overflow-hidden mob:row-auto mob:col-auto row-start-1 col-start-3">
+        <div className="rounded-[18px] overflow-hidden mob:row-auto mob:col-auto row-start-1 col-start-3">
           <Image
             src={image5}
             alt="Office Growth"
@@ -146,7 +189,7 @@ const GridLayout = () => {
         </div>
 
         {/* Middle right image */}
-        <div className="rounded-lg overflow-hidden mob:row-auto mob:col-auto row-start-2 col-start-3 h-full">
+        <div className="rounded-[18px] overflow-hidden mob:row-auto mob:col-auto row-start-2 col-start-3 h-full">
           <Image
             src={image6}
             alt="Laptop hands"
@@ -171,11 +214,11 @@ const GridLayout = () => {
             <div className="absolute bottom-0 left-0 px-[25px] pb-[24px]">
               <Text
                 as="h1"
-                className="w-full bg-black text-white bg-opacity-50 leading-[110px] text-[30px] font-semibold"
+                className="w-full bg-black text-white bg-opacity-50 leading-[110px] text-[2.2vw] font-semibold"
               >
                 35% Increase
               </Text>
-              <Text className="font-poppins text-white text-[28px] mt-[-8px]">
+              <Text className="font-poppins text-white text-[1.8vw] mt-[-8px]">
                 In Customer Engagement
               </Text>
             </div>
@@ -202,14 +245,14 @@ const GridLayout = () => {
       as="h1"
       className="absolute bottom-0 left-0 w-full bg-black text-white bg-opacity-50 px-[33px] py-[27px] text-[2vw] font-medium"
     >
-      <span className="text-[2.2vw] font-semibold">3x</span> <br />
+      <span className="text-[10vw] font-semibold">3x</span> <br />
       More Leads
     </Text>
   </div>
 
   {/* Left big image */}
   <div
-    className=" rounded-lg overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full"
+    className=" rounded-[18px] overflow-hidden mob:row-auto mob:col-auto row-span-2 col-start-1 row-start-2 h-full"
   >
     <Image
       src={image2}
@@ -223,14 +266,25 @@ const GridLayout = () => {
 
   {/* Center image and text block */}
   <div className="flex flex-col gap-5">
-    <div className="relative">
+    {/* <div className="relative">
       <Image src={image3} alt="Woman on Laptop" className="object-cover" />
-    </div>
+    </div> */}
+     <div className="relative rounded-lg overflow-hidden">
+            {/* <Image src={image3} alt="Woman on Laptop" className="object-cover value-prop" /> */}
+            <video
+                  src="/office.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  className=""
+                />
+          </div>
     <div className="border-[5px] border-black rounded-[20px] w-full relative font-medium overflow-hidden h-full">
-          <Text className="text-[1.8vw] font-semibold text-primary mt-[2vw] px-[2vw] mb-[1.5vw] font-poppins">
+          <Text className="text-[20px] font-semibold text-center text-primary mt-[2vw] px-[2vw] mb-[1.5vw] font-poppins">
         Overarching Value Prop.
       </Text>
-      <Text className="font-light leading-[1.5vw] text-[1vw] px-[2vw] text-center z-[100]">
+      <Text className="font-light leading-[1.5vw] text-[18px] pb-2 px-[2vw] text-center z-[100]">
         Your business needs to do more than just take payments. Our platform
         is designed to help you operate at the highest level across
         marketing, customer engagement, and business operations.

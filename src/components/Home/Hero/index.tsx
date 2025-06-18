@@ -81,7 +81,7 @@ const HomeHero = () => {
           color: "#000000",
         },
         {
-          y: isMobile ? 220 : 400, // Less movement on mobile
+          y: isMobile ? "50vw" : "30vw", // Use vw units for consistent scaling
           color: "#FFFFFF",
           ease: "none",
           scrollTrigger: {
@@ -89,7 +89,6 @@ const HomeHero = () => {
             start: "top 20%",
             end: "top 6%",
             scrub: 1,
-            // markers: true,
           },
         }
       );
@@ -100,16 +99,17 @@ const HomeHero = () => {
     if (buttonRef.current && subTextRef.current) {
       gsap.fromTo(
         buttonRef.current,
-        { opacity: 0, y: -40 },
+        { opacity: 0, y: "-10vw" },
         {
           opacity: 1,
           y: 0,
           ease: "power2.out",
           scrollTrigger: {
             trigger: subTextRef.current,
-            start: "top 6%",
+            start: "top 26%",
             end: "top 6%",
             scrub: true,
+            // markers:true
           },
         }
       );
@@ -141,7 +141,7 @@ const HomeHero = () => {
             className="text-[4.5vw] mob:text-[35px] mob:mb-4 text-center mob:leading-[39px]"
             ref={textRef}
           >
-            More than just a point-of-sale.
+            More than just a <span className="text-secondary">point-of-sale.</span>
           </Text>
           <Text
             ref={subTextRef}
@@ -199,7 +199,7 @@ const HomeHero = () => {
             className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500"
           >
             <Link href="/pricing">
-              <Button className="w-[166px] h-[58px] rounded-[15px] font-bold bg-secondary text-white text-[18px] font-space_grotesk">
+              <Button className="w-[12vw] max-w-[12vw] mob:max-w-[60vw] mob:w-[60vw] mob:h-[5vh] h-[8vh] rounded-[15px] font-bold bg-secondary text-white text-[1.2vw] mob:text-[4vw] font-space_grotesk">
                 Get Started
               </Button>
             </Link>
