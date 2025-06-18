@@ -19,7 +19,7 @@ const PricingHero = () => {
         {/* Make nav fixed on top */}
         <DesktopNav  />
         {/* Add padding top equal to nav height, adjust as needed */}
-        <div className="w-full h-full max-w-[1313px] mx-auto flex flex-col justify-center  items-center min-h-[80vh] px-5">
+        <div className="w-full h-full max-w-[1313px] mx-auto flex flex-col justify-center  items-center min-h-[58vh] px-5">
           <Text
             as="h1"
             className="w-full max-w-[634px] mob:text-[35px] mob:leading-[45px] text-center mx-auto flex justify-center items-center text-[50px] text-white"

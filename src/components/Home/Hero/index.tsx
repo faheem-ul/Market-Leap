@@ -199,7 +199,7 @@ const HomeHero = () => {
             className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-0 z-10 duration-500"
           >
             <Link href="/pricing">
-              <Button className="w-[12vw] max-w-[12vw] mob:max-w-[60vw] mob:w-[60vw] mob:h-[5vh] h-[8vh] rounded-[15px] font-bold bg-secondary text-white text-[1.2vw] mob:text-[4vw] font-space_grotesk">
+              <Button className="w-[12vw] max-w-[12vw] mob:max-w-[170px] mob:w-[60vw] mob:h-[58px] h-[8vh] rounded-[15px] font-bold bg-secondary text-white text-[1.2vw] mob:text-[4vw] font-space_grotesk">
                 Get Started
               </Button>
             </Link>
