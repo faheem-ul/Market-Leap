@@ -59,6 +59,10 @@ const RunMobSlider = () => {
           className="mySwiper mob:block hidden">
           <SwiperSlide>
             <div className="px-5 outer-div">
+
+            <Text as="h1" className="text-[30px] leading-[35px] text-center mb-6">
+                  Run Your Business With <span className="text-secondary">Confidence</span>
+                </Text>
               <Image
                 src={calenderImage}
                 // width={424}
@@ -66,15 +70,18 @@ const RunMobSlider = () => {
                 className=""
               />
               <div className="w-full">
+
                 <Text
                   as="h1"
                   className="mob:text-[30px] font-semibold leading-[37px] mt-10">
-                  Branding and Experience
+                   Your Business Command Center
                 </Text>
                 <Text className="font-light text-[18px] mt-[15px] mb-[39px]">
-                  Use our flagship point of sale and business growth software.
-                  Create and own your brand from the start - and let our
-                  software do the heavy lifting to help you stand out.
+                Everything you need in one powerful platform. Effortlessly
+                  manage sales, inventory, staff, and customer relationships.
+                  Whether {"you're"} a small boutique or a growing chain, get
+                  the insights and control you need to make better decisions and
+                  delight your customers.
                 </Text>
                 <Link href="/pricing">
                 <button>
@@ -89,6 +96,10 @@ const RunMobSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
           <div className="px-5 outer-div">
+          <Text as="h1" className="text-[30px] leading-[35px] text-center mb-6">
+          Scale Your Business <span className="text-secondary">Effortlessly</span>
+                </Text>
+        
               <Image
                 src={calenderImage}
                 // width={424}
@@ -103,9 +114,9 @@ const RunMobSlider = () => {
                 </Text>
                 <Text className="font-light text-[18px] mt-[15px]">
                 Never miss a sale again. Take payments in-store, online, by
-                text, or on the go - all with the lowest rates in the industry.
-                Plus, get paid faster with next-day deposits. Simple, secure,
-                and built for your success.
+                  text, or on the go - all with the lowest rates in the
+                  industry. Plus, get paid faster with next-day deposits.
+                  Simple, secure, and built for your success.
                 </Text>
                
               </div>
@@ -113,6 +124,9 @@ const RunMobSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
           <div className="px-5 outer-div">
+          <Text as="h1" className="text-[30px] leading-[35px] text-center mb-6">
+          Grow Your Business <span className="text-secondary">Seamlessly</span>
+                </Text>
               <Image
                 src={calenderImage}
                 // width={424}
@@ -127,10 +141,11 @@ const RunMobSlider = () => {
                 </Text>
                 <Text className="font-light text-[18px] mt-[15px]">
                 Delight customers with a solid brand experience using our
-                flagship loyalty, retention marketing, and customer engagement
-                software. Easy setup and fully managed for you. No need to stress
-                over getting every detail right. Our AI optimizes the experience
-                based on your customer and business data - removing the guesswork.
+                  flagship loyalty, retention marketing, and customer engagement
+                  software. Easy setup and fully managed for you. No need to
+                  stress over getting every detail right. Our AI optimizes the
+                  experience based on your customer and business data - removing
+                  the guesswork.
                 </Text>
                
               </div>

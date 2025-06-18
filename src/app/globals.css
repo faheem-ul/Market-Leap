@@ -81,3 +81,7 @@ body{
 }
 
 
+.building-shadow{
+  background: radial-gradient(circle, #000 0%, #00468e 1%, #726eab 96%)
+  /* radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 70, 142, 1) 1%, rgba(83, 76, 173, 1) 96%); */
+}
