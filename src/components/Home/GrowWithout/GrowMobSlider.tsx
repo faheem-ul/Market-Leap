@@ -50,7 +50,7 @@ const GrowWithoutMobSlider = () => {
     <div className="mob:flex hidden justify-center items-center w-full mob:px-5">
       <div className="w-full max-w-[1313px] flex flex-col items-center relative">
         {/* Top Bar */}
-        <div className="flex flex-wrap justify-center gap-4 items-center w-full max-w-[1017px] rounded-[25px] mb-[22px] min-h-[78px]">
+        <div className="flex flex-wrap justify-center gap-4 items-center w-full max-w-[1017px] rounded-[25px] mb-[22px] min-h-[78px] ">
           {labels.map((label, index) => (
             <button
               key={index}
