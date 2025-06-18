@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button";
 
 const IndustryHero = () => {
   return (
-    <div className="relative w-full mob:h-[593px] md:h-[80vh] overflow-hidden px-5 mob:mt-[20px]">
+    <div className="relative w-full mob:h-[374px] md:h-[59vh] overflow-hidden px-5">
       <Image src={bg} alt="hero image" fill className="object-cover" priority />
       {/* <div className="absolute inset-0 bg-black/50 z-10" /> */}
       <div className="relative z-20 w-full h-full flex flex-col items-start  max-w-[1313px] mx-auto">
