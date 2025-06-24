@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -15,63 +15,63 @@ import image6 from "@/public/images/home/3-2.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const GridLayout = () => {
-  useEffect(() => {
-    // Apply scaling effect to the left image (make it grow as you scroll up)
-    gsap.fromTo(
-      ".left-image", // Target the element with the class 'left-image'
-      { scale: 1 }, // Start with normal size
-      {
-        scale: 1.4, // Scale up by 20%
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: ".left-image",
-          start: "top bottom",
-          end: "top top",
-          scrub: 1,
-          // markers: true,
-        },
-      }
-    );
+  // useEffect(() => {
+  //   // Apply scaling effect to the left image (make it grow as you scroll up)
+  //   gsap.fromTo(
+  //     ".left-image", // Target the element with the class 'left-image'
+  //     { scale: 1 }, // Start with normal size
+  //     {
+  //       scale: 1.4, // Scale up by 20%
+  //       duration: 1.5,
+  //       scrollTrigger: {
+  //         trigger: ".left-image",
+  //         start: "top bottom",
+  //         end: "top top",
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //     }
+  //   );
 
-    // Apply scaling effect to the "Overarching Value Prop." text block
-    gsap.fromTo(
-      ".value-prop", // Target the element with class 'value-prop'
-      { scale: 1 }, // Start with normal size
-      {
-        scale: 1.4, // Scale up by 20%
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: ".value-prop",
-          start: "top bottom",
-          end: "top top",
-          scrub: 1,
-          // markers: true,
-        },
-      }
-    );
+  //   // Apply scaling effect to the "Overarching Value Prop." text block
+  //   gsap.fromTo(
+  //     ".value-prop", // Target the element with class 'value-prop'
+  //     { scale: 1 }, // Start with normal size
+  //     {
+  //       scale: 1.4, // Scale up by 20%
+  //       duration: 1.5,
+  //       scrollTrigger: {
+  //         trigger: ".value-prop",
+  //         start: "top bottom",
+  //         end: "top top",
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //     }
+  //   );
 
-    // Apply scaling effect to the "35% Increase" text
-    gsap.fromTo(
-      ".increase-text", // Target the "35% Increase" element
-      { scale: 1 }, // Start with normal size
-      {
-        scale: 1.4, // Scale up by 20%
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: ".increase-text",
-          start: "top bottom",
-          end: "top top",
-          scrub: 2,
-        },
-      }
-    );
-  }, []);
+  //   // Apply scaling effect to the "35% Increase" text
+  //   gsap.fromTo(
+  //     ".increase-text", // Target the "35% Increase" element
+  //     { scale: 1 }, // Start with normal size
+  //     {
+  //       scale: 1.4, // Scale up by 20%
+  //       duration: 1.5,
+  //       scrollTrigger: {
+  //         trigger: ".increase-text",
+  //         start: "top bottom",
+  //         end: "top top",
+  //         scrub: 2,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <>
       {/* DEKSTOP VIEW */}
-      <div className="overflow-hidden mob:hidden">
-        <div className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[90vw] mx-auto px-5 mb-[83px]">
+      <div className="h-[100vh] mob:hidden">
+        <div className="grid mob:grid-cols-1 grid-cols-3 gap-x-3 gap-y-3 max-w-[90vw] mx-auto px-5 mb-[83px] h-[100vh]">
           {/* Blue box top-left */}
           <div className="text-white relative font-semibold mob:row-auto mob:col-auto row-start-1 col-start-1">
             <Image
@@ -195,15 +195,15 @@ const GridLayout = () => {
           </div>
 
           {/* Blue box bottom-right */}
-          <div className="overflow-hidden">
-            <div className="relative font-semibold mob:row-auto mob:col-auto overflow-hidden row-start-3 col-start-3 h-full">
+          <div className="overflow-hidden h-full min-h-0 flex flex-col justify-end row-start-3 col-start-3">
+            <div className="relative font-semibold overflow-hidden h-full min-h-0 flex flex-col justify-end rounded-[22px]">
               <Image
                 src={image1}
                 alt="Workspace"
                 layout="responsive"
                 width={400}
                 height={250}
-                className="object-cover"
+                className="object-cover object-center h-full w-full"
               />
               <div className="absolute bottom-0 left-0 px-[25px] pb-[24px]">
                 <Text
@@ -315,24 +315,24 @@ const GridLayout = () => {
           </div>
 
           {/* Blue box bottom-right */}
-          <div className="overflow-hidden">
-            <div className="relative font-semibold mob:row-auto mob:col-auto overflow-hidden row-start-3 col-start-3 h-full">
+          <div className="overflow-hidden h-full min-h-0 flex flex-col justify-end row-start-3 col-start-3">
+            <div className="relative font-semibold overflow-hidden h-full min-h-0 flex flex-col justify-end">
               <Image
                 src={image1}
                 alt="Workspace"
                 layout="responsive"
                 width={400}
                 height={250}
-                className="object-cover"
+                className="object-cover object-center h-full w-full"
               />
               <div className="absolute bottom-0 left-0 px-[25px] pb-[24px]">
                 <Text
                   as="h1"
-                  className="w-full bg-black text-white bg-opacity-50 leading-[110px] text-[30px] font-semibold"
+                  className="w-full bg-black text-white bg-opacity-50 leading-[110px] text-[2.2vw] font-semibold"
                 >
                   35% Increase
                 </Text>
-                <Text className="font-poppins text-white text-[28px] mt-[-8px]">
+                <Text className="font-poppins text-white text-[1.8vw] mt-[-8px]">
                   In Customer Engagement
                 </Text>
               </div>

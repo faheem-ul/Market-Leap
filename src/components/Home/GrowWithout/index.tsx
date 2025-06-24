@@ -17,58 +17,49 @@ const GrowWithout = () => {
   const activeIndexRef = useRef(1);
 
   useEffect(() => {
-    // Preload image to ensure stable rendering
-
     const ctx = gsap.context(() => {
       const img = new window.Image();
       img.src = grow1.src;
-
+  
       // Set initial state for the first content section to be visible
       gsap.set("#content1", { opacity: 1, y: 0 });
       for (let i = 2; i <= 4; i++) {
         gsap.set(`#content${i}`, { opacity: 0, y: -50 });
       }
-
+  
+      // Set initial position for dot on the semicircle and label to the left
+      gsap.set("#dot", {
+        motionPath: {
+          path: "#semiPath",
+          align: "#semiPath",
+          alignOrigin: [0.5, 0.5],
+          start: 0,
+          end: 0,
+        },
+        opacity: 0.3,
+        scale: 1,
+      });
+  
+      gsap.set("#label", {
+        x: 0, // Adjusted to position label to the left of the semicircle
+        y: 0,
+        opacity: 0.3,
+        textAnchor: "start", // Align text to the left of the circle
+      });
+  
       const setupAnimation = () => {
-        // ScrollTrigger.refresh();
-
-        const initialPositions = [0.75, 0.5, 0.25, 0];
-
-        // Set initial positions on page load
-        initialPositions.forEach((position, index) => {
-          gsap.set(`#dot${index + 1}`, {
-            motionPath: {
-              path: "#semiPath",
-              align: "#semiPath",
-              alignOrigin: [0.5, 0.5],
-              start: position,
-              end: position,
-            },
-            opacity: 1,
-            scale: 1,
-          });
-        });
-
-        // const contentHeight =
-        //   document.querySelector("#scroll-container")?.getBoundingClientRect()
-        //     .height || 800;
-        // const viewportHeight = window.innerHeight;
-        // const animationDuration = Math.max(
-        //   contentHeight * 4,
-        //   viewportHeight * 2
-        // );
-
-        const tl = gsap.timeline({
+        const numSections = 4;
+        const sectionLength = 1 / numSections;
+  
+        gsap.timeline({
           scrollTrigger: {
             trigger: "#grow-without-container",
             start: "top 10%",
+            end: "#end-animation",
             endTrigger: "#end-animation",
-            end: "top top",
-            // end: "+=1500",
             scrub: true,
             pin: "#pinned-section",
             pinSpacing: true,
-            // markers: true,
             anticipatePin: 1,
             immediateRender: true,
             onEnter: () => {
@@ -76,190 +67,73 @@ const GrowWithout = () => {
             },
             onUpdate: (self) => {
               const progress = self.progress;
-              let newIndex;
-
-              if (progress < 0.25) newIndex = 1;
-              else if (progress < 0.5) newIndex = 2;
-              else if (progress < 0.75) newIndex = 3;
-              else newIndex = 4;
-
-              if (activeIndexRef.current !== newIndex) {
-                activeIndexRef.current = newIndex;
-                setActiveIndex(newIndex);
-
+              const sectionIdx = Math.min(
+                Math.floor(progress / sectionLength),
+                numSections - 1
+              );
+              if (activeIndexRef.current !== sectionIdx + 1) {
+                activeIndexRef.current = sectionIdx + 1;
+                setActiveIndex(sectionIdx + 1);
                 for (let i = 1; i <= 4; i++) {
                   gsap.set(`#content${i}`, {
-                    opacity: i === newIndex ? 1 : 0,
-                    y: i === newIndex ? 0 : -50,
+                    opacity: i === sectionIdx + 1 ? 1 : 0,
+                    y: i === sectionIdx + 1 ? 0 : -50,
                   });
                 }
               }
+              const localProgress =
+                (progress - sectionIdx * sectionLength) / sectionLength;
+  
+              // Animate dot position along the path
+              gsap.set("#dot", {
+                motionPath: {
+                  path: "#semiPath",
+                  align: "#semiPath",
+                  alignOrigin: [0.5, 0.5],
+                  start: 0,
+                  end: localProgress,
+                },
+              });
+  
+              // Keep the text label to the left of the dot during the animation
+              gsap.set("#label", {
+                motionPath: {
+                  path: "#semiPath",
+                  align: "#semiPath",
+                  alignOrigin: [1.4, 0.5],
+                  start: localProgress,
+                  end: localProgress,
+                  autoRotate: false,
+                },
+                x: -60, // Keep the label 60px to the left of the semicircle
+              });
+  
+              const dotOpacity = Math.max(0.3, 1 - 4 * Math.pow(localProgress - 0.5, 2));
+              const dotScale = Math.max(0, 1 - 4 * Math.pow(localProgress - 0.5, 2));
+              gsap.set(["#dot", "#label"], { opacity: dotOpacity, scale: dotScale });
             },
           },
-        });
-
-        tl.to({}, { duration: 0.1 });
-
-        // Phase animations (dot motion along path)
-        tl.to("#dot1", {
-          motionPath: {
-            path: "#semiPath",
-            align: "#semiPath",
-            alignOrigin: [0.5, 0.5],
-            start: initialPositions[0],
-            end: 1,
-          },
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-          ease: "none",
-        })
-          .to(
-            "#dot2",
-            {
-              motionPath: {
-                path: "#semiPath",
-                align: "#semiPath",
-                alignOrigin: [0.5, 0.5],
-                start: initialPositions[1],
-                end: initialPositions[0],
-              },
-              duration: 1,
-              ease: "none",
-            },
-            "<"
-          )
-          .to(
-            "#dot3",
-            {
-              motionPath: {
-                path: "#semiPath",
-                align: "#semiPath",
-                alignOrigin: [0.5, 0.5],
-                start: initialPositions[2],
-                end: initialPositions[1],
-              },
-              duration: 1,
-              ease: "none",
-            },
-            "<"
-          )
-          .to(
-            "#dot4",
-            {
-              motionPath: {
-                path: "#semiPath",
-                align: "#semiPath",
-                alignOrigin: [0.5, 0.5],
-                start: initialPositions[3],
-                end: initialPositions[2],
-              },
-              duration: 1,
-              ease: "none",
-            },
-            "<"
-          );
-
-        tl.to("#dot2", {
-          motionPath: {
-            path: "#semiPath",
-            align: "#semiPath",
-            alignOrigin: [0.5, 0.5],
-            start: initialPositions[0],
-            end: 1,
-          },
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-          ease: "none",
-        })
-          .to(
-            "#dot3",
-            {
-              motionPath: {
-                path: "#semiPath",
-                align: "#semiPath",
-                alignOrigin: [0.5, 0.5],
-                start: initialPositions[1],
-                end: initialPositions[0],
-              },
-              duration: 1,
-              ease: "none",
-            },
-            "<"
-          )
-          .to(
-            "#dot4",
-            {
-              motionPath: {
-                path: "#semiPath",
-                align: "#semiPath",
-                alignOrigin: [0.5, 0.5],
-                start: initialPositions[2],
-                end: initialPositions[1],
-              },
-              duration: 1,
-              ease: "none",
-            },
-            "<"
-          );
-
-        tl.to("#dot3", {
-          motionPath: {
-            path: "#semiPath",
-            align: "#semiPath",
-            alignOrigin: [0.5, 0.5],
-            start: initialPositions[0],
-            end: 1,
-          },
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-          ease: "none",
-        }).to(
-          "#dot4",
-          {
-            motionPath: {
-              path: "#semiPath",
-              align: "#semiPath",
-              alignOrigin: [0.5, 0.5],
-              start: initialPositions[1],
-              end: initialPositions[0],
-            },
-            duration: 1,
-            ease: "none",
-          },
-          "<"
-        );
-
-        tl.to("#dot4", {
-          motionPath: {
-            path: "#semiPath",
-            align: "#semiPath",
-            alignOrigin: [0.5, 0.5],
-            start: initialPositions[0],
-            end: 1,
-          },
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-          ease: "none",
         });
       };
-
+  
       const timer = setTimeout(setupAnimation, 200);
-
-      console.log("GrowWithout component mounted", timer);
-
+  
       const handleResize = () => {
         ScrollTrigger.refresh();
       };
-
+  
       window.addEventListener("resize", handleResize);
       handleResize();
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        clearTimeout(timer);
+      };
     });
+  
     return () => ctx.revert();
   }, []);
+  
 
   const labels = ["Marketing", "Reviews", "Local Market", "Never Lose Lead"];
 
@@ -267,37 +141,15 @@ const GrowWithout = () => {
     <>
       <div
         id="grow-without-container"
-        className="flex justify-center items-center w-full min-h-[83vh] px-4 sm:px-6 md:px-8 mob:hidden">
-        <div className="w-full max-w-[90vw] flex flex-col items-center relative">
-          {/* Pinned + ScrollSynced Section */}
+        className="flex justify-center items-center w-full min-h-[400vh] mob:hidden">
+        <div className="w-full max-w-[100vw] flex flex-col items-center relative">
           <div
             id="pinned-section"
             className="w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 min-h-[100vh]">
-            {/* LEFT SECTION */}
             <div
               id="scroll-container"
               className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-screen gap-4">
-              {/* Animated Content Wrapper */}
               <div className="relative w-full flex flex-col items-center justify-center gap-4 max-w-[50vw]">
-                {/* Labels bar placed ABOVE content */}
-                <div className="bg-secondary relative z-10 rounded-[20px] w-full py-3 px-4 sm:px-6 md:px-12 flex justify-between items-center h-[8vh] sm:h-[10vh]">
-                  {labels.map((label, index) => {
-                    const isActive = activeIndex === index + 1;
-                    return (
-                      <Text
-                        key={label}
-                        className={`font-semibold text-[1.5vw] transition-all duration-1000 ${
-                          isActive
-                            ? "text-white px-[0.5vw] sm:px-3 md:px-5 py-[0.5vw] sm:py-[0.5vw] bg-black rounded-[15px]"
-                            : "text-[#fff]/80"
-                        }`}>
-                        {label}
-                      </Text>
-                    );
-                  })}
-                </div>
-
-                {/* Content container below labels */}
                 <div className="relative w-full min-h-[50vh]">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -309,7 +161,7 @@ const GrowWithout = () => {
                         alt="grow"
                         width={0}
                         height={0}
-                        className="mx-auto w-[38vw] sm:w-[32vw] md:w-[24vw] h-auto"
+                        className="mx-auto w-[38vw] md:w-[40vw] h-auto"
                         priority
                       />
                       <Text
@@ -345,10 +197,9 @@ const GrowWithout = () => {
               </div>
             </div>
 
-            {/* RIGHT SECTION (SVG Path Animation) */}
             <div
               id="svg-container"
-              className="w-full md:w-[40vw] flex justify-center md:justify-end items-center min-h-[80vh]">
+              className="w-full md:w-[40vw] flex justify-center md:justify-end items-center min-h-[80vh] relative">
               <svg
                 viewBox="0 0 400 800"
                 className="w-full max-w-[40vw] sm:max-w-[25vw] md:max-w-[18vw] h-auto overflow-visible">
@@ -359,10 +210,12 @@ const GrowWithout = () => {
                   stroke="#0055FF"
                   strokeWidth="8"
                 />
-                <circle id="dot1" r="20" fill="#0055FF" />
-                <circle id="dot2" r="20" fill="#0055FF" />
-                <circle id="dot3" r="20" fill="#0055FF" />
-                <circle id="dot4" r="20" fill="#0055FF" />
+                <g className="">
+                  <circle id="dot" r="20" fill="#0055FF" />
+                  <text className="text-right italic" id="label" fontSize="24" fontFamily="Poppins" fill="#000" fontWeight="bold"  >
+                    {labels[activeIndex - 1]}
+                  </text>
+                </g>
               </svg>
             </div>
           </div>
