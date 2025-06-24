@@ -38,6 +38,7 @@ const DesktopNav = () => {
     pathname === "/privacy-policy" ||
     pathname === "/terms-and-service" ||
     pathname === "/pricing" ||
+    pathname === "/industry" ||
     pathname.startsWith("/industry/");
 
   return (

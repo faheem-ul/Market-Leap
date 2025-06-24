@@ -81,7 +81,7 @@ const HomeHero = () => {
           color: "#000000",
         },
         {
-          y: isMobile ? "50vw" : "30vw", // Use vw units for consistent scaling
+          y: isMobile ? "50vw" : "29vw", // Use vw units for consistent scaling
           color: "#FFFFFF",
           ease: "none",
           scrollTrigger: {
@@ -99,7 +99,7 @@ const HomeHero = () => {
     if (buttonRef.current && subTextRef.current) {
       gsap.fromTo(
         buttonRef.current,
-        { opacity: 0, y: "-10vw" },
+        { opacity: 0, y: "-8vw" },
         {
           opacity: 1,
           y: 0,

@@ -51,6 +51,8 @@ body{
 
 #pinned-section{
   top: -30px !important;
+  /* width: 100% !important; */
+  /* max-width: 100% !important; */
 }
 
 
@@ -64,6 +66,9 @@ body{
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 
+.hover-shaodw{
+  box-shadow: 0px 8px 30px 8px #00000026;
+}
 
 
 .container-full{
