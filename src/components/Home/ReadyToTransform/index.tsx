@@ -75,7 +75,7 @@ const ReadytoStart = () => {
   }, []);
 
   return (
-    <section className="relative flex min-h-[148vh] building-shadow xl:min-h-[220vh] w-full flex-col items-center justify-center overflow-x-hidden mob:h-full mob:min-h-[48vh] z-10">
+    <section className="relative flex min-h-[100vh] building-shadow xl:min-h-[100vh] w-full flex-col items-center justify-center overflow-x-hidden mob:h-full mob:min-h-[48vh] z-10">
       {/* Background Image */}
       {/* <div className="absolute top-0 left-0 w-full h-full z-0">
         <Image
@@ -92,17 +92,17 @@ const ReadytoStart = () => {
         <Image
           src={building}
           alt="Building"
-          className="w-full max-w-[80vw] object-cover"
+          className="w-full max-w-[48vw] object-cover"
         />
       </div>
 
       {/* Center Text */}
-      <div className="mt-[5vw] absolute top-[10px] mob:flex mob:flex-col mob:items-center">
+      <div className="mt-[1vw] absolute top-[10px] mob:flex mob:flex-col mob:items-center">
         <span
           className=" mob:bottom-[-763px] duration-500 mob:flex mob:justify-center"
           id="sub-heading-ready"
         >
-          <Text className="text-[5.5vw] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
+          <Text className="text-[4.5vw] mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins leading-[100px]">
             Ready To Transform Your
           </Text>
         </span>
@@ -111,19 +111,19 @@ const ReadytoStart = () => {
           smarter with Market Leap.
         </Text>
         <span className="mob:bottom-[-763px] duration-500 mob:hidden mob:flex mob:justify-center">
-          <Text className="text-[1.5vw] mob:text-[15vw] mob:leading-[20vw] leading-[2vw] font-normal text-white mob:text-[16px] px-7 mt-[11px] text-center w-full max-w-[50vw] mx-auto">
+          <Text className="text-[1.2vw] mob:text-[15vw] mob:leading-[20vw] leading-[2vw] font-normal text-white mob:text-[16px] px-7 mt-[11px] text-center w-full max-w-[50vw] mx-auto">
             Join thousands of business owners who are growing faster and working
             smarter with Market Leap.
           </Text>
         </span>
 
         <span
-          className="relative bottom-[-72px] xl:bottom-[-400px] z-[0] mob:bottom-[0px] duration-500 mob:flex mob:justify-center"
+          className="relative bottom-[-7px] xl:bottom-[-400px] z-[0] mob:bottom-[0px] duration-500 mob:flex mob:justify-center"
           id="hero-heading"
         >
           <Text
             as="h1"
-            className="mx-auto text-center leading-[13vw] mob:text-[15vw] text-[12vw] font-bold text-[#FCFCFC] "
+            className="mx-auto text-center leading-[9vw] mob:text-[15vw] text-[9vw] font-bold text-[#FCFCFC] "
           >
             Business
           </Text>
