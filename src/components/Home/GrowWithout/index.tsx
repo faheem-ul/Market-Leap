@@ -27,24 +27,30 @@ const GrowWithout = () => {
         gsap.set(`#content${i}`, { opacity: 0, y: -50 });
       }
   
-      // Set initial position for dot on the semicircle and label to the left
+      // Set initial position for dot and label to the top of the semicircle (progress 0.5)
       gsap.set("#dot", {
         motionPath: {
           path: "#semiPath",
           align: "#semiPath",
           alignOrigin: [0.5, 0.5],
-          start: 0,
-          end: 0,
+          start: 0.5,
+          end: 0.5,
         },
-        opacity: 0.3,
+        opacity: 0,
         scale: 1,
       });
   
       gsap.set("#label", {
-        x: 0, // Adjusted to position label to the left of the semicircle
-        y: 0,
-        opacity: 0.3,
-        textAnchor: "start", // Align text to the left of the circle
+        motionPath: {
+          path: "#semiPath",
+          align: "#semiPath",
+          alignOrigin: [1.4, 0.5],
+          start: 0.5,
+          end: 0.5,
+          autoRotate: false,
+        },
+        x: 0,
+        opacity: 0,
       });
   
       const setupAnimation = () => {
@@ -57,7 +63,7 @@ const GrowWithout = () => {
             start: "top 10%",
             end: "#end-animation",
             endTrigger: "#end-animation",
-            scrub: true,
+            scrub: 0.5,
             pin: "#pinned-section",
             pinSpacing: true,
             anticipatePin: 1,
@@ -105,10 +111,12 @@ const GrowWithout = () => {
                   end: localProgress,
                   autoRotate: false,
                 },
-                x: -60, // Keep the label 60px to the left of the semicircle
+                x: 0, // Keep the label 60px to the left of the semicircle
               });
   
-              const dotOpacity = Math.max(0.3, 1 - 4 * Math.pow(localProgress - 0.5, 2));
+              // Fade in dot/label only after user starts scrolling
+              const visible = self.progress > 0.01 ? 1 : 0;
+              const dotOpacity = Math.max(0.3, 1 - 4 * Math.pow(localProgress - 0.5, 2)) * visible;
               const dotScale = Math.max(0, 1 - 4 * Math.pow(localProgress - 0.5, 2));
               gsap.set(["#dot", "#label"], { opacity: dotOpacity, scale: dotScale });
             },
@@ -211,8 +219,8 @@ const GrowWithout = () => {
                   strokeWidth="8"
                 />
                 <g className="">
-                  <circle id="dot" r="20" fill="#0055FF" />
-                  <text className="text-right italic" id="label" fontSize="24" fontFamily="Poppins" fill="#000" fontWeight="bold"  >
+                  <circle id="dot" r="20" fill="#0055FF" style={{ willChange: 'transform' }} />
+                  <text className="text-right italic" id="label" fontSize="28" fontFamily="Poppins" fill="#000" fontWeight="bold" style={{ willChange: 'transform' }} >
                     {labels[activeIndex - 1]}
                   </text>
                 </g>

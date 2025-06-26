@@ -62,7 +62,7 @@ const HomeHero = () => {
           ease: "none",
           scrollTrigger: {
             trigger: textRef.current,
-            start: "top 15%",
+            start: "top 5%",
             end: "top 20%",
             scrub: 1,
             // markers:true

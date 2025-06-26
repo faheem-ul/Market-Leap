@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {useEffect} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -15,57 +15,57 @@ import image6 from "@/public/images/home/3-2.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const GridLayout = () => {
-  // useEffect(() => {
-  //   // Apply scaling effect to the left image (make it grow as you scroll up)
-  //   gsap.fromTo(
-  //     ".left-image", // Target the element with the class 'left-image'
-  //     { scale: 1 }, // Start with normal size
-  //     {
-  //       scale: 1.4, // Scale up by 20%
-  //       duration: 1.5,
-  //       scrollTrigger: {
-  //         trigger: ".left-image",
-  //         start: "top bottom",
-  //         end: "top top",
-  //         scrub: 1,
-  //         // markers: true,
-  //       },
-  //     }
-  //   );
+  useEffect(() => {
+    // Apply scaling effect to the left image (make it grow as you scroll up)
+    gsap.fromTo(
+      ".left-image", // Target the element with the class 'left-image'
+      { scale: 1 }, // Start with normal size
+      {
+        scale: 1.4, // Scale up by 20%
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".left-image",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+          // markers: true,
+        },
+      }
+    );
 
-  //   // Apply scaling effect to the "Overarching Value Prop." text block
-  //   gsap.fromTo(
-  //     ".value-prop", // Target the element with class 'value-prop'
-  //     { scale: 1 }, // Start with normal size
-  //     {
-  //       scale: 1.4, // Scale up by 20%
-  //       duration: 1.5,
-  //       scrollTrigger: {
-  //         trigger: ".value-prop",
-  //         start: "top bottom",
-  //         end: "top top",
-  //         scrub: 1,
-  //         // markers: true,
-  //       },
-  //     }
-  //   );
+    // Apply scaling effect to the "Overarching Value Prop." text block
+    gsap.fromTo(
+      ".value-prop", // Target the element with class 'value-prop'
+      { scale: 1 }, // Start with normal size
+      {
+        scale: 1.4, // Scale up by 20%
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".value-prop",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+          // markers: true,
+        },
+      }
+    );
 
-  //   // Apply scaling effect to the "35% Increase" text
-  //   gsap.fromTo(
-  //     ".increase-text", // Target the "35% Increase" element
-  //     { scale: 1 }, // Start with normal size
-  //     {
-  //       scale: 1.4, // Scale up by 20%
-  //       duration: 1.5,
-  //       scrollTrigger: {
-  //         trigger: ".increase-text",
-  //         start: "top bottom",
-  //         end: "top top",
-  //         scrub: 2,
-  //       },
-  //     }
-  //   );
-  // }, []);
+    // Apply scaling effect to the "35% Increase" text
+    gsap.fromTo(
+      ".increase-text", // Target the "35% Increase" element
+      { scale: 1 }, // Start with normal size
+      {
+        scale: 1.4, // Scale up by 20%
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".increase-text",
+          start: "top bottom",
+          end: "top top",
+          scrub: 2,
+        },
+      }
+    );
+  }, []);
 
   return (
     <>
