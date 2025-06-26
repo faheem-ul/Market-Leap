@@ -16,6 +16,14 @@ body{
   background: #FFFFFF;
 }
 
+#home-page{
+  scroll-behavior: smooth !important;
+}
+
+
+html{
+  scroll-behavior: smooth !important;
+}
 
 .leading-custom-6{
   line-height: 28px;

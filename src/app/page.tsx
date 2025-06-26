@@ -9,7 +9,7 @@ import ReadytoStart from "@/components/Home/ReadyToTransform";
 
 export default function Home() {
   return (
-    <div>
+    <div id="home-page">
       
       <HomeHero />
       <HomeMarquee />

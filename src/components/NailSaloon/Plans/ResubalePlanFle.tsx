@@ -31,7 +31,7 @@ const ResubalePlanFle: React.FC<props> = ({
 }) => {
   return (
     <div className={cn(
-      "group w-full relative max-w-[304px] mob:max-w-full h-full min-h-[823px] mob:min-h-fit mob:pb-[43px] flex justify-center items-start pt-[43px] border-[3px] border-[#000000] transition-all duration-100 cursor-pointer px-[27px] rounded-[30px] hover:shadow-[0px_8px_30px_8px_#00000026]",
+      "group w-full relative max-w-[304px] mob:max-w-full h-full min-h-[823px] mob:min-h-fit mob:pb-[43px] flex justify-center items-start pt-[43px] border-[2px] border-[#e5e7eb] transition-all duration-100 cursor-pointer px-[27px] rounded-[30px] hover:shadow-[0px_8px_30px_8px_#00000026]",
       planType === "Standard" ? "border-secondary" : ""
     )}>
       <div className={cn("absolute top-0 translate-y-[-50%] left-1/2 -translate-x-1/2 w-[128px] flex justify-center items-center h-[35px] bg-secondary rounded-[30px]", 
