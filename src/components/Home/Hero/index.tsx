@@ -79,6 +79,8 @@ const HomeHero = () => {
         {
           y: 0,
           color: "#000000",
+          duration: 1.5,
+          
         },
         {
           y: isMobile ? "50vw" : "29vw", // Use vw units for consistent scaling
@@ -88,7 +90,8 @@ const HomeHero = () => {
             trigger: subTextRef.current,
             start: "top 20%",
             end: "top 6%",
-            scrub: 1,
+            scrub: 0.5,
+            // duration: 0.5,            
           },
         }
       );
