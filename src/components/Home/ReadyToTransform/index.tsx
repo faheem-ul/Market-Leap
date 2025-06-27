@@ -107,9 +107,8 @@ const ReadytoStart = () => {
           </Text>
         </span>
         
-        <Text className="mob:flex hidden text-white px-5 text-center mob:justify-center">
-          Join thousands of business owners who are growing faster and working
-          smarter with Market Leap.
+        <Text className="mob:flex mob:text-[25px] mob:leading-[45px] font-semibold text-white font-poppins hidden text-white px-5 text-center mob:justify-center">
+         Business
         </Text>
         <span className="mob:bottom-[-763px] duration-500 mob:hidden mob:flex mob:justify-center">
           {/* <Text className="text-[1.2vw] mob:text-[15vw] mob:leading-[20vw] leading-[2vw] font-normal text-white mob:text-[16px] px-7 mt-[11px] text-center w-full max-w-[50vw] mx-auto">
@@ -128,7 +127,7 @@ const ReadytoStart = () => {
           <Text
             as="h1"
             // className="mx-auto text-center leading-[9vw] mob:text-[15vw] text-[9vw] font-bold text-[#FCFCFC] "
-            className="text-[1.2vw] mob:text-[15vw] mob:leading-[20vw] leading-[5vw] font-normal text-white mob:text-[16px] px-7 mt-[11px] text-center w-full max-w-[100vw] mx-auto"
+            className="text-[1.2vw] md:leading-[1vw] leading-[7vw] font-normal text-white mob:leading-[7vw] mob:text-[16px] px-7 mt-[12px] text-center w-full max-w-[100vw] mx-auto"
           >
             Join thousands of business owners who are growing faster and working
             smarter with Market Leap.
