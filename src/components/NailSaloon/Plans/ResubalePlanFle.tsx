@@ -71,7 +71,7 @@ const ResubalePlanFle: React.FC<props> = ({
         <Text className="text-[24px] font-poppins font-bold text-black group-hover:text-black">
           {pricing} <span className="text-[11px] font-light">{pricingDescrip}</span>
         </Text>
-        <Button className={cn("bg-transparent text-secondary transition-colors duration-1000 hover:bg-black hover:text-white  font-bold border h-[41px] rounded-[30px] mt-[43px] mb-[17px] mx-auto border-black w-[149px]",mt)}
+        <Button className={cn("bg-[#F3F4F6] text-primary transition-colors duration-100 hover:bg-secondary hover:text-white font-semibold h-[41px] rounded-[30px] mt-[43px] mb-[17px] mx-auto border-black w-[149px]",mt)}
         >
           {buttontext}
         </Button>
