@@ -98,11 +98,10 @@ const HomeHero = () => {
     }
 
     // Animate button only after subText is fully visible and centered
-    // Animate button only after subText is fully visible and centered
     if (buttonRef.current && subTextRef.current) {
       gsap.fromTo(
         buttonRef.current,
-        { opacity: 0, y: "-8vw" },
+        { opacity: 0, y: "" },
         {
           opacity: 1,
           y: 0,
@@ -112,6 +111,8 @@ const HomeHero = () => {
             start: "top 26%",
             end: "top 6%",
             scrub: true,
+            invalidateOnRefresh: false,
+            id: "hero-button-animation",
             // markers:true
           },
         }
@@ -122,10 +123,22 @@ const HomeHero = () => {
       ScrollTrigger.refresh();
     };
 
+    const handleScroll = () => {
+      // Refresh only the Hero button ScrollTrigger when returning to top
+      if (window.scrollY < 100) {
+        const heroButtonTrigger = ScrollTrigger.getById("hero-button-animation");
+        if (heroButtonTrigger) {
+          heroButtonTrigger.refresh();
+        }
+      }
+    };
+
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Text from "@/components/ui/Text";
-import Button from "@/components/ui/Button";
+// import Button from "@/components/ui/Button";
 import grow1 from "@/public/images/home/grow.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -153,10 +153,26 @@ const GrowWithout = () => {
         <div className="w-full max-w-[100vw] flex flex-col items-center relative">
           <div
             id="pinned-section"
-            className="w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 min-h-[100vh]">
+            className="w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 min-h-[100vh] relative">
+            
+            {/* Fixed Heading at the top */}
+            <div className="absolute top-[10%] translate-y-[0%] left-0 w-full z-30 px-5">
+              <div className="w-full max-w-[50vw]">
+                <Text
+                  as="h1"
+                  className="text-[4vw] mb-[px] text-left ml-[9vw] mob:mb-0 mob:text-[40px] mob:leading-[40px] leading-[4vw] text-black w-full">
+                  Grow 
+                  Without <br />
+                  <span className="text-secondary font-poppins text-[3vw] leading-[3vw] mob:text-[30px] mob:leading-[30px]">
+                    The Guesswork
+                  </span>
+                </Text>
+              </div>
+            </div>
+
             <div
               id="scroll-container"
-              className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-screen gap-4">
+              className="w-full md:w-3/5 relative flex flex-col items-center justify-center min-h-screen gap-4 mt-[10vh]">
               <div className="relative w-full flex flex-col items-center justify-center gap-4 max-w-[50vw]">
                 <div className="relative w-full min-h-[50vh]">
                   {[1, 2, 3, 4].map((i) => (
@@ -190,7 +206,7 @@ const GrowWithout = () => {
                         {i === 4 &&
                           "As you scale and your business operations evolve, continue using our state of the art software APIs with your own platform. Every part of our software is modular, giving you the flexibility to supercharge your systems with the best of ours."}
                       </Text>
-                      <Button className="bg-primary w-[12vw] sm:w-[13vw] md:w-[14vw] mx-auto py-[1vw] font-bold rounded-[1vw] text-white text-[1vw] sm:text-[1.1vw] md:text-[1.2vw]">
+                      {/* <Button className="bg-primary w-[12vw] sm:w-[13vw] md:w-[14vw] mx-auto py-[1vw] font-bold rounded-[1vw] text-white text-[1vw] sm:text-[1.1vw] md:text-[1.2vw]">
                         {i === 1
                           ? "Marketing"
                           : i === 2
@@ -198,7 +214,7 @@ const GrowWithout = () => {
                           : i === 3
                           ? "Operations"
                           : "Software Apis"}
-                      </Button>
+                      </Button> */}
                     </div>
                   ))}
                 </div>
@@ -210,7 +226,7 @@ const GrowWithout = () => {
               className="w-full md:w-[40vw] flex justify-center md:justify-end items-center min-h-[80vh] relative">
               <svg
                 viewBox="0 0 400 800"
-                className="w-full max-w-[40vw] sm:max-w-[25vw] md:max-w-[18vw] h-auto overflow-visible">
+                className="w-full max-w-[40vw] sm:max-w-[25vw] md:max-w-[23vw] h-auto overflow-visible">
                 <path
                   id="semiPath"
                   d="M400,0 A400,400 0 0,0 400,800"
